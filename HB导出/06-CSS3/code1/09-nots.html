@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*排除选择器范围*/
+			/*h1:not(.box){background: red;}*/
+			
+			/*div下一个兄弟元素*/
+			/*div+*{background: blue;}*/
+			
+			/*div下面所有的p元素*/
+			div~p{background: blue;}
+		</style>
+	</head>
+	<body>
+		<h1>hhhhhhhhhh</h1>
+		<p>pppppppp</p>
+		<h1>hhhhhhhhhh</h1>
+		<span>span</span>
+		<h1 class="box">hhhhhhhhh</h1>
+		<div>divtag</div>
+		<p>ppppppppp</p>
+		<h1>hhhhhhhhhh</h1>
+		<p>ppppppppp</p>
+		<p>pppppppp</p>
+		<span>span</span>
+		<h1>hhhhhhhhhh</h1>
+	</body>
+</html>

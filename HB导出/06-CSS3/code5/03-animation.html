@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*动画帧定义动画*/
+		
+		/*move1：动画名字*/
+		@keyframes move1{
+			/*动画状态*/
+			from{width: 50px;}
+			to{width: 500px;}
+		}
+		@-webkit-keyframes move1{
+			/*动画状态*/
+			from{width: 50px;}
+			to{width: 500px;}
+		}
+		@-moz-keyframes move1{
+			/*动画状态*/
+			from{width: 100px;}
+			to{width: 500px;}
+		}
+		@-ms-keyframes move1{
+			/*动画状态*/
+			from{width: 100px;}
+			to{width: 500px;}
+		}
+			#box{width: 100px;height: 100px;background: purple;animation: 2s move1;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

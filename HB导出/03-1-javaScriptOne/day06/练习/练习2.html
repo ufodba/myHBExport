@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+div{ margin-top:300px; width:470px; height:150px; border:1px #000 solid;}
+</style>
+
+</head>
+
+<body>
+<div><img _src="img/1.jpg"></div>
+<div><img _src="img/2.jpg"></div>
+<div><img _src="img/3.jpg"></div>
+<div><img _src="img/4.jpg"></div>
+<div><img _src="img/5.jpg"></div>
+<script>
+	
+	var img = document.getElementsByTagName('img');
+	
+	for (var i=0; i<img.length; i++) {
+		img[i].onoff = true;
+	}
+	
+	toChange();
+	
+	window.onscroll = toChange;
+	function toChange(){
+		for (var i=0; i<img.length; i++) {
+			if (postTop(img[i]) < viewHeight() + getScrollY()  &&img[i].onoff) {
+				var strSrc = img[i].getAttribute('_src');
+				img[i].setAttribute('src', strSrc);
+				
+				img[i].onoff = false;
+			}
+		}
+	};
+	
+	
+	function postTop(obj){
+		var result=0;
+		
+		while(obj)
+		{
+			result += obj.offsetTop;	
+			obj     = obj.offsetParent; 
+		}
+		return result;
+		
+	};
+	function viewHeight(){
+		return document.documentElement.clientHeight;
+	};
+	function getScrollY(){
+		return window.pageYOffset || document.documentElement.scrollTop;
+	};
+
+</script>
+</body>
+</html>

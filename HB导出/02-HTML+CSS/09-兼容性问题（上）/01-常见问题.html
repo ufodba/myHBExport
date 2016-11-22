@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{width:400px;}
+	.left{width:200px; height:300px;background:red; float:left;}
+	.right{width:200px; float:left;}
+	.div1{width:180px; height:180px; background:blue; padding:15px;}
+	
+	/*
+		180 + 15 + 15 + 200px = 410px;
+		计算一定要精确 不要让内容的宽高超出我们设置的宽高
+		在IE6下内容会撑开设置好的宽高
+	*/
+</style>
+
+</head>
+
+<body>
+	<div class="box">
+    	<div class="left"></div>
+        <div class="right">
+        	<div class="div1"></div>
+        </div>
+    </div>
+</body>
+</html>

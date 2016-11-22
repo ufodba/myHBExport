@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="500px" height="500px" id="can">
+			浏览器不兼容时显示
+		</canvas>
+		
+		<script type="text/javascript">
+			var can = document.getElementById('can');
+			var cax = can.getContext('2d');
+			can.style.border='1px solid black';
+			
+			var num=0;
+			
+			
+			var t1 = setInterval(function(){
+				num+=1;
+				cax.save();
+				cax.clearRect(0,0,500,500);
+				cax.translate(100,100);
+				cax.rotate(num*Math.PI/180);
+				cax.translate(-20,-20);
+				cax.fillRect(0,0,40,40);
+				cax.restore();
+//				if(num==360 || num==-360){
+//					
+//				}
+			},10);
+			
+		</script>
+	</body>
+</html>

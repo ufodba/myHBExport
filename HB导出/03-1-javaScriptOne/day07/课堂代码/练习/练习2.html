@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{width: 100px;height: 100px;background: red; position: absolute;}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oDiv = document.getElementById('div1');
+				
+				var bBtn1 = false;
+				var bBtn2 = false;
+				var bBtn3 = false;
+				var bBtn4 = false;
+
+				document.onkeydown = function(ev){
+					var ev = ev||window.event;
+					
+					switch (ev.keyCode){
+						case 37:  //left
+							bBtn1 = true;
+							break;
+						case 38:  //up
+							bBtn2 = true;
+							break;
+						case 39:  //right
+							bBtn3 = true;
+							break;
+						case 40:  //down
+							bBtn4 = true;
+							break;
+						default:
+							break;
+					}
+					
+				if(bBtn1)
+				{
+					oDiv.style.left = oDiv.offsetLeft -10 + 'px';
+				}
+				if(bBtn2)
+				{
+					oDiv.style.top = oDiv.offsetTop -10 + 'px';
+				}
+				if(bBtn3)
+				{
+					oDiv.style.left = oDiv.offsetLeft +10 + 'px';
+				}
+				if(bBtn4)
+				{
+					oDiv.style.top = oDiv.offsetTop +10 + 'px';
+				}
+					
+			};
+				
+				document.onkeyup = function(ev){
+					var ev = ev||window.event;
+					
+					switch (ev.keyCode){
+					case 37:  //left
+						bBtn1 = false;
+						break;
+					case 38:  //up
+						bBtn2 = false;
+						break;
+					case 39:  //right
+						bBtn3 = false;
+						break;
+					case 40:  //down
+						bBtn4 = false;
+						break;
+					default:
+						break;
+					}
+				};
+
+			};
+		</script>
+		
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

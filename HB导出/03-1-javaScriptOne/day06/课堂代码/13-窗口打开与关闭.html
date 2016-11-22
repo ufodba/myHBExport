@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：打开新链接窗口
+	1、window.open
+		自动调用open方法的时候，标准浏览器默认情况下回阻止, ie是不会。
+		window.open('https://www.baidu.com');
+		
+	2、主动（人为的）调用时，不会被阻止
+	
+	
+	3、关闭时
+	关闭是当前当前这个窗口, 并不是新创建的窗口(标准浏览器支持的，但是默认情况是不让调用关闭close方法:about:config)
+	about:config => close => dom.allow_scripts_to_close_windows: true
+-->
+	<body>
+		<input  type="button" value="点击"/><input type="button" value="关闭"/>
+		
+		
+		
+	   <script type="text/javascript">
+	   
+	   
+	   	//自动调用，会被阻止
+	   //	window.open("http://www.163.com");
+	   	
+	   	//主动打开
+	   	var aInput=document.getElementsByTagName('input');
+	   	
+	   	aInput[0].onclick=function(){
+	   		
+	   		//window.open("http://www.163.com",'_self');  //_self:打方式 当前窗口打开
+	   		window.open("http://www.163.com");
+	   	}
+	   	
+	   	
+	   	aInput[1].onclick=function(){
+	   		
+	   		window.close();  //ie可直接关闭，其他浏览器默认是不可以，需要配置：   about:config
+	   	}
+	   	
+	   	
+	   	
+	   </script>	
+	
+		
+	</body>
+</html>

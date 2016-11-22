@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="n1">
+			<div id="n2" class="abc">
+				<label id="n3">label1</label>
+				<span class="s1" id="n4">span1</span>
+				<span class="s1" id="n5" class="abc">span2</span>
+				<span class="s1" id="n6">span3</span>
+			</div>
+			<div id="n7">
+				<span class="s1" id="n8" class="abc">span1</span>
+				<span class="s1" id="n9">span2</span>
+			</div>
+			
+			<p id="n7">
+				<strong>strong</strong>
+				<span class="s1" id="n8" class="abc">span1</span>
+				<span class="s1" id="n9">span2</span>
+			</p>
+		</div>
+		
+		
+		<p id="n8">
+				<strong>strong</strong>
+				<span class="s1" id="n8" class="abc">span8</span>
+				<span class="s1" id="n9">span2</span>
+		</p>
+
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".s1:first-of-type").addClass('my_c');
+		</script>
+	</body>
+
+</html>

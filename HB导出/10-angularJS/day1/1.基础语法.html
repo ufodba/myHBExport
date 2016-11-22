@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!-- ng-app 唯一的。angularjs入口。-->
+		<h1>ng-init 初始化数据</h1>
+		<!-- 初始化字符串 -->
+		<div ng-init="name='小明'">
+			{{ name }}
+		</div>
+
+		<!-- 初始化数字  -->
+		<div ng-init="num1=9;num2='8';">
+			{{ num1 + num2 }}
+		</div>
+
+		<!-- 初始化数组  -->
+		<div ng-init="arrays=['苹果','西瓜','桃子','草莓','荔枝'];">
+			<ul>
+				<li>{{arrays[0]}}</li>
+				<li>{{arrays[1]}}</li>
+				<li>{{arrays[2]}}</li>
+				<li>{{arrays[3]}}</li>
+			</ul>
+		</div>
+		<hr />
+		<ol>
+			<!-- ng-repeat 会将数组中的数据迭代到变量中。并且复制当前指令所在的标签元素。 -->
+			<li ng-repeat="fruit in arrays">
+				<h3>{{ fruit }}</h3></li>
+		</ol>
+		<hr />
+		
+		<div ng-repeat="fruit in arrays">
+			<div><strong>{{ fruit }}</strong></div>
+		</div>
+		
+		
+		<!-- 对象 -->
+		
+		<div ng-init="student={name:'小明',age:19}">
+			<strong>{{student.name}}</strong>
+			<strong>{{student['age']}}</strong>
+		</div>
+		
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

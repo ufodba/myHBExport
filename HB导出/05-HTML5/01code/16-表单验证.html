@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<!--<input type="text" id="text" required=""/><br />-->
+			<!--<input type="url" id="text" required=""/><br />-->
+			
+			<!--number、range-->
+			<!--<input type="number" min="5" value="2" id="text"/><br />-->
+			<input type="number" max="10" min="2" value="6" id="text" step="2"/><br />
+			<input type="submit"/>
+		</form>
+		
+		<script>
+			var otext = document.getElementById('text');
+			//添加验证事件监听
+			otext.addEventListener('invalid',fn,false);
+			
+			function fn(ev){
+				var ev = ev || window.event;
+				ev.preventDefault();
+				
+//				alert(this.validity.valueMissing);//为空返回true，不为空的值提交成功
+//				alert(this.validity.typeMismatch);//类型不匹配的时候，true，匹配没有效果
+				
+				//值低于最小值---》true
+				//alert(this.validity.rangeUnderflow);
+				//值高于最大值---》true
+//				alert(this.validity.rangeOverflow);
+//需要设置最大小值，设置步数，取值value是处于最大值跟最小值之间的数，并且是step的倍数
+				alert(this.validity.stepMismatch);//失去匹配--》true
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

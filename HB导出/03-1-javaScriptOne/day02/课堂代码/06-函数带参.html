@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			//不带参
+			function show(){
+				console.log(123);
+			}
+			show();
+			
+			//带参函数
+			function show1(m){
+				
+				console.log(m);
+			}
+			
+			show1(5);
+			
+			
+			var m=7;    
+			show1(5);  //输出的是5，  与26行的M无关
+			
+			
+			//带参函数：  参数表示的是实现功能的条件    如画圆，条件：位置  半径
+			
+			
+			//参没有任何意义的函数
+			
+			function  show2(m,n,k)
+			{
+				console.log('abc');
+				//console.log(m+'-'+n+'-'+k);
+			}
+			
+			show2(1);
+			show2(2,3);   //2-->m    3-->n
+			show2(1,2,3); //1--》m    2-->n    3--->k
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

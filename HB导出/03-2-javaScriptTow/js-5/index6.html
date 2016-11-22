@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<div id="box">
+			hello
+		</div>
+		
+		<button id="btn">设置背景</button>
+		<button id="btn2">IE</button>
+		
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			
+			btn.onclick = function(){
+				box.style.background = 'red';	
+			}
+			
+			btn2.onclick = function(){
+				//标准浏览器不支持此写法。
+				box.style.setAttribute('background','blue');
+			}
+			
+		</script>
+	</body>
+</html>

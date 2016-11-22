@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box  {width: 400px; height: 400px; border: #FF5500 1px solid; margin: 0 auto;}
+			#view {width: 300px; height: 180px; border: #FF5500 1px solid;margin: 5px 9px;padding: 20px 40px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="view"></div>
+			&nbsp;&nbsp;&nbsp;&nbsp;名字：<input type="text" name="" id="" value="" /><br /><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;性别：<input type="text" name="" id="" value="" /><br /><br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="" id="" value="添加" />&nbsp;&nbsp;
+			<input type="button" name="" id="" value="删除" />
+		</div>
+		
+		<script type="text/javascript">
+			var aInp=document.getElementsByTagName('input');
+			var oView=document.getElementById('view');
+			var arr=['李为龙','邓晓丰','陈健','吴闻','刘世颖','韦文会','冼瑞健','李家盛','程建政','周喜良','孙志亮','懵逼'];
+			var arrClass=new Array();
+			var index=[]
+			//两个字的在中间加空格
+			for (var i=0; i<arr.length;i++) {
+				var stu={};
+				if(arr[i].length<3){
+					var aa=arr[i].split('');
+					arr[i]=aa[0]+'&nbsp;'+aa[1];
+					stu.name=arr[i];
+				}else{
+					stu.name=arr[i];
+				}
+				
+				stu.sex='男';
+				arrClass.push(stu);
+			}
+			//将对象加入数组
+			sort(); 
+			aInp[2].onclick=function(){
+				var stu={};
+				if(aInp[0].value.length<3){
+					var aa=aInp[0].value.split('');
+					aInp[0].value=aa[0]+'&nbsp;'+aa[1];
+					stu.name=aInp[0].value;
+				}else{
+					stu.name=aInp[0].value;
+				}
+				
+				stu.sex=aInp[1].value;
+				arrClass.push(stu);
+				sort();
+				aInp[0].value='';
+			}
+			aInp[3].onclick=function(){
+				if(aInp[0].value.length==0){
+					arrClass.pop();
+				}else{
+					if (aInp[0].value.length<3) {
+						var aa=aInp[0].value.split('');
+						aInp[0].value=aa[0]+'&nbsp;'+aa[1];
+					}
+					for(var i=0;i<arrClass.length;i++){
+						if(arrClass[i].name==aInp[0].value){
+							arrClass.splice(i,1);
+						}
+					}
+				}
+				sort();
+				aInp[0].value='';
+			}
+			function sort(){
+				oView.innerHTML='';
+				for(var i=0;i<arrClass.length;i++){
+					if(i<9){
+						index[i]='0'+(i+1);
+					}
+					else{
+						index[i]=i+1;
+					}
+					oView.innerHTML+=index[i]+'&nbsp;'+arrClass[i].name+'&nbsp;'+arrClass[i].sex+'&nbsp;&nbsp;';
+					if(i%2==1){
+						oView.innerHTML+='<br>';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

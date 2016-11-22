@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{height: 100px;border: 10px solid black;padding: 10px;
+				/*弹性盒模型:并列排列*/
+				display: -webkit-box;
+				display: -moz-box;
+				
+				/*box-pack 对盒子富裕的空间进行管理
+					Start 所有子元素在盒子左侧显示，富裕空间在右侧
+					End 所有子元素在盒子右侧显示，富裕空间在左侧
+					Center 所有子元素居中
+					Justify 富余空间在子元素之间平均分布
+				*/
+				
+				-moz-box-pack: justify;
+
+					}
+			
+			.wrap div{width: 100px;height: 100px;background: red;border: 1px solid white;}
+
+				
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>

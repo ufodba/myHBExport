@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<hello></hello>
+		<div hello></div>
+		<hello></hello>
+		<div hello></div>
+		<hello></hello>
+		<div hello></div>
+		<hello></hello>
+		<div hello></div>
+		<hello></hello>
+		<div hello></div>
+		<hello></hello>
+		<div hello></div>
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app',[]);
+			app.directive('hello',function(){
+				return{
+					restrict:'EA',
+					template:'<div><input type="text" placeholder="请输入..." ng-model="value"/><strong ng-bind="value"></strong></div>',
+					replace:true,
+					/*
+					 * 独立Scope
+					 * 当设置了此属性每个指令与指令之间的scope作用域对象相对独立，不会互相影响。
+					 */
+					scope:{},
+				};
+			});
+		</script>
+		
+	</body>
+</html>

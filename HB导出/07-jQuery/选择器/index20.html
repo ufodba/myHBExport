@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				width: 100px;
+				height: 50px;
+				border: 1px solid gold;
+			}
+			.my_c2{
+				background: orange;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p>Hello!</p>
+		</div>
+		<div id="test2">2</div>
+		<div id="atest3">3</div>
+		<div id="test4">4</div>
+		<p id="tesss">ppp</p>
+		
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$('div[id $= "t3"]').addClass('my_c');
+		$('div[id *= "t"]').addClass('my_c2');
+		
+		</script>
+	</body>
+
+</html>

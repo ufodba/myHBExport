@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#boxM {position: relative; width: 400px;height: 400px;margin: 20px auto; border: 10px black solid; }
+			#boxN { width: 50px;height: 50px; background: red; position: absolute;top:0;left:0px}
+		</style>
+	</head>
+	<body>
+		<div id="boxM">
+			<div id="boxN"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var oBoxN=document.getElementById('boxN');
+			var i=0;
+			var direct=1;
+			var t=setInterval(function(){
+				switch (direct){
+					case 1:
+						if(i<=348){
+							i+=2;
+							oBoxN.style.cssText='top:0;left:'+i+'px';
+							direct=1;
+							return;
+						}
+						direct=2;
+						i=0;
+						break;
+					case 2:
+						if(i<=348){
+							i+=2;
+							oBoxN.style.cssText='top:'+i+'px;left:350px';
+							direct=2;
+							return;
+						}
+						direct=3;
+						i=350;
+						break;
+					case 3:
+						if(i>=2){
+							i-=2;
+							oBoxN.style.cssText='top:350px;left:'+i+'px';
+							direct=3;
+							return;
+						}
+						direct=4;
+						i=350;
+						break;
+					case 4:
+						if(i>=2){
+							i-=2;
+							oBoxN.style.cssText='top:'+i+'px;left:0px';
+							direct=4;
+							return;
+						}
+						direct=1;
+						i=0;
+						break;
+				}
+				
+			},25);
+		</script>
+	</body>
+</html>

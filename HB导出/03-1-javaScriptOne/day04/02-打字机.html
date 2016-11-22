@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{ margin:0; padding:0; }
+		.box { width:700px; height:200px; margin:90px auto; }
+		.txt { float:left; width:300px; height:200px; line-height:20px; font-size:12px; border:1px #ccc solid; }
+		.boxM {display:none; text-align:center;}
+		div div { float:left;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<textarea id="txtL" class="txt" name="" ></textarea>
+		    <div >
+		    	<input id="btn" type="button" value="移动文字" />
+		        <p id="txtM" class="boxM"><span></span>/<span></span></p>
+		    </div>
+		    <div id="txtR" class="txt" ></div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var oTxtL=document.getElementById('txtL');
+		var oBtn=document.getElementById('btn');
+		var oTxtM=document.getElementById('txtM');
+		var aSpan=oTxtM.getElementsByTagName('span');
+		var oTxtR=document.getElementById('txtR');
+		oBtn.onclick=function(){
+			var arrStr=oTxtL.value;
+			var a=0;
+			var b=arrStr.length;
+			aSpan[0].innerHTML=a;
+			aSpan[1].innerHTML=arrStr.length;
+			this.disabled='disabled';
+			oTxtM.style.display='block';
+			var c=this;
+			var t=setInterval(function(){
+		
+				if(a!=arrStr.length){
+					a++;
+					oTxtL.value=arrStr.substring(a);
+					oTxtR.innerHTML=arrStr.substring(0,a) + '_';
+					aSpan[0].innerHTML=a;
+				}
+				else{
+					clearInterval(t);
+					oTxtR.innerHTML=arrStr;
+					c.disabled='';
+					
+				}
+				
+			},1000);
+		}
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+
+	<body>
+		<button id="btn">button</button>
+		
+		<script type="text/javascript">
+		
+			var btn = document.getElementById('btn');
+			var num = 0;
+			btn.onclick = function(){
+				num++;
+				if(2 == num ){
+					this.onclick = null;
+					return;
+				}
+				alert('hello');
+				
+				
+			}
+		</script>
+	</body>
+
+</html>

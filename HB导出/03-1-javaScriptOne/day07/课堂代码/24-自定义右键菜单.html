@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../day05/base1.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			*{margin: 0; padding: 0;}
+			li{list-style: none;}
+			#ul1{width: 200px;height: 200px;border: 1px solid #000; position: absolute;display: none;}
+			
+		</style>
+		
+
+		
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：鼠标左、右键事件   document.onclick    document.oncontextmenu
+	
+	1、右键显示 
+	2、左键隐藏
+-->
+	
+	<body>
+		<ul id="ul1">
+			<li>11111</li>
+			<li>22222</li>
+			<li>33333</li>
+			<li>44444</li>
+		</ul>
+
+		
+	<script type="text/javascript">
+	    var  oUL=document.getElementById('ul1');
+	 
+		document.oncontextmenu=function(ev){
+			ev=ev||window.event;
+			//console.log(ev.clientX);
+			var x=ev.clientX;
+			var y=ev.clientY;
+            
+            CSS(oUL,'display','block'); 
+            CSS(oUL,'left',x+'px');
+            CSS(oUL,'top',y+'px');
+            
+            return  false;  //取消默认的右键弹出菜单
+		}
+		
+		document.onclick=function(ev){
+			ev=ev||window.event;
+			CSS(oUL,'display','none'); 
+			
+		}
+		
+		
+	</script>	
+		
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="MyController">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<base target="_blank" />
+	</head>
+	<body>
+		
+		<div id="box">
+			
+			<input type="checkbox" ng-model="flag" />
+			<div ng-if="flag">
+				<img src="img/bigptr.jpg"/>
+			</div>
+			<div ng-hide="flag">
+				<img src="img/dog.jpg"/>
+			</div>
+			<div ng-show="flag">
+				<img src="img/bigptr.jpg"/>
+			</div>
+			
+			
+		</div>
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app',[]);
+			app.controller('MyController',function($scope){
+				$scope.flag = false;
+			});
+			
+		</script>
+	</body>
+</html>

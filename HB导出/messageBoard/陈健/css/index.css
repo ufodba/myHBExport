@@ -1,0 +1,86 @@
+body,ul {margin: 0; 
+	  padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+#warp {
+	width: 800px;
+	background: #ecebe7;
+	margin: 10px auto;
+	border: 20px solid #ecebe7;
+	zoom: 1;
+}
+
+#warp:after {
+	content:"";
+	display:block; 
+	clear:both;
+} 
+
+#messages {
+		width: 96%;
+		height: 380px;
+		overflow: auto;
+		margin: 0 auto;
+		border: 1px #999999  dotted;
+		border-bottom: none;
+		padding: 10px 10px;
+}
+
+#users {
+	margin-left: 5px;
+	width: 80px;
+	float: left;
+	overflow: auto;
+	border: 1px #999999 solid;
+	border-bottom: none;
+}
+
+#users li {
+	cursor: pointer;
+	line-height: 21px;
+	background: #f6f6f6;
+	border-bottom: 1px #999999 solid;
+	text-align: center;
+}
+
+#liuyan {
+	width: 604px;
+	height: 123px;
+	float: left;
+	resize: none;
+	border-left: none;
+	border-right: none;
+	color: #d1d0cb;
+	font-size: 24px;
+	line-height: 28px;
+	padding: 15px;
+}
+
+#btn {
+	width: 74px;
+	height: 155px;
+	float: right;
+	margin-right: 5px;
+	font-size: 22px;
+}
+
+#messages div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px #999999  dotted;
+}
+
+#messages strong {
+	line-height: 22px;
+	display: block;
+}
+
+#messages span {
+	display: block;
+	margin-left: 40px;
+	line-height: 22px;
+}

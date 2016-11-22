@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app='App'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body >
+		<div ng-controller="myController">
+			{{ hello }}
+			<strong>{{ hello }}</strong>
+			
+			{{ num1 * num2 }}
+			
+			<ul>
+				<li ng-repeat="val in array">{{val}}</li>
+			</ul>
+			
+			{{
+				student.name +","+student.age
+			}}
+			
+			
+			
+		</div>
+		
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*
+			 * angularJS程序是从模块开始的。
+			 * 
+			 *参数1： 模块名称。
+			 *参数2：依赖列表。也就是可以注入的对象列表。
+			 */
+			var app = angular.module('App',[]);
+			app.controller('myController',function($scope){
+				$scope.hello='hello angularJS';
+				
+				$scope.num1 = 19;
+				$scope.num2 = 29;
+				
+				$scope.array = ['苹果','西瓜','桃子','草莓','荔枝'];
+				
+				$scope.student = {name:'小明',age:17};
+				
+				
+			});
+			
+			
+		</script>
+	</body>
+</html>

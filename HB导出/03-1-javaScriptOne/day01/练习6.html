@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			li {list-style: none; position: absolute;top: 0;left: 0;width: 50px;height: 50px;background: url(img/1.png);}
+		</style>
+	</head>
+	<body>
+		<ul id="bg"></ul>
+		<script type="text/javascript">
+			var obg=document.getElementById('bg');
+			for (var i=0;i<500/50;i++) {
+				for (var j=0;j<250/50;j++) {
+					obg.innerHTML+='<li style="top:'+(j*51)+'px; left:'+(i*51)+'px; background-position:'+(-i*50)+'px '+(-j*50)+'px"></li>'
+				}
+			}
+		</script>
+	</body>
+</html>

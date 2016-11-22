@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="shopping">
+			<input type="checkbox" name="1" id="1" value="香蕉" />香蕉
+			<br />
+			<input type="checkbox" name="2" id="2" value="苹果" />苹果
+			<br />
+			<input type="checkbox" name="3" id="3" value="烧鸭" />烧鸭
+			<br />
+			<input type="checkbox" name="4" id="4" value="啤酒" />啤酒
+			<br />
+			<input type="checkbox" name="5" id="5" value="花生" />花生
+			<br />
+			<input type="checkbox" name="6" id="6" value="火腿" />火腿
+		</div>
+		
+		<script type="text/javascript">
+			var shopping = document.getElementById('shopping');
+			var shoppingBox = shopping.getElementsByTagName('input');
+			var renews = document.getElementById('renews');
+			//刷新页面时加载实时状态
+			reload();
+			//设置状态
+			for (var i=0; i<shoppingBox.length; i++) {
+				shoppingBox[i].onclick=function(){
+					setStatus(this);
+				}
+			}
+			//共享实时状态
+			window.addEventListener('storage',function(ev){
+				reload();
+			},false);
+			//刷新
+			function reload() {
+				for (var i=0; i<shoppingBox.length; i++) {
+					var now = window.localStorage.getItem(shoppingBox[i].name);
+					if(now==1) shoppingBox[i].checked =true;
+					if(now==0) shoppingBox[i].checked =false;
+				}
+			}
+			//改变状态
+			function setStatus(obj) {
+				if (obj.checked) {
+					window.localStorage.setItem(obj.name, 1);
+				} else{
+					window.localStorage.setItem(obj.name, 0);
+				}
+			}
+		</script>
+	</body>
+</html>

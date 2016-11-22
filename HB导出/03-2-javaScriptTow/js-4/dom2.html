@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul li {
+				background: red;
+				border: white 2px solid;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box1"></div>
+		<ul>
+			<li>苹果</li>
+			<li>草莓</li>
+			<li>香蕉</li>
+			<li>西瓜</li>
+		</ul>
+		<script type="text/javascript">
+			var lis = document.getElementsByTagName('li')
+			for(i in lis){
+				lis[i].onclick = function(){
+					alert('hello'+ this.innerHTML);
+				}
+			}
+		
+		
+		</script>
+	</body>
+
+</html>

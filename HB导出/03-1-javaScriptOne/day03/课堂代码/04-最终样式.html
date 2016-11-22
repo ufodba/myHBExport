@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#div1{ height: 200px; border: 5px  solid  blue;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"  style="background: red;width: 200px;"></div>
+		
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById('div1');
+			
+			console.log(oDiv.style.width);	  //  oDiv.style 只读取内联样式，设置也是内联样式 		
+			
+			
+			//最终样式
+			//兼容性
+		 if(window.getComputedStyle)
+		 {
+			//标准
+			var value=getComputedStyle(oDiv).height;
+			console.log(value);
+		}
+		 else
+		 {
+			//IE8下使用
+			var value= oDiv.currentStyle.height;
+			alert(value);
+		}
+
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

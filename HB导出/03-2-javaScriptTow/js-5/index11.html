@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" id="btn" value="点我" />
+		<input type="button" id="btn1" value="关闭" />
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var btn1 = document.getElementById('btn1');
+
+			var newWindows = [];
+
+			btn.onclick = function() {
+				newWindows.push(window.open('https://www.baidu.com'));
+			}
+			btn1.onclick = function() {
+				if(0 != newWindows.length) {
+					newWindows.pop().close();
+					console.log(newWindows);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

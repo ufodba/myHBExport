@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/** {margin: 0; padding: 0;}*/
+			/*input,span {float: left;}*/
+			/*li {display: block; vertical-align:middle;}*/
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="li0">
+				<span>1.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li id="li1">
+				<span>2.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>3.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>4.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>5.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var aInput=document.getElementsByTagName('input');
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		for(var i=0;i<aInput.length;i++){
+			if (i%2==0) {
+				aInput[i].onclick=function(){
+					var onLi=this.parentNode;
+					var prev=preNode(onLi);
+					if(prev){
+						oUl.insertBefore(onLi,prev);
+					}
+					else{
+						alert('到头');
+					}
+				}
+			}
+			else{
+				aInput[i].onclick=function(){
+					var onLi=this.parentNode;
+					var next=nextNode(onLi);
+					if(next){
+						oUl.insertBefore(next,onLi);
+					}
+					else{
+						alert('到尾');
+					}
+				}
+			}
+		}
+		
+		
+		function  firstNode(obj){
+	     	//兼容
+	     	if (!obj.firstChild) {
+	     		return false;
+	     	}
+	       return  	obj.firstElementChild||obj.firstChild;
+	     }
+		
+		function  lastNode(obj){
+	     	if (!obj.lastChild) {
+	     		return false;
+	     	}			
+			return  obj.lastElementChild || obj.lastChild;
+		}
+		
+		function   preNode(obj){
+	     	if (!obj.previousSibling) {
+	     		return false;
+	     	}
+			return  obj.previousElementSibling ||(obj.previousSibling.nodeType==1?obj.previousSibling:preNode(obj.previousSibling));
+		}
+		
+		function nextNode(obj){
+	     	if (!obj.nextSibling) {
+	     		return false;
+	     	}			
+
+		return  obj.nextElementSibling ||(obj.nextSibling.nodeType==1?obj.nextSibling:nextNode(obj.nextSibling));
+		}		
+		
+	</script>
+</html>

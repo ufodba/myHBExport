@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var oDiv=document.getElementById('box');
+			
+          /*
+         * 1、this指针 ，一般用于函数
+         * 2、函数没有赋值结变量时，this是指向window
+         */
+         
+         //1、函数没有赋值给其他成员
+  		function  show(){
+         	
+         	alert(this);
+         }  
+         //show();   			//window
+                        
+         //2、变量
+         var k=function(){
+         	
+         	alert(this);
+         }
+         //k();   				//window
+         
+         //3、对象：oDiv
+         oDiv.show=function(){        	
+         	alert(this);
+         }
+         
+        // oDiv.show();   	    //div
+         
+         
+        //4、 p并不是一个对象，所以下面操作无效
+         var p.show=function(){
+         	alert(this);
+         }
+		 p.show();	
+					
+		</script>
+	</body>
+</html>

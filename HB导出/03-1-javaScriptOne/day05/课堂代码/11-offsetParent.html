@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			*{margin: 0; padding: 0;}
+			#box1{background-color: red; }
+			#box2{width: 100px; height: 100px;background-color: blue;position: relative;}
+		</style>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：距离定位元素的距离    offsetParent
+	
+标准浏览器:
+	1. div所有父节点都没有定位的情况下, offsetParent就是body
+	2. div所有父节点中如果有节点存在定位(绝对，相对，固定)情况, offsetParent就是有定位的祖先节点(就近原则)
+
+IE6,7
+	1. div(没有定位)的所有祖先节点中, 如果有触发haslayout的时候,那么offsetParent就是触发haslayout的节点
+	2. div(有定位)的所有祖先节点中都没有定位情况下，offsetParent就是offsetParent就是html
+	3. div(有定位)的所有祖先节点中, 如果有触发haslayout, 并不会收到影响
+
+总结：
+1、html和body 样式相同
+2、低版本IE必须加上定位（解决兼容性问题）
+
+
+
+
+	
+	
+-->
+	<body>
+		<div  id="box1">
+			<div id="box2"></div>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+		  	var box1=document.getElementById('box1');
+		  	var box2=document.getElementById('box2');
+		   console.log(box1.offsetParent.nodeName);     //BODY
+		   console.log(box2.offsetParent.nodeName);     //IE6~7   DIV    标准：BODY
+		   
+		   
+		   //测试验证：按上面的注释，一条条认证！
+		   
+		   
+			
+		</script>
+	</body>
+</html>

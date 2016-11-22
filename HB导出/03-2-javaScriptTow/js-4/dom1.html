@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul li {
+				background: red;
+				border: white 2px solid;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box1"></div>
+		<ul>
+			<li id="l1"class="fr">苹果</li>
+			<li class="fr">草莓</li>
+			<li name='na'>香蕉</li>
+			<li>西瓜</li>
+		</ul>
+		<script type="text/javascript">
+//			var box = document.getElementById('box1');
+
+			var l1 = document.getElementById('l1');
+			l1.style.background='blue';
+			
+			var ls = document.getElementsByClassName('fr');
+			ls[0].style.background = 'black';
+			ls[1].style.background = 'green';
+			
+			
+			var ns = document.getElementsByName('na');
+			ns[0].style.background = 'pink';
+			
+			
+			var ss = document.getElementsByTagName('li');
+			for(i in ss){
+				ss[i].style.background= 'deepskyblue';
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

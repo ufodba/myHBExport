@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*子元素：同常在同类型标签中使用*/
+			li:nth-child(5){background: gold;}
+			
+			/*先选择类型，在排顺序，通常在混合标签中使用*/
+			li:nth-of-type(6){background: blue;}
+			
+			li:nth-last-of-type(2){background: red;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>litag</li>
+			<p>pppp</p>
+			<p>pppp</p>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<p>pppp</p>
+			<p>pppp</p>
+			<li>litag</li>
+		</ul>
+		
+	</body>
+</html>

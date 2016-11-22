@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原型</title>
+	</head>
+	<body>
+		<script>
+			//js所有函数都有一个prototype属性，这个属性引用了一个对象，即原型对象，也简称为原型
+			function CreateDog(name,color){
+				this.name = name;
+				this.color = color;
+			}
+			//prototype  作用是 扩展了方法对象的属性
+			CreateDog.prototype.swiming = function (){
+				console.log(this.name + '在游泳');
+			};
+			var dog1 = new CreateDog('泰迪','棕色');
+			dog1.swiming();
+			var dog2 = new CreateDog('萨摩耶','白色');
+			dog2.swiming();
+			//判断一下dog1 是不是由CreateDog 构造出来
+			//instanceof 运算符  可以用来判断对象的类型，更重要的 可以在继承关系中判断一个实例是否是属于他的父类型
+			console.log(dog1 instanceof CreateDog);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" id="inp" placeholder="请输入。。。"/>
+		<button>提交</button>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var oInput = document.getElementById('inp');
+			var box  = document.getElementById('box');
+			// 回车
+			/*
+			oInput.onkeydown =function(ev){
+				var ev = ev ||  window.event;
+				if(13 == ev.keyCode){
+					var mP = document.createElement('p');
+					var textNode = document.createTextNode(this.value);
+					mP.appendChild(textNode);
+					box.appendChild(mP);
+				}
+			};
+			*/
+			
+			// ctrl + 回车
+			/*
+			oInput.onkeydown =function(ev){
+				var ev = ev ||  window.event;
+				if(13 == ev.keyCode && ev.ctrlKey){
+					var mP = document.createElement('p');
+					var textNode = document.createTextNode(this.value);
+					mP.appendChild(textNode);
+					box.appendChild(mP);
+				}
+			};*/
+			
+			//ctrl + 回车 注：不能使用
+			/*
+			oInput.onkeydown =function(ev){
+				var ev = ev ||  window.event;
+				if(13 == ev.keyCode && 17 == ev.keyCode){
+					var mP = document.createElement('p');
+					var textNode = document.createTextNode(this.value);
+					mP.appendChild(textNode);
+					box.appendChild(mP);
+				}
+			};*/
+			
+			var onoff1 = false;
+			var onoff2 = false;
+			oInput.onkeydown =function(ev){
+				var ev = ev ||  window.event;
+				if(13 == ev.keyCode){
+					onoff1 = true;
+				}
+				if(17 == ev.keyCode){
+					onoff2 = true;
+				}
+				if(onoff1 && onoff2 ){
+					var mP = document.createElement('p');
+					var textNode = document.createTextNode(this.value);
+					mP.appendChild(textNode);
+					box.appendChild(mP);
+				}
+				
+			};
+			
+			oInput.onkeyup =function(ev){
+				var ev = ev ||  window.event;
+				if(13 == ev.keyCode){
+					onoff1 = false;
+				}
+				if(17 == ev.keyCode){
+					onoff2 = false;
+				}
+			};
+			
+		</script>
+		
+	</body>
+</html>

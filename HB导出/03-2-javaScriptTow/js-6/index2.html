@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img id="img"  src="img/bigptr.jpg" alt="..."/>
+		<script type="text/javascript">
+			var img = document.getElementById('img');
+			img.onmousedown = function(){
+				console.log('鼠标按下');
+			}
+			img.onmouseup = function(){
+				console.log('鼠标松开');
+			}
+			
+			img.onmouseenter = function(){
+				console.log('鼠标进入');
+			}
+			img.onmouseleave = function(){
+				console.log('鼠标离开');
+			}
+			
+			img.onmouseover = function(){
+				console.log('鼠标进入1');
+			}
+			img.onmouseout = function(){
+				console.log('鼠标离开1');
+			}
+			
+			
+		</script>
+	</body>
+</html>

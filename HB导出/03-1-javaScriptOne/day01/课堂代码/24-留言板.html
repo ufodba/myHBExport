@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+		    /* word-break: break-all;  单词处理，换行是否为以单词为单位 */
+			#box{margin: 0 auto;width: 622px;border: 5px solid red;}
+			#box1{width: 600px; margin: 10px;border: 1px solid black;min-height: 50px; max-height: 300px;overflow: auto;word-break: break-all;}
+			#txt{width: 600px; margin: 10px;border: 1px solid black;height: 50px; overflow: auto;resize: none;}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			留言：
+			<div id="box1"></div>
+			<textarea  id="txt" value=""></textarea>
+			<input type="button" id="btn" value="提交" />
+			
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			var  oDiv=document.getElementById('box1');
+			var  oText=document.getElementById('txt');
+			var  btn=document.getElementById('btn');
+			
+			
+			btn.onclick=function(){
+				
+				
+				oDiv.innerHTML +='<p>'+oText.value+ '</p>';
+				oText.value='';
+			}
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

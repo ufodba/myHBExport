@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">点击</div>
+		<div id="box2">click</div>
+		<div id="box3" style="height: 300px;"></div>
+		
+		<script type="text/javascript">
+			var  oDiv1=document.getElementById('box');
+			var  oDiv2=document.getElementById('box2');
+			var  oDiv3=document.getElementById('box3');
+			oDiv1.onclick=function(){
+				
+				//alert(123);	
+				console.log(123);
+				document.body.innerHTML+='<h1>abc</h1>';
+				//body.innerHTML会让事件取消
+			}
+			
+			
+			oDiv2.onclick=function(){
+				
+				//alert(123);	
+				console.log(123);
+				oDiv3.innerHTML+='<h1>abc</h1>';
+				//innerHTML会让事件取消
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	//脚本1
+	<script type="text/javascript">
+		
+				//兼容性
+		function  bindEvent(obj,event,fn,bl)
+		{
+			if(obj.addEventListener)
+			{
+				obj.addEventListener(event,fn,bl);
+			}else{
+				
+				obj.attachEvent('on'+event,fn); 
+			}
+			
+		}
+	</script>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：绑定两个函数给window
+	
+	1、同一 个script内绑定两个函数
+	2、分别在两个script内各绑定一个
+	3、在两个外部js文件中实现但名称有一定要求
+	
+-->	
+	
+	
+	<body>
+		
+		//脚本2
+		<script type="text/javascript">
+		
+		
+		  bindEvent(window,'load',function(){
+		  	alert(1);
+		  },false);
+		
+		</script>
+		
+		//脚本3
+		<script type="text/javascript">
+		
+		
+		  bindEvent(window,'load',function(){
+		  	alert(2);
+		  },false);
+		
+		</script>		
+		
+		
+		
+	</body>
+</html>

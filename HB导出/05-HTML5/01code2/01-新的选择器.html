@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box" class="divclass" title="hello">divtag</div>
+		<div class="divclass">divtag</div>
+		<script>
+			//id class tagname
+//			document.getElementById('id')
+//			document.getElementsByClassName('classsname');
+//			document.getElementsByTagName('div');
+
+// 新的选择器使用方式跟css设置样式类似：id 类  属性 标签名
+
+			//通过id获取
+//			var odiv = document.querySelector('#box');
+			
+			//通过类名获取：只匹配首个元素
+//			var odiv = document.querySelector('.divclass');
+			
+			//通过标签名获取
+//			var odiv = document.querySelector('div');
+			
+			//通过属性获取元素
+//			var odiv = document.querySelector('[title=hello]');
+			
+			
+			//querySelectorAll:获取一个集合
+			var odiv = document.querySelectorAll('.divclass');
+			alert(odiv.length);
+			
+			
+			odiv[1].style.background = 'red';
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

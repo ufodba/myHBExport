@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app='App'>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body >
+		<div ng-controller="myController">
+			{{ hello }}
+			<strong>{{ hello }}</strong>
+			
+			{{ num1 * num2 }}
+			
+			<ul>
+				<li ng-repeat="val in array">{{val}}</li>
+			</ul>
+			
+			{{
+				student.name +","+student.age
+			}}
+			
+		</div>
+		
+		<!--  -->
+		{{ id }}
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var app = angular.module('App',[]);
+			/*
+			 * 作用域：scope
+			 * 构成angularjs应用的核心基础。
+			 * 是表达式执行上下文。
+			 * $scope对象就是一个普通的JS对象。我们可以随意的添加或修改属性。
+			 * $scope对象在angularJS中充当数据模型。
+			 * $scope对象并不负责处理数据。它只是控制器与HTML视图之间的桥梁。
+			 * $scope对象中的所有属性都是可以被视图访问到的。
+			 * 
+			 * ng-controller指令为这个DOM元素创建一个新的$scope对象。并将它嵌套在$rootScope。
+			 * 
+			 */
+			
+			
+			/*
+			 * $rootScope: angularJS中最接近全局作用域的对象。
+			 * 注：不建议在rootScope对象中添加过多的属性和方法。
+			 * 
+			 */
+			
+			app.controller('myController',function($scope,$rootScope){
+				$scope.hello='hello angularJS';
+				
+				$scope.num1 = 19;
+				$scope.num2 = 29;
+				
+				$scope.array = ['苹果','西瓜','桃子','草莓','荔枝'];
+				
+				$scope.student = {name:'小明',age:17};
+				
+				
+				$rootScope.id = '2016-10-23';
+				
+				
+			});
+			
+			
+		</script>
+	</body>
+</html>

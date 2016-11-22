@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<div ng-controller="myController">
+			{{obj.name}}
+			<button ng-click="myClick()">btn</button>
+		</div>
+		{{stu.xxx}}
+		
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app',[]);
+			app.controller('myController',function($scope,$rootScope){
+				$scope.num = 19;
+				$rootScope.num = 'hello java';
+				$rootScope.stu={};
+				
+				$scope.str = 'hello';
+				$scope.array = [1,3,5,6,7,8];
+				$scope.obj = new Object();
+				$scope.obj.name = '小明';
+				
+				$scope.myClick = function(){
+					alert('...')
+				};
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

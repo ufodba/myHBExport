@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="0" />
+		<input type="button" value="确认" />
+	</body>
+		<script type="text/javascript">
+			var aInput=document.getElementsByTagName('input');
+			var a=parseInt(aInput[0].value);
+			var b=1;
+			var c=0;
+			var d=0;
+			aInput[1].onclick=function(){
+					var t=setInterval(function(){
+						if((a==4&&b==1)||(a==0&&b==-1)){
+							c++;
+							aInput[1].value='暂停'+c+'秒';
+							if(c==2){
+								b*=-1;
+								c=0;
+							}
+						}
+						else{
+							aInput[1].value='确定';
+							a+=b;
+							aInput[0].value=a;
+							d++;
+							if(d%8==0){
+								clearInterval(t);
+								d=0;
+							}
+						}
+						
+					},1000);
+			};
+		</script>
+</html>

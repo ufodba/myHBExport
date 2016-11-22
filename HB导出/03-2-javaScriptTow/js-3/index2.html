@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				border: blue 1px solid;
+				margin: 0 auto;
+			}
+			
+			.bg-r {
+				background: red;
+			}
+			.bg-b {
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		
+		<div class="box"></div>
+
+		<script type="text/javascript">
+//			var btn = document.getElementById('btn');
+			var bs = document.getElementsByClassName('box');
+			var flag = true;
+			
+			var ts = [];
+			
+			
+			bs[0].onmouseover = function(){
+				
+				var time = setInterval (function (){
+					if(flag){
+						bs[0].className = 'box bg-b';
+					}else{
+						bs[0].className = 'box bg-r';
+					}
+					
+					flag = !flag;
+				},1000);
+				ts.push(time);
+				console.log(ts.length);
+			}
+			bs[0].onmouseout = function(){
+				clearInterval(ts.pop());
+			}
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

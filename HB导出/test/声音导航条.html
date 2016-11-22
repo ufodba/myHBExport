@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul {margin: 0; padding: 0;}
+		 	li {list-style: none; display: inline-block; background-color: plum; float: left; margin-left: 1px; cursor: pointer; border-radius: 5px; border: 1px solid blueviolet; font-size: 40px;}
+		</style>
+	</head>
+	<body>
+		<ul dir="ul">
+			<li>1111</li>
+			<li>2222</li>
+			<li>3333</li>
+			<li>4444</li>
+			<li>5555</li>
+			<li>6666</li>
+			<li>7777</li>
+		</ul>
+		<!--<audio >
+			您的浏览器不支持。
+			<source src="http://s8.qhimg.com/share/audio/piano1/a4.mp3" type="audio/mpeg" ></source>
+		</audio>-->
+		<script type="text/javascript">
+			var aLi=document.getElementsByTagName('li');
+			
+			var arr=['a','b','c','d','e','f','g'];
+			var arrAu=[];
+			for (var i=0; i<aLi.length; i++) {
+				var au=document.createElement('audio');
+				au.innerHTML='<source src="http://s8.qhimg.com/share/audio/piano1/'+arr[i]+'4.mp3" type="audio/mpeg" ></source>';
+				document.body.appendChild(au);
+				arrAu.push(au);
+			}
+			for (var i=0; i<aLi.length; i++) {
+				aLi[i].index=i;
+				aLi[i].onmouseover=function(){
+					this.style.backgroundColor='palevioletred';
+					arrAu[this.index].pause();
+					arrAu[this.index].load();
+					arrAu[this.index].play();
+				}
+				aLi[i].onmouseout=function(){
+					this.style.backgroundColor='plum';
+					
+				}
+			}
+		</script>
+	</body>
+</html>

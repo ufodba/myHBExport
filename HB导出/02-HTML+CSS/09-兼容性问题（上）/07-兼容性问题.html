@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	body{margin:0;}
+	
+	/*.box{background:blue; float:left;}*/
+	.box{background:blue; border:1px solid #000; zoom:1;}
+	.div1{width:200px; height:200px; background:red; margin:100px;}
+	
+	/*
+		在IE6下解决margin传递要触发haslayout
+		在IE6下父级有边框，子元素的margin值消失
+		解决方法: 触发父级的haslayout
+	*/
+	
+</style>
+</head>
+
+<body>
+	<div class="box">
+    	<div class="div1"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="加载新闻" id="btn"/>
+		<ul id="ulid">
+			
+		</ul>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			var oul = document.getElementById('ulid');
+			obtn.onclick = function(){
+//				ajax('get','new.php','',function(data){
+//					
+//					
+//				})
+				
+				//1.c创建请求对象
+				
+				var xhr = null;
+				
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					//TODO handle the exception
+					xhr = ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				xhr.open('GET','News.php',true);
+				xhr.send();
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						
+						if(xhr.status == 200){
+							
+							var data = xhr.responseText;
+							
+							//string--->obj
+							var arr = JSON.parse(data);
+//							alert(arr.length);
+							//遍历
+							for(var i = 0;i<arr.length;i++){
+								
+								oul.innerHTML += '<li><a href="#">'+arr[i].title+'</a>[<span>'+arr[i].date+'</span>]</li>';
+								
+							}
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+		</script>
+	</body>
+</html>

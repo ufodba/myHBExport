@@ -1,0 +1,32 @@
+
+#warp {
+	position: relative;
+}
+
+#headerLine {
+	font-family:"微软雅黑";
+	font-size: 38px;
+	color: #336666;
+	display: block;
+	position: absolute;
+	top: 12%;
+	left: 50px;
+}
+
+.content1 {
+	display: none;
+	width: 924px;
+	height: 230px;
+	position: absolute;
+	top: 22%;
+	left: 50px;
+}
+
+.content2 {
+	display: none;
+	width: 924px;
+	height: 240px;
+	position: absolute;
+	bottom: 9.1%;
+	left: 50px;
+}

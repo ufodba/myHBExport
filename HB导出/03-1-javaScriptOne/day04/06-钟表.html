@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div { margin:100px;}
+			div img { position:relative; top:0;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/0.png">
+		    <img src="img/0.png">
+		    <img src="img/second1.png">
+		    <img src="img/0.png">
+		    <img src="img/0.png">
+		    <img src="img/second1.png">
+		    <img src="img/0.png">
+		    <img src="img/0.png">
+		</div
+	</body>
+	<script type="text/javascript">
+	var oImg=document.getElementsByTagName('img');
+		var runtimes=0;
+		var run=0;
+		var s1=0;
+		var s1_1=0;
+		var m1=0;
+		var m1_1=0;
+		var m2=0;
+		var m2_1=0;
+		var h1=0;
+		var h1_1=0;
+		var h2=0;
+		var h2_1=0;
+		var tt=0;
+		var t=setInterval(function(){
+				run=runtimes%10;
+				oImg[7].src='img/'+run+'.png'; //秒
+				s1=Math.floor(runtimes/10);
+				s1_1=s1%6;
+				oImg[6].src='img/'+s1_1+'.png'; //秒
+				m1=Math.floor(runtimes/60);
+				m1_1=m1%10;
+				oImg[4].src='img/'+m1_1+'.png'; //分
+				m2=Math.floor(m1/10);
+				m2_1=m2%6;
+				oImg[3].src='img/'+m2_1+'.png'; //分
+//				tt=runtimes/1440;
+				h1=Math.floor(runtimes/60);
+				h1_1=h1%10;
+				h2=Math.floor(h1/10);
+				h2_1=h2%6;
+//				if(h2_1==2&&h1_1==4){
+//					h2_1=0;
+//					h1_1=0;
+//				}
+				oImg[1].src='img/'+h1_1+'.png'; //时
+				oImg[0].src='img/'+h2_1+'.png'; //时
+				runtimes++;
+				
+				
+		},1000);
+	</script>
+</html>

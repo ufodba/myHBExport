@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--data-定义自定义属性-->
+		<!--设置多个单词组成的属性，多个单词之间用中划线隔开-->
+		<div id="box" data-hello="hi" data-hello-world="hihi">divtag</div>
+		
+		<script>
+			var odiv = document.getElementById('box');
+			
+			//alert(odiv.dataset.hello);//hi
+			//驼峰命名规则获取
+			alert(odiv.dataset.helloWorld);
+			
+		</script>
+		
+	</body>
+</html>

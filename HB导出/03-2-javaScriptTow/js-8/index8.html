@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			Array.prototype.a = 19;
+			Array.prototype.add = function(i,j){
+				return i+j;
+			}
+//			var arr = new Array();
+			
+//			alert(arr.a);
+//			alert(arr.add(1,1));
+//			
+//			var arr2 =[];
+//			alert(arr2.add(1,2));
+
+			var ar = [];
+			var ar2 = [];
+			console.log(ar.a);
+			ar.a = 16;
+			
+			delete ar.a;//删除自定义的属性a
+			console.log("ar:"+ ar.a);
+			console.log("ar2: "+ ar2.a);
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

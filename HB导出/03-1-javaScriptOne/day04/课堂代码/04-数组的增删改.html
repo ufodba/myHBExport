@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		
+	
+		
+		<script type="text/javascript">
+			var dat=['a','b','c'];
+		  /*
+		   * splice:
+		   * 参数1：位置
+		   * 参数2：删除的个数
+		   * 参数3到N：添加的元素
+		   * 
+		   */
+		 
+		 	//1、增
+			var num=dat.splice(1,0,'q','p');
+			console.log(dat);      // ["a", "q", "p", "b", "c"]
+			console.log(num);   //无返回
+			
+			
+			//2、删除
+			var dat1=['a','b','c','d','e','f'];
+			dat1.splice(1,2);
+			console.log(dat1);    // ["a", "d", "e", "f"]   
+			
+			
+			//3、改
+			var dat2=['a','b','c','d','e','f'];
+			dat2.splice(1,2,'kkkk');
+			console.log(dat2);    // ["a", "kkkk", "d", "e", "f"]
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

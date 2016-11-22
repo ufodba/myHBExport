@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--canvas：申请一块绘制区域-->
+		<!--画布默认的宽：300px 高度：150px，不能通过css设置宽高-->
+		<canvas width="400" height="400" id="ca">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+			//获取画布
+			var oc = document.getElementById('ca');
+			var ctx = oc.getContext('2d');//绘制场景：只支持2d场景
+			
+			//1.创建渐变对象
+			//线性渐变： 第一组：起始渐变点  第二组：结束渐变点
+//			var obj = ctx.createLinearGradient(0,0,200,200);
+			
+			//径向渐变:第一组：开始渐变圆的圆心和半径  第二组：结束渐变圆的圆心和半径  
+			var obj = ctx.createRadialGradient(100,100,40,100,100,100);
+			
+			//2.添加渐变点
+			//指定位置0~1跟颜色
+			obj.addColorStop(0.2,'red');
+			obj.addColorStop(0.5,'blue');
+			obj.addColorStop(0.8,'yellow');
+			//3.设置填充样式
+			ctx.fillStyle = obj;
+			
+			//4.范围
+			ctx.fillRect(0,0,200,200);
+			
+		</script>
+	</body>
+</html>

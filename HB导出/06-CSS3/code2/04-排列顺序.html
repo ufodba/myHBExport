@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{height: 100px;border: 10px solid black;padding: 10px;
+				/*弹性盒模型:并列排列*/
+				display: -webkit-box;
+				display: -moz-box;
+			
+				/*box-direction 元素排列顺序
+				Normal 正序
+				Reverse 反序
+				*/
+					-webkit-box-direction: reverse;
+					}
+			
+			.wrap div{width: 100px;height: 100px;background: red;border: 1px solid white;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>

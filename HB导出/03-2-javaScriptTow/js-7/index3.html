@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			document.onkeydown = function(ev){
+				var ev = ev || window.event;
+				
+//				console.log(ev.code+","+ev.keyCode);
+//				if(37 == ev.keyCode){
+//					alert('left');	
+//				}else if(38 == ev.keyCode){
+//					alert('up');
+//				}
+				
+				console.log(ev);
+				if(ev.ctrlKey){
+					alert('ctrl');
+				}
+				if(ev.shiftKey){
+					alert('shiftKey');
+				}
+				if(ev.altKey){
+					alert('altKey');
+				}
+				
+				
+				
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

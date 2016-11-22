@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="获取" id="btn"/>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			
+			obtn.onclick= function(){
+				
+				//1.
+				var xhr = new XMLHttpRequest();
+				//2.
+				xhr.open('GET','data.php',true);
+				//3.
+				xhr.send();
+				
+				//4.
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						
+						if(xhr.status == 200){
+							var data = xhr.responseText;
+							//alert(typeof data);//string
+							//alert(xhr.responseText);  //array
+							//json编码之后：获取数组中内容
+							
+							var obj = JSON.parse(data);
+							alert(typeof obj);
+							alert(obj.name);
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

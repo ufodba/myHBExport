@@ -1,0 +1,8 @@
+1、jQuery(function($){ }) 与 $(document).ready(function(){}) 有什么区别？？ 
+	 没区别都是页面加载运行
+	要说真正的区别 就是 jQuery(function($){ })   这样写可以防止和其他的库产生冲突
+	因为$ 在其他的库中很多运用到
+	window.onload=function{} 
+	表示页面加载完了后（包括dom和js），再执行函数里面的内容； 
+	$(function(){}) 
+	表示页面（dom）加载完了后，再执行函数里面的内容

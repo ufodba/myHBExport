@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#s1{
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box">box</div>
+		<span id="s1">span</span>
+
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			var s1 = document.getElementById('s1');
+			
+			s1.onclick = function(){
+				alert('ssssss');
+			}
+			
+			// 剪切操作。
+//			document.body.insertBefore(s1, box);
+//			document.body.appendChild(s1);
+			
+			var s2 = s1.cloneNode(true);
+			document.body.insertBefore(s2, box);
+			s2.onclick = function(){
+				alert('11111111111');
+			}
+//			document.getElementById('s1').style.background = 'blue';
+			
+			
+
+
+		</script>
+
+	</body>
+
+</html>

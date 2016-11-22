@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包</title>
+		<style >
+			#div1{width:100px; height: 100px; background-color: green;}
+			p{width:200px; height: 50px; background-color: red;}
+		</style>
+		
+	</head>
+	<body>
+		<!--<div id="div1">sadfs</div>-->
+		
+		<p></p>   
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<script  type="text/javascript">
+			//1、变量的作用域  
+			var num =11;
+			function fun1(){
+				alert(num);
+			}
+			//fun1();
+			
+			function fun2(){
+				var i = 0;
+				var div1 = document.getElementById('div1');
+				div1.onclick = function (){
+					i++;
+					alert(i);
+				}
+			}
+			//alert(i);
+			//fun2();
+			
+			function fun3(){
+				var num1 = 22;
+				num2 = 33;
+			}
+			fun3();
+			//alert(num1);//
+			//alert(num2);//
+			//2、函数的外部想要调用内部的变量  需要使用闭包
+			function fun4(){
+				var num1 = 22;
+				//console.log(num1);
+				function inner(){
+					num1++;
+					//alert(num1);
+				}
+				return inner;
+			}
+			//alert(num1);
+			//var init4 = fun4();
+			//init4();
+			//init4();
+			
+			//var init5 = fun4();
+			//init5();
+			//init5();
+			
+			//3、闭包在数组循环中的应用
+			//(1)p无元素属性，无闭包
+			function init1(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					pArr[i].onclick = function(){
+						alert(i);
+					};
+				}
+			}
+			//init1();
+			//(2)p有元素属性，无闭包
+			function init2(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					pArr[i].index = i;
+					pArr[i].onclick = function(){
+						alert(this.index);
+					};
+				}
+			}
+			//init2();
+			
+			//(1)p无元素属性，有闭包
+			function init3(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					(function (){
+						var temp = i;
+						pArr[i].onclick = function(){
+							alert(temp);
+						};
+					})();
+				}
+			}
+			//init3();
+			
+			function init4(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					(function (arg){
+						pArr[i].onclick = function(){
+							alert(arg);
+						};
+					})(i);
+				}
+			}
+			//init4();
+			
+			function init7(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					function inner(){
+						var temp = i;
+						pArr[i].onclick = function(){
+							alert(temp);
+						};
+					}
+					inner();
+				}
+			}
+			//init7();
+		
+			
+			function init6(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					pArr[i].onclick = function(arg){
+						//alert(arg);
+						
+						return function (){
+							alert(arg);
+						}
+					}(i);
+				}
+			}
+			//init6();
+			
+			function init5(){
+				var pArr = document.getElementsByTagName('p');
+				for(var i=0;i<pArr.length;i++){
+					pArr[i].onclick = new Function("alert("+i+")");//每一次new方法都会产生一个新的闭包
+					
+				}
+			}
+			//init5();
+			
+			
+			//将变量 i 保存在匿名函数自身 
+			/**
+			 * callee 是 arguments 对象的属性。在该函数的函数体内，它可以指向当前正在执行的函数。
+			 * 当函数是匿名函数时，这是很有用的， 比如没有名字的函数表达式 (也被叫做"匿名函数")。
+			 * 警告：在 ECMAScript 第五版 (ES5) 的 严格模式 中禁止使用 arguments.callee()。
+			 */
+			function init8() {
+				var pAry = document.getElementsByTagName("p");
+				for( var i=0; i<pAry.length; i++ ) {
+					(
+						pAry[i].onclick = function() {
+						alert(arguments.callee.arg);
+					}).arg = i;
+				}
+			} 
+			
+			init8();
+			/**
+			 * 五、使用闭包的注意点
+				1）由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，
+				否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。
+				
+				
+				2）闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，
+				把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），
+				这时一定要小心，不要随便改变父函数内部变量的值。
+			 */
+		</script>
+	</body>
+</html>

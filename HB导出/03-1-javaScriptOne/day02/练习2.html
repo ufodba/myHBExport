@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			a {text-decoration: none; display: block;}
+			.active {background: red;}
+			div {width: 200px;height: 200px;border: 2px solid blueviolet;display:none; position:absolute;}
+			span {position:absolute;display: block; width: 30px; height: 20px; border: 1px solid greenyellow; /*font: 14px/20px "微软雅黑";*/}
+			#onLeft {left:10px; top: 100px;}
+			#onRight {left:180px; top:100px;}
+		</style>
+	</head>
+	<body>
+		<a>
+		<input type="button" value="1"/>
+		<input type="button" value="2"/>
+		<input type="button" value="3"/>
+		<div>111111</div>
+		<div>222222</div>
+		<div>333333</div>
+		<span id="onLeft"><---</span>
+		<span id="onRight">---></span>
+		</a>
+		<script type="text/javascript">
+			var oInput=document.getElementsByTagName('input');
+			var oDiv=document.getElementsByTagName('div');
+			var oLeft=document.getElementById('onLeft');
+			var oRight=document.getElementById('onRight');
+			var oA=document.getElementsByTagName('a')[0];
+			oInput[0].className='active';
+			oDiv[0].style.display='block';
+			oLeft.style.display='none';
+			oRight.style.display='none';
+			var nowIndex=0;
+			
+			function changeObj(a){
+				for (var i=0;i<oInput.length;i++) {
+					oInput[i].className='';
+					oDiv[i].style.display='none';
+				}
+				oInput[a].className='active';
+				oDiv[a].style.display='block';
+			}
+			for (var i=0;i<oInput.length;i++) {
+				oInput[i].index=i;
+				oInput[i].onclick=function(){
+					changeObj(this.index);
+					nowIndex=this.index;
+				}
+			}
+			oLeft.onclick=function(){
+				if(nowIndex>0){
+					nowIndex-=1;
+					changeObj(nowIndex);
+				}
+				else{
+					//重新循环
+					nowIndex=2;
+					changeObj(nowIndex);
+				}
+				
+			}
+			oRight.onclick=function(){
+				if(nowIndex<2){
+					nowIndex+=1;
+					changeObj(nowIndex);
+				}
+				else{
+					//重新循环
+					nowIndex=0;
+					changeObj(nowIndex);
+				}
+				
+			}
+			oA.onmouseover=function(){
+				oLeft.style.display='block';
+				oRight.style.display='block';
+			}
+			oA.onmouseout=function(){
+				oLeft.style.display='none';
+				oRight.style.display='none';
+			}
+			
+		</script>
+	</body>
+</html>

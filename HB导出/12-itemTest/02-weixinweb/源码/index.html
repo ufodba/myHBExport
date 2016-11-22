@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微信场景前备知识-1</title>
+		<meta name="viewport" content="width=640,user-scalable = no" />
+		<!--用视口来做了横向的适配，让我们的图片能够在横向满屏-->
+		<style>
+			html,body,h1,h2,h3,h4,p,div,img,ol,li,ul{padding:0;margin:0;}
+			/*   *{padding:0;margin:0;}影响性能*/
+			#main{width:640px;  position: relative; overflow: hidden;}
+			#list > li{ width: 100%; height: 100%; position: absolute; top:0;left:0;
+			background-repeat:no-repeat ;  background-size: cover;
+			}
+			#list > li:nth-of-type(1){background-image: url(img/b.png);}
+			
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<ul id="list">
+				<li></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js" ></script>
+		<script>
+		//$(document).ready(function(){});dom
+		//window.onload = function(){};  窗口加载的慢一些， dom，视频，音频，
+		
+		//1、宽度自适应  viewport
+		//2、高度自适应    获取屏幕的高度   在赋值给 main  
+		//3、背景偏了 
+		//4、背景往左偏移   （屏幕宽度-背景图片宽度）/2  ，最终让背景图片居中显示    
+			$(function(){
+				//定义变量
+				//只要是使用一次以上的节点，都建议保存在变量里
+				var oMain = $('#main');
+				var oList = $('#list');
+				var oLi = oList.find('>li');
+				//定义默认尺寸
+				var desW = 640;
+				var desH = 960;
+				//获取可视区的高度
+				var viewHeight = $(window).height();
+				//alert(viewHeight);
+				//获取背景图片的宽度
+				var nowWidth = desW/desH *viewHeight;
+				
+				oMain.css('height',viewHeight);
+				//向左移位
+				oLi.css('background-position',(desW-nowWidth)/2+'px 0');
+			});
+		</script>
+	</body>
+</html>

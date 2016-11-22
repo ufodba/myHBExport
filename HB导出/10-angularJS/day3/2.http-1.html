@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		
+		<div ng-controller="myController">
+			
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('myApp', []);
+			app.controller('myController', function($scope, $http) {
+				var getRequest = $http.get("data.json");
+				getRequest.success(function(response) {
+					console.log(response);
+					$scope.names = response.sites;
+				});
+//				getRequest.error(function(response){
+//					console.log(response);
+//				})
+			});
+		</script>
+
+	</body>
+
+</html>

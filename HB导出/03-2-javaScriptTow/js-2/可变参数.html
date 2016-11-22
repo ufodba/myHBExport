@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		
+		
+			var person ={name:'小明',say:function(a,b,c){
+				console.log("A: "+a+",b"+b+",c"+c);
+				for(x in arguments){
+					console.log(arguments[x]);
+				}
+			}};
+			
+			person.say(1,'2','hello');
+			
+			
+		</script>
+	</body>
+</html>

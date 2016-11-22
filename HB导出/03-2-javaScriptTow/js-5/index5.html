@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			hello
+		</div>
+		
+		<button id="btn">设置class属性方式一</button>
+		<button id="btn2">设置class属性方式二</button>
+		
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			
+			btn.onclick = function(){
+					box.class = 'div1'; //注意。这里的class只是一个普通的box对象中的属性。
+					console.log(box.class);
+					box.className = 'div1';
+			}
+			
+			btn2.onclick = function(){
+				box.setAttribute('class','div1');//IE 6 7 下不支持。
+//				box.setAttribute('className','div1');// IE6 7 兼容方法。
+				
+			}
+			
+		</script>
+	</body>
+</html>

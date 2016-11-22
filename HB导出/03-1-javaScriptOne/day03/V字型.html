@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {margin: 0;padding: 0;position: relative;}
+			div {position: absolute;width: 20px;height: 20px;background:red;text-align: center;}
+			/*div {;}*/
+		</style>
+	</head>
+	<body>
+		<a id="a1">
+			
+		</a>
+		<script type="text/javascript">
+			var oA=document.getElementById('a1');
+			for (var i=0;i<40;i++) {
+				oA.innerHTML+='<div>'+i+'</div>'
+			}
+			var oDiv=document.getElementsByTagName('div');
+			for (var i=0;i<=7;i++) {
+				oDiv[i].style.cssText+='top:'+(i+1)*20+'px;left:'+(i+1)*20+'px'
+			}
+			var j=8;
+			for (var i=8;i<=15;i++) {
+				j--;
+				oDiv[i].style.cssText+='top:'+j*20+'px;left:'+(i+1)*20+'px'
+			}
+			for (var i=16;i<=23;i++) {
+				oDiv[i].style.cssText+='top:'+(i-16+1)*20+'px;left:'+(i+1)*20+'px'
+			}
+			var k=8;
+			for (var i=24;i<=31;i++) {
+				k--;
+				oDiv[i].style.cssText+='top:'+k*20+'px;left:'+(i+1)*20+'px'
+			}
+			for (var i=32;i<=39;i++) {
+				oDiv[i].style.cssText+='top:'+(i-32+1)*20+'px;left:'+(i+1)*20+'px'
+			}
+		</script>
+	</body>
+</html>

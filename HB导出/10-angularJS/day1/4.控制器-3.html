@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div ng-controller="mycontroller">
+
+			<input type="number" ng-model="val" />
+
+			<button ng-click="add(val)">递增</button>
+
+			<button ng-click="sub(val)">递减</button>
+			<strong ng-bind="num"></strong>
+
+		</div>
+
+		<script src="js/angular-1.3.0.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('mycontroller', function($scope) {
+				$scope.num = 1;
+				$scope.val = 0;
+				$scope.add = function(i) {
+					$scope.num += i;
+				};
+
+				$scope.sub = function(i) {
+					$scope.num -= i;
+				}
+
+			});
+		</script>
+	</body>
+
+</html>

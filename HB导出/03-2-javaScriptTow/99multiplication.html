@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script type="text/javascript">
+			var oDiv = document.getElementById('box');
+			for(var i=0; i<=9; i++) {
+				for(var j=0; j<=i; j++) {
+					oDiv.innerHTML+=''+i+'X'+j+'='+i*j+'&nbsp;';
+					if(j==i){
+						oDiv.innerHTML+='<br>';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

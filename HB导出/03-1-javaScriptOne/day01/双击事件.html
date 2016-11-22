@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html>-->
+<html>
+<head>
+<meta charset="UTF-8"/>
+<script>
+window.onload=function(){
+	var aDiv=document.getElementById("pupwin");
+	aDiv.ondblclick=function(){
+		setWindow();
+	}
+	var statusWin = "winmin";
+	function setWindow()
+	{
+		if(statusWin=="winmin")
+			{
+			aDiv.style.width=500;
+			aDiv.style.height=400;
+			statusWin="winmax";
+			}
+		else{
+			aDiv.style.width=200;
+			aDiv.style.height=80;
+			statusWin="winmin";
+			}
+	}
+}
+</script>
+</head>
+
+<body>
+<div id=pupwin style="width:200px; border:1px solid #333333">
+<div id=winTitle style="background-color:#CC0033" >
+标题:
+</div>
+<div id=winBody><br />
+<br />
+内容<br />
+<br />
+<br />
+</div>
+</div>
+</body>
+</html>

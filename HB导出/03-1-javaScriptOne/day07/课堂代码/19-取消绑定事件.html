@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：取消绑定事件方法
+	1、removeEventListener
+	2、detachEvent
+	
+	参数与绑定一样
+-->	
+	
+	<body>
+		<div id="div1">aaaa</div>
+		
+       <script type="text/javascript">
+       	
+       	   var div=document.getElementById('div1');
+       	   
+//     	   div.addEventListener('click',aaa,false);
+//     	   div.addEventListener('click',bbb,false);
+       	   bindEvent(div,'click',aaa,false);
+       	   bindEvent(div,'click',bbb,false);
+       	   
+       	   function  aaa(){
+       	   	alert(1);
+       	   }
+       	   
+       	   function  bbb(){
+       	   	alert(2);
+       	   	
+       	   	removeEvent(div,'click',bbb,false);
+       	   }
+       	
+       	
+       	
+       	
+       	//移除兼容
+       	function  removeEvent(obj,event,fn,bl)
+       	{
+       		if(obj.removeEventListener)
+       		{
+       			
+       			obj.removeEventListener(event,fn,bl);
+       		}else
+       		{
+       			
+       		     obj.detachEvent('on'+event,fn);	
+       			
+       		}
+       	}
+       	
+       	//兼容性
+		function  bindEvent(obj,event,fn,bl)
+		{
+			if(obj.addEventListener)
+			{
+				obj.addEventListener(event,fn,bl);
+			}else{
+				
+				obj.attachEvent('on'+event,fn); 
+			}
+			
+		}
+       	
+       	
+       	
+       </script>
+		
+	</body>
+</html>

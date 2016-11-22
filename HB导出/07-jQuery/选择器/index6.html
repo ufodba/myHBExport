@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>.s1 {
+				width: 100px;
+				height: 50px;
+				background: green;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box"><span class="s1">知行合一</span></div>
+		
+		<div>
+			<p>
+				<span class="s1">知行合一</span>
+			</p>
+		</div>
+		
+		<button>btn</button>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		$('button').click(function(){
+//			$('div>.s1').removeClass('s1');
+
+			$('#box span').toggleClass('s1');
+		});
+		
+		
+		
+		</script>
+
+	</body>
+
+</html>

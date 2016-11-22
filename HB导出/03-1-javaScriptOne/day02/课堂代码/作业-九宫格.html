@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			#divM{width: 600px; height:  600px;border: 5px  solid black;position: relative;}
+			.minBox{width: 95px;height: 95px;background: red; position: absolute;}
+		</style>
+	</head>
+	<body>
+	    <div id="divM">	</div>
+	    
+	    
+	    
+	    
+	    <script type="text/javascript">
+	    	//获取元素
+	    	var oDiv=document.getElementById('divM');
+	    	
+	    	
+	    	//布置9宫格
+	    	//测试1：出一个格子  <div class="minBox" style=" left:wpx;top:hpx;">0</div>
+	    	/*
+	    	var  w=100;
+	    	var  h=100;
+	    	oDiv.innerHTML='<div class="minBox" style=\" left:'+w+'px;'+'top:'+h+'px;' +'\">0</div>'
+	    	*/
+	    	
+	    	//测试2：出一行格子  <div class="minBox" style=" left:wpx;top:hpx;">0</div>
+	        /*
+	    	var  w=0;
+	    	var  h=0;
+	    	
+	    	for(var i=0; i<5; i++)
+	    	{
+	    		//130  下一个元素与前一个元素的开始距离 
+	    		//10  为与边框的开始距离
+	    		w=i*130+10;
+	    		h=10;
+	    	  oDiv.innerHTML+='<div class="minBox" style=\" left:'+w+'px;'+'top:'+h+'px;' +'\">0</div>'
+	        }	
+	    	
+	    	*/
+	    	
+	    	
+
+	    	//测试3：出二维3x3的格子    <div class="minBox" style=" left:wpx;top:hpx;">0</div>
+	         
+	    	var  w=0;
+	    	var  h=0;
+	    	
+	    	for(var i=0; i<9; i++)
+	    	{
+	    		//110  下一个元素与前一个元素的开始距离 
+	    		//10  为与边框的开始距离
+	    		//i%3:求出第几列
+	    		//i/3：求出第几行
+	    		
+	    		
+	    		w=(i%3)*110+10;
+	    		h=(Math.floor(i/3))*110+10;
+	    		
+	    	  oDiv.innerHTML+='<div class="minBox" style=\" left:'+w+'px;'+'top:'+h+'px;' +'\">'+i+'</div>'
+	        }	
+	    	
+	    	
+
+
+	    	
+	    </script>
+	</body>
+</html>

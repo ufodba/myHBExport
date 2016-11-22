@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="base.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			*{margin: 0;padding: 0;}
+			#login{width: 300px; height: 300px; border: 1px solid #000; position: absolute;left: 0;top: 0;background: white;z-index: 20;}
+			#close{position: absolute;right: 0;top: 0;}
+			#mark{position: absolute;left: 0;top: 0; background: black; opacity: 0.5; filter: alpha(opacity:50);z-index: 10;}
+		</style>
+		
+	</head>
+
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：登陆窗
+	1、自动弹窗+点击弹窗两种，为了方便最好是定义函数： showLogin
+	2、创建div，并设置成员userName   password  及确认按键
+	3、制作函数,整个窗口的宽度、高度、当前滚动的高度、关闭弹窗、确认按键等函数
+	4、居中
+	5、蒙板添加
+	6、设置窗口的滚动不会影响蒙板、弹窗
+	
+-->
+	
+	
+	
+	
+	<body>
+		<input type="button" value="请登录" id="input1" style="margin: 400px;"/>
+		
+		
+		<script type="text/javascript">
+			var btn=document.getElementById('input1');
+			var  mbDiv=null;
+			var  loginView=null;
+			var  close=null;
+			
+			
+			btn.onclick=function(){
+				
+				
+			//1、创建蒙板
+		     mbDiv=document.createElement('div');
+		     mbDiv.id='mark';
+		     
+		     var  width=windowWidth();   //获取可视区大小
+		     var  height=windowHeight();
+		     CSS(mbDiv,"width",width+'px');
+		     CSS(mbDiv,"height",height+'px');
+		     
+		     document.body.appendChild(mbDiv);
+		     
+			
+			
+			//登陆窗口
+	         loginView=document.createElement('div');
+	         loginView.id='login';
+	         
+	         document.body.appendChild(loginView);
+	   
+			var  left=(width-parseInt(CSS(loginView,'width')))/2;
+	         var  top=(height-parseInt(CSS(loginView,'height')))/2;
+	         
+	         //先显示 才可以获取 最终 样式
+	         CSS(loginView,"left",left+'px');
+		     CSS(loginView,"top",top+'px');
+		     
+		     
+		     
+		     
+		     
+		     //关闭DIV
+			   close=document.createElement('div');  
+			   close.id='close';
+			   close.style.width='10px';
+			   close.style.height='10px';
+			   close.innerHTML='X';
+			   loginView.appendChild(close);
+			   
+			   close.onclick=function(){
+			   	
+			   	document.body.removeChild(mbDiv);
+			   	document.body.removeChild(loginView);
+			   }
+			   
+			   window.onresize=window.onscroll=function(){
+			
+			   		var   lenght=getScrollTop();
+			   		var  width=windowWidth();   //获取可视区大小
+		    		var  height=windowHeight();
+		     		CSS(mbDiv,"width",width+'px');
+		     		CSS(mbDiv,"height",height+'px');
+			   		mbDiv.style.top=lenght+'px';
+			   		loginView.style.top =(height-parseInt(CSS(loginView,'height')))/2+lenght+'px';
+			   		loginView.style.left =(width-parseInt(CSS(loginView,'width')))/2+'px';
+				}	
+
+ 
+			}
+			
+			
+
+		</script>
+
+	</body>
+</html>

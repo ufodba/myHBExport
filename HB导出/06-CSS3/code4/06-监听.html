@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{width: 100px;height: 100px;background: blue;
+		
+			-webkit-transition:2s width,6s height;}
+		
+			/*.box{width:300px;height: 600px;}*/
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script>
+			var odiv = document.getElementById('box');
+			
+			odiv.onclick = function(){
+				//宽高改变都会触发事件监听
+				odiv.style.width = "400px";
+				odiv.style.height = "400px";
+				
+			}
+			
+			
+			addlinsten(odiv,function(){
+				
+				alert(666);
+			})
+			
+			//封装事件监听方法
+			function addlinsten(obj,fn){
+				obj.addEventListener('webkitTransitionEnd',fn,false);
+				obj.addEventListener('transitionend',fn,false);
+			
+			}
+			
+			
+		</script>
+	</body>
+</html>

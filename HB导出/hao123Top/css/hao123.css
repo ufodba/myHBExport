@@ -1,0 +1,65 @@
+body,input,ul,li,dl,dt,dd {margin: 0; padding: 0;}
+a {text-decoration: none;}
+li {list-style: none;}
+img {border: none;}
+#boBg {width: 1300px; height: 1500px; margin-left: 50px; position: relative;}
+#alter {width: 100%; height: 40px; background: #fffeee; border-bottom: 1px solid #dddddd; font: 13px/40px "宋体";}
+#top {width: 100%; height: 60px; background: #fdfdfd; border-bottom: 1px solid #f4f4f4;}
+#bottom {width: 100%; height: 112px;background: url(../img/topBg.gif) repeat-x; position: relative;}
+.alterLImg {margin: 11px 5px 0 30px; float: left;}
+#alterL {margin-right: 10px;float: left;}
+#alterBtn {width: 80px; height: 24px; border: none; background: url(../img/btn01.gif) no-repeat; outline: none; cursor: pointer;}
+#alterR {float: right;}
+.alterLR_1 {margin-right: 20px; margin-left: 13px;}
+.alterRed {color: red;}
+.font {font: 13px/60px "宋体";  color: #999999;}
+#hao123 {margin-left: 30px; float: left; cursor: pointer;}
+#hao123home {margin-top: 13px;float: left; cursor: pointer;}
+#top {position: relative;}
+#top li {height: 60px; display: inline-block; float: left; font: 13px/60px "宋体";  color: #999999; cursor: pointer;}
+#cityWeather span {display: inline-block; float: left; height: 60px;}
+#cityWeather {float: left; margin-left: 2px;}
+.cityBox,#weatherBox {height: 60px; cursor: pointer;}
+.city {margin-left: 9px; font: 13px/60px "宋体";  color: #999999;}
+.down {background: url(../img/down.png) no-repeat 0 23px ; width: 9px; margin-left: 5px;}
+#youImg  {margin-left: 10px; width: 16px; background: url(../img/you.png) no-repeat 0 21px; cursor: pointer;}
+#yunImg  {margin-left: 6px; width: 28px; background: url(../img/weather.png) no-repeat 0 15px;}
+#weather {font: 13px/60px "宋体";  color: #999999; margin-left: 4px; margin-right: 7px;}
+#date {margin: 0 7px 0 7px;}
+#topR {float: right;margin-right: 90px;}
+#topR span {display: inline-block; float: left; height: 60px;}
+#login  {width: 14px; background: url(../img/login.png) no-repeat 0 22px;}
+#run  {width: 15px; background: url(../img/tou.png) no-repeat 0 21px;}
+#topR li {padding: 0 8px;}
+#guangGao {display: inline-block; position: absolute;right: 0px; top: 0px;}
+.active {background-color: #f7f7f7;}
+#alter a:hover { text-decoration: underline; color: red;}
+#search {height: 46px; position: absolute; left: 170px; top: 27px;}
+.searchText {width: 540px; height: 44px;float: left;margin-left: 30px; border:1px solid #999999;border-right: none;background-color: white;}
+.searchTextL {height: 44px;float: left; background: 0 16px; display: inline-block;cursor: pointer;}
+.searchTextL span {display: inline-block;height:44px; float: left;}
+.city1 {margin-left: 10px; font: 13px/44px "宋体";  color: #999999;}
+.down1 { background: url(../img/down.png) no-repeat 0 16px ; width: 9px; margin-left: 5px;}
+.searchTextM {width: 460px; height: 44px;border: none;outline: none;font: 18px/44px "宋体";}
+.searchTextR {text-align:center; font:bold 12px/18px "宋体"; float: right; margin: 12px 4px; height: 18px;width: 18px; border-radius: 50%; background: #ff5500; color: white;}
+#baiduBtn {float: left; background: url(../img/baiduBtn1.png) no-repeat; width: 120px;height: 46px; cursor: pointer; border: none;}
+#baidu { cursor: pointer;float: left; }
+.chazhao {position: absolute; left: 321px; top: 84px;}
+#varB {position: absolute; left: 341px; top: 84px;}
+#varB li {display: inline-block; float: left; margin-right: 20px;font: 12px "宋体"; }
+#varB a {color: #666666;}
+#varB li .red {color: red;}
+#varB a:hover,#rollNavR li a:hover { text-decoration: underline; color: red;}
+#rollNav {border-radius: 20px; height: 30px;width: 194px;position: absolute; left: 1010px; top: 35px;}
+#rollNavM {display: inline-block;float: left; overflow: hidden; height: 30px;width: 120px; position: relative;}
+#rollNavR {height: 30px;width: 360px; position: absolute;}
+#rollNavR li {display: inline-block; float: left;height: 30px;width: 120px;}
+#rollNavR li a {font: 12px/30px "宋体"; color: #666666;float: left;}
+.dot {float: left; display: inline-block; height: 8px;width: 8px; border-radius: 50%; background: #ff5500;margin: 11px 5px;}
+#quan { display: none; float: right; height: 16px;width: 16px;margin: 5px 5px; background: url(../img/quan.png) no-repeat;}
+.rollNavBg {background-color: white;}
+#types {position: absolute;top: 45px; left: 150px; z-index: 2;display: none;}
+#types li {display:block;;width: 50px;border-left: 1px solid #999999; border-right: 1px solid #999999;padding-left: 10px;font: 13px/20px "宋体"; color: #666666;background-color: white;}
+/*#cities dt {width: 40px; border:none ;margin-bottom: 20px; }*/
+#types .dd {border-bottom: 1px solid #999999;}
+.up {background: url(../img/up.png) no-repeat 0 16px}

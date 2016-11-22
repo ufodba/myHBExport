@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//加载数字
+			function fn1(data) {
+				var oul = document.getElementById('ul1');
+				oul.innerHTML = '';
+				for(var i = 0; i < data.length; i++) {
+		
+					oul.innerHTML += '<li>' + data[i] + '</li>';
+		
+				}
+		
+			}
+			//加载字母
+			function fn2(data) {
+		
+				var oul = document.getElementById('ul2');
+				oul.innerHTML = '';
+				for(var i = 0; i < data.length; i++) {
+		
+					oul.innerHTML += '<li>' + data[i] + '</li>';
+		
+				}
+		
+			}
+		</script>
+		
+		<script>
+			window.onload = function() {
+				//加载数字
+				var obtn1 = document.getElementById('btn1');
+				obtn1.onclick = function() {
+		
+					var js = document.createElement('script');
+					//t参数提供该后台判断
+					js.src = '2.data.php?t=num&callback=fn1';
+		
+					document.body.appendChild(js);
+				}
+				
+				//加载字母
+				var obtn2 = document.getElementById('btn2');
+				obtn2.onclick = function() {
+		
+					var js = document.createElement('script');
+					//t参数提供该后台判断
+					js.src = '2.data.php?t=str&callback=fn2';
+		
+					document.body.appendChild(js);
+				}
+		
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<!--1.data.php?t=num-->
+		<input type="button" value="获取数字" id="btn1" />
+		<ul id="ul1"></ul>
+		<!--1.data.php?t=str-->
+		<input type="button" value="获取字母" id="btn2" />
+		<ul id="ul2"></ul>
+		
+
+	</body>
+	<script>
+//		function fn1(){
+//			alert(111);
+//		}
+//		
+//		var callback = fn1;
+//		callback()==fn1();
+	</script>
+
+</html>

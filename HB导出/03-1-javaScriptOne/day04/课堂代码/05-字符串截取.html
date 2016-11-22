@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		
+		<script type="text/javascript">
+			
+			var string='abcdefgh';
+			//substring
+			//参数1：开始位置 
+			//参数2：结束位置
+			var str1=string.substring(3);   //从位置3开始到最后
+			console.log(string);   //abcdefgh
+			console.log(str1);     //defgh
+			
+		     var str2=string.substring(2,3);
+		     console.log(str2);             // c
+			
+			//特殊情况
+		     var str3=string.substring(3,2);   //自动排序，由小到大
+		     console.log(str3);             // c
+			
+		     var str4=string.substring('-5',2);   //负数或字符都 自动 为0
+		     console.log(str4);             // c			
+			
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

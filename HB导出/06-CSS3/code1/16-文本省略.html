@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{border: 1px solid black;width: 200px;height: 30px;
+				/*超出部分显示省略号*/
+				text-overflow:ellipsis ;
+				
+				/*让文本始终在一行显示*/
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Direction  定义文字排列方式(全兼容)
+			Rtl 从右向左排列
+			Ltr 从左向右排列
+			注意要配合unicode-bidi 一块使用
+			Text-overflow 定义省略文本的处理方式
+			clip  无省略号
+			Ellipsis省略号 (注意配合overflow:hidden和white-space:nowrap一块使用) 
+
+		</p>
+	</body>
+</html>

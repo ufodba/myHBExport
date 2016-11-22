@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input type="text" id="num1" value="" />
+		<strong>&nbsp;+	&nbsp;</strong><input type="text" id="num2" value="" />
+		<strong>&nbsp;=	&nbsp;</strong><span id="s1"></span>
+		<input type="button" id="btn" value="求和" />
+
+		<script type="text/javascript">
+			//			var num = new Number(99);
+			//			console.log("max: " + Number.MAX_VALUE);
+			//			console.log('min: ' + Number.MIN_VALUE);
+			//			alert(isNaN('a'));
+
+			var num1 = document.getElementById('num1');
+			var num2 = document.getElementById('num2');
+			var btn = document.getElementById('btn');
+			var value = document.getElementById('s1');
+
+			btn.onclick = function() {
+				var str1 = num1.value;
+				var str2 = num2.value;
+				
+				if(isNaN(str1) || isNaN(str2)){
+					alert('请输入数字！');
+					return;
+				}
+				
+				var n1 = parseFloat(str1);
+				var n2 = parseFloat(str2);
+				var val = n1 + n2;
+				value.innerHTML = val;
+			};
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：绑定事件
+		普通事件: 同一个元素，加相同的事件, 调用不同的函数，后面的会覆盖前面
+			
+		绑定事件: 不会出现该问题
+		IE6~8 : attachEvent   	
+		IE9~10: attachEvent   addEventListener
+		IE11  : addEventListener	
+		
+	    attachEvent 
+	   		parm1: 事件名字     
+	   		pram2: 函数名字
+	   		
+	   	addEventListener
+	   	    parm1: 事件名字（不加on）
+			pram2: 函数名字
+			para3: 布尔值: true-捕获阶段	  false-冒泡阶段
+	   	    
+-->
+	<body>
+		<div id="div1">aaaa</div>
+		
+	
+	
+	<script type="text/javascript">
+		var  div=document.getElementById('div1');
+		
+		
+//		     div.addEventListener('click',aaa,false);
+//		     div.addEventListener('click',bbb,false);
+		
+		    bindEvent(div,'click',aaa,false);
+		    bindEvent(div,'click',bbb,false);
+		
+			function aaa(){
+				alert(1);
+			}
+			
+			function bbb(){
+				alert(2);
+			}
+		
+		
+		//兼容性
+		function  bindEvent(obj,event,fn,bl)
+		{
+			if(obj.addEventListener)
+			{
+				obj.addEventListener(event,fn,bl);
+			}else{
+				
+				obj.attachEvent('on'+event,fn); 
+			}
+			
+		}
+		
+		
+		
+	</script>
+	</body>
+
+</html>

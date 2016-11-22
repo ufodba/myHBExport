@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<style type="text/css">
+			.ui-block-a {
+				background: red;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div data-role="page" id="pageone">
+			<div data-role="main" class="ui-content">
+				<a href="#pagetwo">跳转到第二个页面</a>
+			</div>
+		</div>
+
+		<div data-role="page" id="pagetwo">
+			<div data-role="main" class="ui-content">
+				<a href="#pageone">跳转到第一个页面</a>
+				
+				
+				<a href="#anylink" class="ui-btn ui-icon-search ui-btn-icon-left ui-alt-icon">黑色</a>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

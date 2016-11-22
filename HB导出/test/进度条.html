@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<progress max="100" value="0"></progress>
+		<span id="percent"></span>
+		
+		<script type="text/javascript">
+			var pro=document.getElementsByTagName('progress')[0];
+			var per=document.getElementById('percent');
+			
+			var t=setInterval(function(){
+				pro.value+=5;
+				per.innerHTML=pro.value+'%';
+				if(pro.value==100){
+					pro.value=0;
+				}
+			},400);
+		</script>
+	</body>
+</html>

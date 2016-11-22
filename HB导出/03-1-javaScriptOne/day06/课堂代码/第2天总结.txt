@@ -1,0 +1,94 @@
+
+第2天总结：
+一、回顾offset(真实距离)及client(可视)
+二、属性操作
+三、提示信息操作
+
+四、表格添加行操作
+
+五、可视区、内容、文档大小
+六、窗口操作：打开、关闭
+七、位置操作（location）：URL信息
+八、浏览器信息 agent
+九、登陆弹窗：位置、蒙板、滚动
+
+
+
+
+一、回顾offset(真实距离)及client(可视)
+    1、元素的可视大小、元素到窗口边的可视距离
+    2、元素的可以看到的大小、元素到定位祖先窗口边的距离
+    
+    
+二、属性操作：id、className、value、src等 
+  1、点方法操作
+  2、最终样式：getComputedStyle、currentStyle方法
+  3、attribute(属性方法)： 
+    设置：setAttribute();    
+    获取：getAttribute();
+    删除：removeAttribute();
+    
+  4、自定义属性（常用）
+  5、html5的方法     dataset       数据格式：  data-XXXX
+    
+    
+三、提示信息操作
+	知识点：
+		1、元素的offset
+		2、属性数据获取
+		3、鼠标的悬停、离开事件
+
+
+
+四、表格添加行操作
+方法1：tagName的方法获取
+方法2:主体集合、行集合、列集合
+  主体集合：	tBodies
+  行集合：	rows
+  列集合：	cells
+  
+
+五、可视区、内容、文档大小
+可视区宽\高：
+	document.documentElement.clientWidth
+    document.documentElement.clientHeight
+    
+内容宽、高 ：
+	元素.clientWidth   
+    元素.clientHeight
+    
+文档的宽、高：
+	document.body.offsetWidth 或 document.documentElement.offsetWidth
+	document.body.offsetHeight 或 document.documentElement.offsetHeight
+	
+
+六、窗口操作
+     1、打开：wimdow.open('链接地址'，flg)；    打开窗口，flg为打开方式【block(默认)、self】,返回新窗口句柄【句柄就是新窗口】     
+     2、关闭：window.close();      关闭当前窗口、默认是被禁止的（ie与其他浏览器的区别）
+     3、创建窗口关闭：句柄.close();
+     4、浏览器配置项操作：about:config
+     5、窗口写入内容   句柄.document.write('内容');
+
+七、位置操作（location）
+	window.location的主要成员：
+	1、URL地址：			href
+	2、URL地址参数：		search
+	3、URL地址的哈希值：	hash 【可以存放值,string,#开头】
+	4、窗口刷新(地址刷新):window.reload();
+
+
+八、浏览器信息
+   结构：
+   		window
+   			navigator
+   				userAgent
+   				
+
+
+
+九、登陆弹窗：位置、蒙板、滚动
+知识点：
+1、滚动时，登陆窗、蒙板位置不可以变化
+2、计算可视窗口的距离+滚动距离  ；				可视距离只能获取
+3、登陆窗、蒙板都在可视大小
+4、蒙板：透明度   opacity: 0.5; filter: alpha(opacity:50);

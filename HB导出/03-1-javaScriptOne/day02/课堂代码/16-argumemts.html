@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		
+		<script type="text/javascript">
+			
+			function display()
+			{
+				//argumemts 形参集  系统提供的
+				
+				console.log(arguments.length);
+				console.log(arguments[0]);
+				console.log(arguments[1]);
+				console.log(arguments[2]);
+
+			}
+			
+			
+			//display();
+			//display(1);
+			//display(1,'abc',3);
+			
+			
+			//Math.max    max
+			function  max()
+			{
+				var  value=arguments[0];   //取第0个形参的值给value
+				
+				/* for循环，使用value与每一个形参比较
+				   每一次比较的最大值保存在value中
+				   
+				  比较结束,value中的值为形参中的最大值
+				 * */
+			  for (var i=0;i<arguments.length;i++) {
+			  	if(arguments[i]>value)
+			  	{
+			  		value=arguments[i];
+			  	}
+			  }	
+			  
+			   return value;  //最大值 
+			}
+			
+			console.log(max(1));
+			console.log(max(1,5,888,3,6));
+			console.log(max(0,0,0,88,5,100));
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

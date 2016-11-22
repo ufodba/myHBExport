@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0; padding: 0;}
+			div {display: inline-block; background: url(img/star.jpg) no-repeat 0px -70px; width: 30px;height: 30px;float: left;}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementsByTagName('div');
+			var middle=Math.floor(oDiv.length/2);
+			for (var j=0;j<oDiv.length;j++) {
+				oDiv[j].index=j
+				oDiv[j].onmouseover=function(){
+					oDiv[middle].style.backgroundPosition='0px 0px';
+					if(this.index>middle){
+						for(var i=middle+1;i<=this.index;i++){
+							oDiv[i].style.backgroundPosition='0px 0px';
+						}
+					}
+					else if(this.index<middle){
+						for(var i=this.index;i<=middle;i++){
+							oDiv[i].style.backgroundPosition='0px 0px';
+						}
+					}
+				}
+				oDiv[j].onmouseout=function(){
+					for(var i=0;i<oDiv.length;i++){
+						oDiv[i].style.backgroundPosition='0px -70px';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{width: 746px; height: 33px; top: 300px; position: absolute; background: url(line.gif) no-repeat;}
+		</style>
+		
+		<script>
+			window.onload = function(){
+				var oDiv = document.getElementById('div1');
+				var iTop = oDiv.offsetTop;
+				
+				window.onscroll = function(){
+					
+					if(getScrollY() >= iTop)
+					{
+						oDiv.style.top = scrollY + 'px';
+					}
+					else
+					{
+						oDiv.style.top = iTop + 'px';
+						
+					}
+					
+				};
+				
+				//获取
+				function getScrollY(){
+					return window.pageYOffset || document.documentElement.scrollTop;
+				};
+			};
+			
+			
+			
+		</script>
+		
+	</head>
+	<body style="height: 2000px;">
+		<div id="div1"></div>
+		
+	</body>
+</html>

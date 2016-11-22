@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var str =' There will   be  no  regret and sorrow if you fight with all your strength. ';
+			var re = /\s+/g;
+			
+			//{n,m}最少n 最多m个 
+			var re2 = /\s{3,5}/g;
+			
+			//{n,}最少n 最多不限个 
+			var re3 = /\s{3,}/g;
+			
+//			//{,m}最少不限 最多m个 
+//			var re4 = /\s{,3}/g;
+
+			//{n}刚好n个 
+			var re5 = /\s{3}/g;
+
+
+			alert(str.replace(re5,''));
+			
+			
+		</script>
+		
+	</body>
+</html>

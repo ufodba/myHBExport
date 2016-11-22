@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box1{width: 300px; height: 300px; background: red;}
+			.box2{width: 200px; height: 200px; background: yellow;}
+			.box3{width: 100px; height: 100px; background: blue;}
+		</style>
+
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：事件流的传递停止方式
+	
+	ev.cancelBubble = true;	//非标准的方法
+	ev.stopPropagation();	//标准方法(W3C标准)	，IE6~IE8不支持
+-->	
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2">
+				<div class="box3"></div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		var  aDiv=document.getElementsByTagName('div');
+		for(var i=0; i<aDiv.length; i++)
+		{
+			aDiv[i].onclick=function(ev){
+				ev=ev||window.event;
+				
+			   alert(this.className);
+			   
+			   //取消或禁止事件传递
+			   if(ev.stopPropagation)
+			   {
+			   		ev.stopPropagation();  //标准
+			   }else
+			   {
+			   	   ev.cancelBubble=true;   //IE6~IE7
+			   }
+			}
+		}
+			
+		
+		</script>
+	</body>
+</html>

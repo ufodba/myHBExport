@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 400px;
+				height: 50px;
+				border: white solid 2px;
+				line-height: 50px;
+				text-align: center;
+			}
+			
+			#box1 {
+				background: red;
+				color: white;
+			}
+			
+			#box2 {
+				background: green;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box1">
+
+		</div>
+		<div id="box2">
+
+		</div>
+
+		<script type="text/javascript">
+			var divs = document.getElementsByTagName('div');
+
+			var str = "stringObject从 start开始";
+
+			divs[0].innerHTML = str;
+//			divs[1].innerHTML = str.slice(0,12);
+			divs[1].innerHTML = str.slice(-7,-3);
+		</script>
+	</body>
+
+</html>

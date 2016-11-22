@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box ,.box1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				color: white;
+				font-size: 2em;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button>点击隐藏</button>
+		<div class="box">box</div>
+		<div class="box1"  id="div1">box1</div>
+
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/* 中文API文档
+			 * http://jquery.cuishifeng.cn/index.html
+			 */
+			
+			$(function(){
+				//元素选择器
+				$('button').click(function(){
+					//类别选择器
+//					$('.box').hide();
+//					$('#div1').hide();
+					//* 通配符。
+//					$('*').hide();
+
+				});
+				
+				
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

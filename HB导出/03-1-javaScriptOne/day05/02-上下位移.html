@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/** {margin: 0; padding: 0;}*/
+			/*input,span {float: left;}*/
+			/*li {display: block; vertical-align:middle;}*/
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span>1.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>2.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>3.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>4.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+			<li>
+				<span>5.</span>
+				<input type="button" value="上移" />
+				<input type="button" value="下移" />
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var aInput=document.getElementsByTagName('input');
+		var oUl=document.getElementsByTagName('ul')[0];
+//		var aLi=oUl.getElementsByTagName('li');
+//		var arr=[];
+//		for(var i=0; i<aLi.length;i++){
+//			arr.push(aLi[i]);
+//		}
+//		console.log(arr);
+//		aInput[0].onclick=function(){
+//			
+//		}
+//		aInput[1].onclick=function(){
+//			
+//		}
+//		aInput[2].onclick=function(){
+//			
+//		}
+		for(var i=0;i<aInput.length;i++){
+			
+			aInput[i].index=i;
+			aInput[i].onclick=function(){
+			var aLi=oUl.getElementsByTagName('li');
+			var arr=[];
+			for(var i=0; i<aLi.length;i++){
+				arr.push(aLi[i]);
+			}
+//				var temp=aLi[1];
+//				aLi[1]=prev;
+//				prev=temp;
+////				var next=nextNode(aLi[1]);
+//				console.log(prev);
+				
+				
+				if(this.index%2==0){
+					var a=Math.floor(this.index/2);
+					var prev=prevNode(aLi[a]);
+					oUl.replaceChild(aLi[a],aLi[a-1]);
+					oUl.insertBefore(prev,aLi[a]);
+				}
+//				if(index%2==1){
+//					
+//				}
+			}
+		}
+		
+//			for(var i=0;i<aInput.length;i++){
+//			if (i%2==0) {
+//				aInput[i].index=i;
+//				aInput[i].onclick=function(){
+//					
+//					aLi=oUl.getElementsByTagName('li');
+//					
+//					if(this.index/2-1>=0){
+//						oUl.insertBefore(aLi[this.index/2],aLi[this.index/2-1])
+//					}
+//					aInput=document.getElementsByTagName('input');
+//				}
+//			}
+//		}
+//		aInput[2].onclick=function(){
+//				oUl.insertBefore(aLi[1],aLi[0]);
+//				aInput=document.getElementsByTagName('input');
+//				aLi=oUl.getElementsByTagName('li');
+//		console.log(aLi[1]);console.log(aInput[2]);
+//			aInput[2].onclick=function(){
+//				oUl.insertBefore(aLi[1],aLi[0]);
+//				aInput=document.getElementsByTagName('input');
+//				aLi=oUl.getElementsByTagName('li');
+//			}
+//		}
+		function   prevNode(obj){
+	     	if (!obj.previousSibling) {
+	     		return false;
+	     	}
+			return  obj.previousElementSibling ||(obj.previousSibling.nodeType==1?obj.previousSibling:preNode(obj.previousSibling));
+		}
+	</script>
+</html>

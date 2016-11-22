@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#txt{width: 200px; height: 50px;}
+		</style>
+	</head>
+	<body>
+		<textarea  id="txt"></textarea>
+		<input  type="button" id="btn"   value="按钮"/>
+		
+		
+		
+		
+		<script type="text/javascript">
+			var  text=document.getElementById('txt');
+			var  btn=document.getElementById('btn');
+			
+			btn.onclick=function(){
+				
+				console.log(text.value);
+				
+				console.log(Number(text.value)+4);
+			}
+			
+		</script>
+	</body>
+</html>

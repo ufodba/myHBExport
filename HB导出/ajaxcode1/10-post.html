@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="获取" id="btn"/>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			
+			obtn.onclick = function(){
+
+				//1.c创建请求对象
+				
+				var xhr = null;
+				
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					//TODO handle the exception
+					xhr = ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				
+				//2.open
+				//username
+				//age
+				xhr.open('POST','1.post.php',true);
+				
+				//3.send 发送数据
+					//1.设置请求头信息
+				//参数1：类型  参数：内容
+				xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded')
+					//2.将要传递的参数放在send里面
+				//post 不需要中文编码 缓存	
+				xhr.send('username=小明&age=18');
+				
+				//4.
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						if(xhr.status == 200){
+							//拿到后台的数据
+							alert(xhr.responseText);
+							//username  age
+						}
+						
+					}
+					
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

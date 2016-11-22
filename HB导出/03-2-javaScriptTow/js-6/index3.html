@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="in" id="in" />
+		<script type="text/javascript">
+			var inp = document.getElementById('in');
+			inp.onblur = function(){
+				console.log('失去焦点');
+			}
+			inp.onfocus = function(){
+				console.log('获取焦点');
+			}
+			inp.onfocusin = function(){
+				console.log('即将获取焦点');
+			}
+			inp.onfocusout = function(){
+				console.log('即将失去焦点');
+			}
+			
+			
+		</script>
+	</body>
+</html>

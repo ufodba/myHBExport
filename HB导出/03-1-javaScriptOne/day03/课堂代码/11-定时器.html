@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script type="text/javascript">
+			//时间到了，执行功能 函数
+			//第1个参数为：功能函数
+			//第2个参数：时间 ，毫秒为单位
+			//setTimeout:只定时一次
+			var time=setTimeout(
+				function(){
+					console.log(1);
+				}
+				,
+				2000
+			);
+
+			clearTimeout(time);   //删除定时器，防止重复创建
+			
+			//setInterval重复定时
+			var t=setInterval(
+				function(){
+					console.log(2);
+				}
+				,
+				2000
+			);
+			
+			//clearInterval(t);   //删除 和停止
+
+		</script>
+		
+		
+	</body>
+</html>

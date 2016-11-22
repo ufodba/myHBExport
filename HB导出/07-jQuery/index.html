@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.focused {
+			    background: #abcdef;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2" class="d2">
+				11
+			</div>
+			<div id="div3" class="d3">
+				22
+			</div>
+			<ul>
+				<li id="l1">1</li>
+				<li id="l2">2</li>
+				<li id="l3">3</li>
+				<li id="l4">4</li>
+			</ul>
+			<ul>
+				<li id="l11">11</li>
+				<li id="l22">22</li>
+				<li id="l33">33</li>
+				<li id="l44">44</li>
+				<li id="l55">55</li>
+			</ul>
+		</div>
+		<button>点点</button>
+		<div id="content">
+		    <input tabIndex="1">
+		    <input tabIndex="2">
+		    <select tabIndex="3">
+		        <option>select menu</option>
+		    </select>
+		    <div tabIndex="4">
+		        a div
+		    </div>
+		</div>
+		<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var quicFlagA=true;
+			$('button').mouseup(function(){
+//			clearInterval(adwanceTimer);
+			quicFlagA=false
+			console.log(quicFlagA);
+			});
+		</script>
+	</body>
+</html>

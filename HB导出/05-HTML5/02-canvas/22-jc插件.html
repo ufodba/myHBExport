@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jCanvaScript.1.5.18.min.js"></script>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--canvas：申请一块绘制区域-->
+		<!--画布默认的宽：300px 高度：150px，不能通过css设置宽高-->
+		<canvas width="400" height="400" id="ca">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+		
+			jc.start('ca',true);
+			
+			jc.circle(100,100,50,'rgb(255,0,0)',true).draggable();
+			jc.circle(100,200,50,'rgb(255,0,0)',false);
+			
+			
+			
+			jc.start('ca');
+			
+			
+		</script>
+	</body>
+</html>

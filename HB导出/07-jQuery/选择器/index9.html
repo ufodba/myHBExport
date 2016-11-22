@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li {
+				background: yellowgreen;
+			}
+			.my_n{
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li class="li">list item 1</li>
+			<li class="li">list item 2</li>
+			<li class="li">list item 3</li>
+			<li class="li">list item 4</li>
+			<li class="li">list item 5</li>
+		</ul>
+		<ul>
+			<li id="n1" class="li1">list item 1</li>
+			<li class="li1">list item 2</li>
+			<li class="li1">list item 3</li>
+			<li class="li1">list item 4</li>
+			<li class="li1">list item 5</li>
+		</ul>
+
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('li:not("#n1")').addClass('my_n');
+		</script>
+	</body>
+
+</html>

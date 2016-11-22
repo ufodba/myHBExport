@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微信场景前备知识-2 canvas</title>
+		<meta name="viewport" content="width=640,user-scalable = no" />
+		<!--用视口来做了横向的适配，让我们的图片能够在横向满屏-->
+		<style>
+				body{background-color: #ccc;}
+				#c1{background-color: #fff;}
+			
+		</style>
+	</head>
+	<body>
+		<canvas id="c1" width="600" height="600">浏览器不兼容本标签</canvas>
+		<script>
+			//初始值
+			var oC = document.getElementById('c1');
+			var oGC = oC.getContext('2d');
+			
+			//画矩形
+			oGC.fillRect(50,50,500,500);
+			oGC.fillStyle = 'yellow';
+			//叠加效果属性设置
+			//source-over
+			//destination-over
+			//destination-out  作用 后画上去的图像会把前面的图像进行透明的抠图效果 
+			oGC.globalCompositeOperation = 'destination-out';
+			oGC.fillRect(100,100,100,100);
+			//画个圆
+			oGC.beginPath();
+			oGC.arc(200,200,50,0,360*Math.PI/180);
+			oGC.closePath();
+			oGC.fill();
+			//画线
+			oGC.lineWidth = 40;
+			oGC.lineCap = 'round';
+			oGC.moveTo(250,250);
+			oGC.lineTo(400,400);
+			oGC.stroke();
+		</script>
+	</body>
+</html>

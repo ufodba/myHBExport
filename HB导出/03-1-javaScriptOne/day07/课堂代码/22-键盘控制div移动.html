@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="../第2天/base.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			#div1{width: 100px;height: 100px; background: red; position: absolute;}
+		</style>
+		
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：键盘练习
+	
+	上下左右键控制DIV的移动
+-->
+	<body>
+		<div id="div1"></div>
+		
+
+		<script type="text/javascript">
+			//1、获取DIV
+			var div=document.getElementById('div1');
+			
+			//2、设置键盘事件
+			window.onkeydown=function(ev){
+				ev=ev||window.event;
+			    //2.1 获取键盘值
+			    var  key=ev.keyCode;
+			    
+			    //2.2  根据键盘值修改DIV的位置
+			    
+			    var  left=parseInt(CSS(div,'left'));
+			    var  top=parseInt(CSS(div,'top'));
+			    
+			    switch(key)
+			    {
+			    	case  37:CSS(div,'left',left-10+'px') ;    break;   //左
+			    	case  38:CSS(div,'top',top-10+'px') ;     break;   //上
+			    	case  39:CSS(div,'left',left+10+'px') ;     break;   //右
+			    	case  40:CSS(div,'top',top+10+'px') ;     break;   //下
+			    }  
+			}
+			
+		</script>
+	</body>
+</html>

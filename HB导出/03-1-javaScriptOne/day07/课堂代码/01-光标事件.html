@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：光标事件（不是鼠标事件）
+	1、移入：onfocus
+	2、移出：onblur
+-->
+	<body>
+		<input type="text"/>
+		<input type="text"/>
+		<input type="text"/>
+		
+	
+		<script type="text/javascript">
+			var   aInput=document.getElementsByTagName('input');
+			
+			for (var i=0;i<aInput.length; i++) {
+				aInput[i].index=i;
+				
+				//移入
+				aInput[i].onfocus=function(){
+					
+				   console.log(this.index+'--IN');
+				   alert(1);
+				}
+				
+				//移出
+				aInput[i].onblur=function(){
+					console.log(this.index+'--OUT');
+				}
+			}
+			
+		</script>	
+		
+	</body>
+</html>

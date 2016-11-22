@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box5{background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="divid" class="box1 box2 box3">divtag</div>
+		<input type="button" id="btn" value="切换"/>
+		
+		<script>
+			
+			var odiv = document.querySelector('#divid');
+			//获取类列表box1 box2 box3
+			//alert(odiv.classList);
+			//alert(odiv.classList.length);//3
+			
+			//添加类
+			odiv.classList.add('box4');
+			//删除类
+			odiv.classList.remove('box1');
+			
+			//类的切换
+			document.getElementById('btn').onclick = function(){
+				//当这个类存在的时候---》删除的操作
+				//当这个类不存在的时候---》添加的操作
+				odiv.classList.toggle('box5');
+				
+			}
+			
+		</script>
+	</body>
+</html>

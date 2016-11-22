@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			window.onload = function(){
+				var ainputs = document.getElementsByTagName('input');
+				
+				//点击box
+				for(var i = 0;i<ainputs.length;i++){
+					
+					ainputs[i].onclick = function(){
+						
+						//区分选中
+						if(this.checked){
+							
+							window.localStorage.setItem('select',this.value);
+						}else{
+							//取消
+							window.localStorage.setItem('offsel',this.value);
+							
+						}
+						
+					}
+					
+				}
+				
+				//storage事件
+				
+				window.addEventListener('storage',function(ev){
+					
+					//ev.key  ev.newvalue
+					//console.log(ev.key);
+					//console.log(ev.newValue);
+					//选中
+					if(ev.key=='select'){
+						//遍历找到对应的box
+						for(var i = 0;i<ainputs.length;i++){
+							
+							if(ainputs[i].value == ev.newValue){
+								
+								ainputs[i].checked = true;
+							}
+							
+						}
+						
+					}else if(ev.key=='offsel'){
+						//遍历找到对应的box
+						for(var i = 0;i<ainputs.length;i++){
+							
+							if(ainputs[i].value == ev.newValue){
+								
+								ainputs[i].checked = false;
+							}
+							
+						}
+						
+					}
+					
+					
+				},false);
+				
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="checkbox" value="梨子"/>梨子<br />
+		<input type="checkbox" value="橘子"/>橘子<br />
+		<input type="checkbox" value="西瓜"/>西瓜<br />
+		<input type="checkbox" value="龙眼"/>龙眼<br />
+		<input type="checkbox" value="荔枝"/>荔枝<br />
+	</body>
+</html>

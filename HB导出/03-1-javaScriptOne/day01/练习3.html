@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img {border:none;}
+			a {text-decoration:none;}
+			div { width: 666px; height: 81px; background: url(img/index_top.gif);}
+			div li {display: inline-block;float: left;height: 27px; margin-top:35px;}
+			div li a {display: block;height: 27px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>
+					<a href="#"><img src="img/index_00.gif" alt="0"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_01.gif" alt="1"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_02.gif" alt="2"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_03.gif" alt="3"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_04.gif" alt="4"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_05.gif" alt="5"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_06.gif" alt="6"/></a>
+				</li>
+				<li>
+					<a href="#"><img src="img/index_07.gif" alt="7"/></a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oimg=document.getElementsByTagName('img');
+		for (var i=0;i<oimg.length;i++) {
+			oimg[i].onmouseover= function(){
+				this.src="img/index_0"+this.alt+"_f2.gif";
+			}
+			oimg[i].onmouseout=function (){
+				this.src="img/index_0"+this.alt+".gif";
+			}
+		}
+	</script>
+</html>

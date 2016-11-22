@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		
+		
+		
+		
+		<script type="text/javascript">
+			
+//			var  str='hello   hello';
+//			
+//			//查找 
+//			var  index=str.indexOf('e');     //打开第一个‘e'的位置'
+//			console.log(index);
+//			
+//			
+//			//2、查找
+//			var i =str.indexOf('e',4);    //从第4个开始往后找
+//			console.log(i);
+//			
+//			
+//			//3、查找 ，找不到会怎么样？？  结果为-1
+//			var p=str.indexOf('k');
+//			console.log(p);
+//			
+//			//4、查找字符串 
+//			var p1=str.indexOf('llo');
+//			console.log(p1);
+//			
+			
+			
+			//5、思考   如何获得字符串1中存在字符串2的次数
+			
+			var str ="aaaaaaaa";
+			var str1='aa';
+			
+			var cnt=findCount(str,str1);
+			
+			
+			console.log(cnt);
+			
+			function  findCount(strM,strN)
+			{
+				var  len=strN.length;    //获取要查找内容长度
+				var index=0;    //记录次数
+				var   x=0;      //记录位置
+				
+				while(1)
+				{
+					//计算查找开始位置
+				    x=strM.indexOf(strN,x);     
+				  if(x==-1)
+				  {
+				  	break;      //没有找到
+				  }else
+				  {
+				  	//找到
+				  	index++;       //记录次数
+				  	 //console.log(index);
+						x=x+len;   //更改下一查找的起始位置，主要是为了跳过找到过的
+				  }
+				}	
+				return index;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

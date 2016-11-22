@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		
+		<script type="text/javascript">
+			var aDiv=document.getElementsByTagName('div');
+			
+			var aimTime=new Date(2016,10,2,18,42,0);
+			var value1=aimTime.getTime();
+			aDiv[0].innerHTML=aimTime.getFullYear()+'-'+(aimTime.getMonth()+1)+'-'+aimTime.getDate()+'-'+aimTime.getHours()+':'+aimTime.getMinutes()+':'+aimTime.getSeconds();
+			var t=setInterval(function(){
+				var nowTime=new Date();
+				var value2=nowTime.getTime();
+				var value=value1-value2;
+				value=Math.floor(value/1000);
+				var day=Math.floor(value/86400);
+				value-=day*86400;
+				var hh=Math.floor(value/3600);
+				value-=hh*3600;
+				var ms=Math.floor(value/60);
+				var ss=value-ms*60;
+				if (day<0) {
+					clearInterval(t);
+					day=0;
+					hh=0;
+					ms=0;
+					ss=0;
+				}
+				aDiv[1].innerHTML='剩余：'+day+'天 '+hh+':'+ms+':'+ss;
+				
+			},1000);
+		</script>
+	</body>
+</html>

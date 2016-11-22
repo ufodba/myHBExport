@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			img {border: 0; display: block;margin-top: 300px;}
+			
+		</style>
+	</head>
+	<body>
+		<img src="img/1.jpg"/>
+		<img src="img/2.jpg"/>
+		<img src="img/3.jpg"/>
+		<img src="img/4.jpg"/>
+		<img src="img/5.jpg"/>
+	</body>
+	<script type="text/javascript">
+		var aImg=document.getElementsByTagName('img');
+		window.location.hash=1;
+		for (var i=0;i<aImg.length;i++) {
+			aImg[i].index=i;
+			aImg[i].onclick=function(){
+				var hash=this.index+2;
+				if(hash>=6){
+					hash=1;
+				}
+				window.location.hash=hash;
+				
+				document.documentElement.scrollTop=window.scrollTop=(hash-1)*500;
+				console.log(document.documentElement.scrollTop);
+				
+			}
+		}
+//		for (var i=0;i<aImg.length;i++) {
+//			aImg[i].index=i;
+//			aImg[i].onclick=function(){
+//				document.documentElement.scrollTop=window.scrollTop=(this.index+1)*500;
+//				console.log(document.documentElement.scrollTop);
+//			}
+//		}
+	</script>
+</html>

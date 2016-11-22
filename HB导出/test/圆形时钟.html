@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {margin: 0; padding: 0;}
+			canvas {background: white;}
+		</style>
+	</head>
+	<body>
+		<canvas id="can" width="500px" height="500px">
+			浏览器不兼容
+		</canvas>
+		
+		<script type="text/javascript">
+			var can=document.getElementById('can');
+			var ctx=can.getContext('2d');
+			
+			var h=0;
+			var m=0;
+			var s=0;
+			setInterval(function(){
+				ctx.clearRect(0,0,500,500);
+				//外表盘
+				ctx.save();
+				ctx.lineWidth=6;
+				ctx.strokeStyle='blueviolet';
+				ctx.beginPath();
+				ctx.arc(250,250,150,0,360*Math.PI/180,false);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+				
+				//秒刻度
+				for (var i=0; i<=60; i++) {
+					ctx.save();
+					ctx.lineWidth=1;
+					ctx.beginPath();
+					ctx.translate(250,250);
+					ctx.rotate(6*i*Math.PI/180);
+					ctx.translate(-250,-250);
+					ctx.moveTo(250,115);
+					ctx.lineTo(250,105);
+					ctx.stroke();
+					ctx.closePath();
+					ctx.restore();
+				}
+				//时刻度
+				for (var i=0; i<=12; i++) {
+					ctx.save();
+					ctx.lineWidth=3;
+					ctx.strokeStyle='darkcyan';
+					ctx.beginPath();
+					ctx.translate(250,250);
+					ctx.rotate(30*i*Math.PI/180);
+					ctx.translate(-250,-250);
+					ctx.moveTo(250,120);
+					ctx.lineTo(250,105);
+					ctx.stroke();
+					ctx.closePath();
+					ctx.restore();
+				}
+				
+				//获取系统时间
+				var date=new Date();
+				h=date.getHours();
+				m=date.getMinutes();
+				s=date.getSeconds();
+				//时针
+				ctx.save();
+				ctx.lineWidth=6;
+				ctx.beginPath();
+				ctx.translate(250,250);
+				ctx.rotate(30*(h-12)*Math.PI/180);
+				ctx.translate(-250,-250);
+				ctx.moveTo(250,260);
+				ctx.lineTo(250,165);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+				//分针
+				ctx.save();
+				ctx.lineWidth=3;
+				ctx.beginPath();
+				ctx.translate(250,250);
+				ctx.rotate(6*m*Math.PI/180);
+				ctx.translate(-250,-250);
+				ctx.moveTo(250,260);
+				ctx.lineTo(250,145);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+				//秒针
+				ctx.save();
+				ctx.lineWidth=1;
+				ctx.beginPath();
+				ctx.strokeStyle='brown';
+				ctx.translate(250,250);
+				ctx.rotate(6*s*Math.PI/180);
+				ctx.translate(-250,-250);
+				ctx.moveTo(250,260);
+				ctx.lineTo(250,105);
+				ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+			},1000);
+		</script>
+	</body>
+</html>

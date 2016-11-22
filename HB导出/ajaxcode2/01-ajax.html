@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="请求" id="btn"/>
+		
+		
+		<script>
+			document.getElementById('btn').onclick = function(){
+			
+				var xhr = new XMLHttpRequest();
+				
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						
+						if(xhr.status == 200){
+							
+							alert(xhr.responseText);
+						}
+						
+					}
+					
+					
+				}
+				
+				//顺序调整，不会影响
+				xhr.open('GET','1.txt',true);
+			
+				xhr.send();
+				
+			
+			}
+			
+			
+		</script>
+	</body>
+</html>

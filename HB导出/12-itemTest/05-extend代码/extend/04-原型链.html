@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原型链</title>
+	</head>
+	<body>
+		<script>
+			//原型链  是一个链条的 形式，可以把对象串联起来
+			function CreateDog(name,color){
+				this.name = name;
+				this.color = color;
+			}
+			CreateDog.prototype.call = function(){
+				console.log(this.color + this.name + '在叫！');
+			};
+			var dog  = new CreateDog('萨摩耶','白色');
+			dog.call();
+			//访问原型的方法
+			//1.通过构造函数来访问
+			//console.log(CreateDog.prototype);
+			//2. 通过实例化的对象来访问
+			//console.log(dog.__proto__);
+			//js 在创建对象（任何对象，普通对象和函数对象）的时候，都有一个__proto__的属性，
+			//这个属性用于指向创建他的函数对象的原型对象prototype
+			console.log(dog.__proto__ === CreateDog.prototype);
+			//同样的，CreateDog.prototype 对象也有一个__proto__   指向创建他的函数的原型对象 （object）的prototype
+			console.log(CreateDog.prototype.__proto__ === Object.prototype);
+			//Object.prototype  也有一个__proto__   指向null
+			console.log(Object.prototype.__proto__ === null);
+			//原型链  特点是：__proto__  属性，
+			
+			
+		</script>
+	</body>
+</html>

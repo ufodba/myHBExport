@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="保存"/>
+		<input type="button" value="获取"/>
+		<input type="text"/>
+		<input type="button" value="删除"/>
+		
+		<script>
+			var ainputs = document.getElementsByTagName('input');
+			
+			//数据保存
+			ainputs[0].onclick = function(){
+				//临时存储:生命周期，页面关闭数据消失
+//				window.sessionStorage.setItem('value',ainputs[2].value);
+				
+				//永久存储：数据一直存在
+				window.localStorage.setItem('value',ainputs[2].value);
+				
+				alert('保存成功');
+			}
+			
+				//数据获取
+			ainputs[1].onclick = function(){
+				//临时存储
+//				alert(window.sessionStorage.getItem('value'));
+
+				alert(window.localStorage.getItem('value'));
+			}
+			
+				//数据删除
+			ainputs[3].onclick = function(){
+
+				//通过key删除数据
+//				window.localStorage.removeItem('value');
+
+				//删除所有数据
+				window.localStorage.clear();
+				alert('删除成功');
+			}
+		</script>
+	</body>
+</html>

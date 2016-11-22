@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>苹果</li>
+			<li class="ban">香蕉</li>
+			<li id="tz">桃子</li>
+			<li>李子</li>
+		</ul>
+		<script type="text/javascript">
+			var li = document.querySelector('li');
+			li.style.background = 'greenyellow';
+			
+			document.querySelector('.ban').style.background='red';
+			document.querySelector('#tz').style.background='blueviolet';
+			
+			
+			var ls = document.querySelectorAll('li');
+			for(i in ls){
+				ls[i].style.background = 'pink';
+			}
+			
+		</script>
+	</body>
+</html>

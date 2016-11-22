@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			body {height: 1500px; position: relative;}
+			img {position: absolute; top: 500px;}
+		</style>
+	</head>
+	<body>
+		<img src="img/line.gif" />
+	</body>
+		<script type="text/javascript">
+			var oImg=document.getElementsByTagName('img')[0];
+			var len=0;
+			var imgLen=parseInt(CSS(oImg,'top'));
+			document.onscroll=function(){
+				len=document.documentElement.scrollTop||window.pageYOffset;
+				if(len>=500){
+					CSS(oImg,'top',len+'px');
+				}
+				else{
+					CSS(oImg,'top',imgLen+'px');
+				}
+			}
+			
+			function CSS(obj,attr,value)
+			{
+				if(value!=undefined)
+				{
+					obj.style[attr]=value;
+				
+				}
+				
+				//获取 最终样式
+				if(window.getComputedStyle)
+				{
+					  return   getComputedStyle(obj)[attr];
+				}else
+				{
+					
+					 return   obj.currentStyle[attr];
+				}
+
+			}
+		</script>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：开始、最后、前一、后一节点操作
+	         开始节点：      firstElementChild、firstChild
+		 最后节点：	lastElementChild、lastChild
+		 下一节点：	nextElementSibling、nextSibling
+		 上一节点：	previousElementSibling、previousSibling
+		 
+         (注意：前者在IE6~IE8不支持并且只获取元素节点，后者会获取文本节点，所以设计程序时要作处理)
+	
+	    操作：函数封装，鼠标移动背景色：蓝红蓝走动
+-->
+
+	<body>
+		<ul id="ul1">
+			<li>111111</li>			
+			<li >222222</li>
+			<li>333333<div></div></li>
+			<li>444444</li>
+			<li>555555</li>
+			<li>666666</li>
+		</ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+			
+		 var oUl= document.getElementById("ul1");
+		 var  aLi=document.getElementsByTagName('li');
+		 
+		 
+		   //节点方法测试 
+		    var one= oUl.lastChild;   //在标准浏览器下获取空白节点
+		    console.log(one.nodeType);
+		    
+		    var two= one.nextSibling;
+		    console.log(two.nodeType);
+		 
+		 
+ 
+		
+//		// var first=oUl.firstElementChild;            //第一个节点
+//		var  first=firstNode(oUl);
+//		console.log(first.innerHTML);
+//		
+//
+//		//var next=first.nextElementSibling;          //下一个节点
+//		var  next=nextNode(first);
+//		console.log(next.innerHTML);
+//		
+//	
+//		
+////		 var last=oUl.lastElementChild;              //最后一个节点
+// 		var  last=lastNode(oUl);
+//		console.log(last.innerHTML);
+//		
+////		var   pre=last.previousElementSibling;      //前一个节点
+//      var  pre=preNode(last);
+// 
+//		console.log(pre.innerHTML);
+		
+		
+		
+//		console.log(aLi.length);
+//		
+//	   for(var i=0; i<aLi.length; i++)
+//	   {
+//	   		if(i%2)
+//	   	 	{
+//	   	 		aLi[i].style.backgroundColor='blue';
+//	   	 		aLi[i].color='blue';
+//	   	 	}
+//	   	 	else
+//	   		 {
+//	   	 		aLi[i].style.backgroundColor='';
+//	   	 		aLi[i].color='';
+//	   	 	}                                                                                                                                  
+//	   	
+//	   }
+//		
+//		
+//		
+//		//测试前后 节点
+//		
+//		for(var i=0;i <aLi.length; i++)
+//		{
+//			aLi[i].onmouseover=function(){
+//				var  prev=prevNode(this);
+//				var  next=nextNode(this);
+//				if(prev)
+//				  prev.style.backgroundColor='green';
+//				if(next)
+//					next.style.backgroundColor='green';
+//				this.style.backgroundColor='red';
+//			}
+//			
+//			
+//			
+//			aLi[i].onmouseout=function(){
+//				var  prev=prevNode(this);
+//				var  next=nextNode(this);
+//				if(prev)
+//					prev.style.backgroundColor=prev.color;
+//				if(next)
+//					next.style.backgroundColor=next.color;
+//				
+//				this.style.backgroundColor=this.color;
+//			}
+//		}
+//		
+//
+//		
+//	     function  firstNode(obj){
+//	     	//兼容
+//	     	if (!obj.firstChild) {
+//	     		return false;
+//	     	}
+//	       return  	obj.firstElementChild||obj.firstChild;
+//	     }
+//		
+//		
+//
+//		
+//		
+//		function  lastNode(obj){
+//	     	if (!obj.lastChild) {
+//	     		return false;
+//	     	}			
+//			return  obj.lastElementChild || obj.lastChild;
+//		}
+//		
+//		
+//		function   prevNode(obj){
+//	     	if (!obj.previousSibling) {
+//	     		return false;
+//	     	}
+//			return  obj.previousElementSibling ||(obj.previousSibling.nodeType==1?obj.previousSibling:prevNode(obj.previousSibling));
+//		}
+//		
+//		function nextNode(obj){
+//	     	if (!obj.nextSibling) {
+//	     		return false;
+//	     	}			
+//
+//		return  obj.nextElementSibling ||(obj.nextSibling.nodeType==1?obj.nextSibling:nextNode(obj.nextSibling));
+//		}		
+		
+		
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#div1{height: 200px; background: red; border: 5px solid blue;}
+		</style>
+		
+		<script type="text/javascript"  src="base.js"></script>
+	</head>
+	<body>
+		<div id="div1"  style="width: 200px;"></div>
+		
+		
+		
+		
+		<script type="text/javascript">
+			 var oDiv=document.getElementById('div1');
+			 
+			 var  w=CSS(oDiv,'width');
+			 console.log(w);
+			 var  h=CSS(oDiv,'height');
+			 console.log(h);
+			 
+			  var  c=CSS(oDiv,'backgroundColor');
+			 console.log(c);
+			 
+			 //设置背景颜色
+			 CSS(oDiv,'width','300px');
+			 CSS(oDiv,'backgroundColor','green');
+			 
+			 
+			
+		</script>
+		
+	</body>
+</html>

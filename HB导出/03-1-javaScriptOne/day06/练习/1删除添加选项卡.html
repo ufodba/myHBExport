@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#div2 div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+.active{ background:red;}
+</style>
+<script>
+
+window.onload = function(){
+	
+	var oDiv = document.getElementById('div0');
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	
+	var cB = oDiv.getElementsByTagName('input');
+	var btn = oDiv1.getElementsByTagName('input');
+	var con = oDiv2.getElementsByTagName('div');
+	
+	
+	tab();
+	
+	function tab(){
+		
+		for(var i=0;i<btn.length;i++){
+			btn[i].index = i;
+			btn[i].onclick = function(){
+				for(var i=0;i<btn.length;i++){
+					btn[i].className = '';
+					con[i].style.display = 'none';
+				}
+				this.className = 'active';
+				
+				con[this.index].style.display = 'block';
+				
+			};
+		}
+		
+	}
+	
+	
+	for(var i=0;i<cB.length;i++){
+		cB[i].onclick = function(){
+			
+			if(this.checked){
+				
+				add(this);
+				
+			}
+			else{
+				
+				remove(this);
+				
+			}
+			
+		};
+	}
+	
+	
+	function add( obj ){
+		
+		var oInput = document.createElement('input');
+		oInput.type = 'button';
+		oInput.value = obj.value;
+		oDiv1.appendChild( oInput );
+		
+		var oDiv = document.createElement('div');
+		oDiv.innerHTML = obj.value;
+		oDiv2.appendChild( oDiv );
+		
+		tab();
+		
+	}
+	
+	
+	function remove(obj){
+		
+		for(var i=0;i<con.length;i++){  //为了能够找到对应的内容
+			if(con[i].innerHTML == obj.value){
+				oDiv2.removeChild(con[i]);
+			}
+		}
+		
+		for(var i=0;i<btn.length;i++){
+			if(btn[i].value == obj.value){
+				
+				if(btn[i].className == 'active'){
+					
+					oDiv1.removeChild(btn[i]);
+					
+					btn[0].className = 'active';
+					con[0].style.display = 'block';
+					
+					
+				}
+				else{
+					
+					oDiv1.removeChild(btn[i]);
+					
+				}
+				
+				
+			}
+		}
+		
+		
+		tab();
+		
+	}
+	
+};
+
+</script>
+</head>
+
+<body>
+<div id="div0">
+    <input type="checkbox" value="1111" checked>1111
+    <input type="checkbox" value="2222" checked>2222
+    <input type="checkbox" value="3333" checked>3333
+    <input type="checkbox" value="4444">4444
+    <input type="checkbox" value="5555">5555
+</div>
+
+<div id="div1">
+	<input class="active" type="button" value="1111">
+    <input type="button" value="2222">
+    <input type="button" value="3333">
+</div>
+<div id="div2">
+	<div style="display:block">1111</div>
+    <div>2222</div>
+    <div>3333</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{width: 500px;height: 500px;border: 1px solid black;}
+			div{width: 100px;height: 100px;margin: 100px auto;background: red;
+			transition: 2s;
+			
+			}
+			/*transform加多个变换，用空格隔开
+			 变换有顺序问题 
+			 * */
+			body:hover #box{-webkit-transform: translateX(100px) scale(0.5);}
+			body:hover #box2{-webkit-transform:scale(0.5) translateX(100px);}
+		</style>
+	</head>
+	<body>
+		<div id="box">2222</div>
+		<div id="box2">3333</div>
+	</body>
+</html>

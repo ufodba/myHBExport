@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<button ng-click="sayHello()">btn</button>
+	
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+
+			app.factory('othreFun1',function(){
+				
+				return {
+					say:function(w){
+						alert(w);
+					}
+				};
+			});
+
+
+			app.controller('myController', function($scope,othreFun1) {
+				$scope.sayHello = function() {
+					othreFun1.say('hello');
+				}
+			});
+		</script>
+	</body>
+
+</html>

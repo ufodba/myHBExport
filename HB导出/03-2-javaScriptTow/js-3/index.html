@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 100px;
+				border: blue 1px solid;
+			}
+			
+			.bg {
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<button id="btn">开始定时器</button>
+		<div class="box"></div>
+
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var boxs = document.getElementsByClassName('box');
+			//			boxs[0].style.background = '#f00'
+			//			boxs[0].className += ' bg'
+
+			var flag = true;
+			var time;
+			btn.onclick = function() {
+				
+				if(flag) {
+					time = setTimeout(function() {
+						boxs[0].className += ' bg'
+					}, 5000);
+					console.log(time);
+					btn.innerHTML = '关闭定时器';
+				}else{
+					console.log(time);
+					clearTimeout(time);
+					btn.innerHTML = '开启定时器';
+				}
+				
+				
+				flag = !flag;
+			}
+		</script>
+	</body>
+
+</html>

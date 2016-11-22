@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap{width: 400px;height: 400px;border: 1px solid black;
+			-webkit-perspective: 400px;
+			}
+			#box{width: 100px;height: 100px;background: blue;margin: 100px auto;
+			/*开启3d场景*/
+			transform-style: preserve-3d;
+			transition: 2s;	
+			}
+			
+			/*Z轴位移：正数：向外边走   负数：向里面走*/
+			#wrap:hover #box{transform: translateZ(100px);}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box">1111</div>
+		</div>
+	</body>
+</html>

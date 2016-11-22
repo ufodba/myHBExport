@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			/*通过css设置画布宽高的：将画布等比例缩放，画布里面内容进行缩放*/
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--不能通过百分数设置，将百分数识别成数值-->
+		<canvas id="ca" width="400" height="400">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+			//1.相当于画布
+			var oc = document.getElementById('ca');
+			//数值
+//			oc.width = 500;
+//			oc.height = 500;
+			//2.相当于画笔
+			var ctx = oc.getContext('2d');
+			
+			//设置填充颜色
+			ctx.fillStyle = 'yellow';
+			
+			//设置线宽:数值
+			ctx.lineWidth = 10;
+			//设置边界链接点样式:round:圆角  bevel：斜角
+			ctx.lineJoin = 'bevel';
+			
+			ctx.fillRect(50,50,100,100);
+			
+				//设置边线颜色
+			ctx.strokeStyle = 'blue';
+			ctx.strokeRect(200.5,200.5,100,100);
+			
+		
+		</script>
+	</body>
+</html>

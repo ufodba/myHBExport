@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微信场景-刮刮卡效果</title>
+		<meta name="viewport" content="width=640,user-scalable = no" />
+		<!--用视口来做了横向的适配，让我们的图片能够在横向满屏-->
+		<style>
+			html,body,h1,h2,h3,h4,p,div,img,ol,li,ul{padding:0;margin:0;}
+			/*   *{padding:0;margin:0;}影响性能*/
+			#main{width:640px;  position: relative; overflow: hidden;}
+			#c1{width: 100%; height: 100%; position: absolute;top:0;left:0;z-index: 10;}
+			#list > li{ width: 100%; height: 100%; position: absolute; top:0;left:0;
+			background-repeat:no-repeat ;  background-size: cover; display: none;
+			z-index: 5;
+			}
+			#list > li:nth-of-type(1){background-image: url(img/b.png); display: block;}
+			#list > li:nth-of-type(2){background-image: url(img/c.png);}
+			#list > li:nth-of-type(3){background-image: url(img/d.png);}
+			#list > li:nth-of-type(4){background-image: url(img/e.png);}
+			#list > li:nth-of-type(5){background-image: url(img/ad1.png);}
+			#list > li:nth-of-type(6){background-image: url(img/ad2.png);}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<canvas id="c1" width="640" height="960">浏览器不兼容本标签</canvas>
+			<ul id="list">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js" ></script>
+		<script>
+		//$(document).ready(function(){});dom
+		//window.onload = function(){};  窗口加载的慢一些， dom，视频，音频，
+		
+		//1、宽度自适应  viewport
+		//2、高度自适应    获取屏幕的高度   在赋值给 main  
+		//3、背景偏了 
+		//4、背景往左偏移   （屏幕宽度-背景图片宽度）/2  ，最终让背景图片居中显示    
+			$(function(){
+				//定义变量
+				//只要是使用一次以上的节点，都建议保存在变量里
+				var oMain = $('#main');
+				var oList = $('#list');
+				var oLi = oList.find('>li');
+				//定义默认尺寸
+				var desW = 640;
+				var desH = 960;
+				//获取可视区的高度
+				var viewHeight = $(window).height();
+				//alert(viewHeight);
+				//获取背景图片的宽度
+				var nowWidth = desW/desH *viewHeight;
+				
+				oMain.css('height',viewHeight);
+				//向左移位
+				oLi.css('background-position',(desW-nowWidth)/2+'px 0');
+				
+				//刮刮卡效果
+				slideCanvas();
+				
+				
+				//刮刮卡效果方法
+				/**
+				 * 1、获取canvas对象
+				 * 2、给canvas对象一个高度
+				 * 3、生成一个图片
+				 * 4、给canvas画一张底图
+				 * 5、对底图做处理，让它能等比的放大，并且居中
+				 * 6、初始化画笔
+				 * 7、开始触摸  （获取x,y坐标， 然后赋值给 moveto lineto     判断是不是第一次触摸 ）
+				 * 8、触摸中    （直接复制了开始触摸的代码）
+				 * 9、触摸结束（对刮开的面积进行了计算  ，透明度  ）
+				 * （对刮开的面积和地图的面积进行比较）（对画布进行清除  ，慢慢清除的效果，对之前的事件进行接触绑定）
+				 */
+				function slideCanvas(){
+					//获取canvas图层
+					var oC = $('#c1').get(0);//将jquery对象转成js原生对象
+					//alert(oC);
+					var oGC = oC.getContext('2d');
+					//把main获取到的高度再赋值给画布
+					oC.height = viewHeight;
+					
+					var bBtn = true;//是不是首次触摸
+					//生成画布的背景图片
+					var imgObj = new Image();
+					imgObj.src = 'img/a.png';
+					imgObj.onload = function(){
+						//图片画到画布上
+						//oGC.drawImage(imgObj,0,0,640,viewHeight);//能够自适应屏幕高度  ，但是图片变形了
+						oGC.drawImage(imgObj,(desW-nowWidth)/2,0,nowWidth,viewHeight);//能够自适应屏幕高度  ，图片不变形了
+						//初始化画笔
+						oGC.lineCap = 'round';
+						oGC.lineWidth  =60;
+						oGC.globalCompositeOperation = 'destination-out';
+						//开始触摸
+						$(oC).on('touchstart',function(ev){
+							//获取事件的手指列表
+							var touch = ev.originalEvent.changedTouches[0];
+							var x = touch.pageX -  $(this).offset().left;
+							var y = touch.pageY -  $(this).offset().top;
+							//画笔的起始坐标
+							if(bBtn){
+								oGC.moveTo(x,y);
+								oGC.lineTo(x+1,y+1);
+								bBtn = false;
+							}else{
+								oGC.lineTo(x,y);
+							}	
+							oGC.stroke();
+							
+							//触摸中  可以让刮 的效果平滑
+							//.move  命名空间
+							$(oC).on('touchmove.move',function(ev){
+								//获取事件的手指列表
+								var touch = ev.originalEvent.changedTouches[0];
+								var x = touch.pageX -  $(this).offset().left;
+								var y = touch.pageY -  $(this).offset().top;
+								oGC.lineTo(x,y);
+								oGC.stroke();
+							});
+							
+							//触摸结束 ，对刮得面积进行判断
+							$(oC).on('touchend.move',function(ev){
+								//获取画布的面积
+								var imgData = oGC.getImageData(0,0,oC.width,oC.height);
+								//所有像素个数
+								var allPX = imgData.width * imgData.height;
+								var iNum = 0; //记录刮开的像素是透明的个数
+								//例子
+								//imgDataTest = oGC.getImageData(0,0,10,10);
+								//console.log(imgDataTest.data);
+								
+								//计算透明像素的个数
+								//imgData.data 4个值表示一个像素点   rgba   r1,b1,g1,a1,r2,b2,g2,a2
+								for(var i=0;i<allPX;i++){
+									if(imgData.data[i*4+3] ==0){
+										iNum++;
+									}
+								}
+								//判断刮开的面积和底图的面积的比较
+								if(iNum>=allPX/2){
+									//设置清除的过渡效果
+									$(this).animate({opacity:0},2000,function(){
+										$(this).remove();//对画布清除
+									});
+								}
+								//解除绑定
+								$(oC).off('.move');
+							});
+						});
+						
+					};
+					
+				}
+				
+			});
+		</script>
+	</body>
+</html>

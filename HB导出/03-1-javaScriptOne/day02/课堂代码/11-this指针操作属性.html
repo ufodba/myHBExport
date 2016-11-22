@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#div1,#div2{width: 200px; height: 200px;}
+			#div1{background: red;}
+			#div2{background: blue;}
+		</style>
+	</head>
+	<body>
+      <div id="div1">
+      	
+      </div>
+      <div id="div2">
+      	
+      </div>
+      
+      
+      
+      
+      <script type="text/javascript">
+      	  var div1=document.getElementById('div1');
+      	  var div2=document.getElementById('div2');
+      	  
+      	  div1.index=true;  //index 是对象中的一个成员
+      	  div2.index=true;
+      	  
+      	  function show(){
+      	    if(this.index)
+      	    {
+      	    	this.style.background='green';
+      	    	this.index=false;
+      	    }
+      	    else
+      	    {
+      	    	this.style.background='red';
+      	    	this.index=true;
+      	    }
+      	  
+      	  }
+      	  
+      	  //div1.onclick=show();  //错误的赋值函数   show();调用
+      	 div1.onclick=show;       //正确， 当div1点击 时,执行show函数，那么show内的this指向div1
+      	 div2.onclick=show;
+      	  
+      	  
+        show();   //this     --->window
+
+
+      	  
+      </script>
+
+	</body>
+</html>

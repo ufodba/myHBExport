@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="div1">反选</div>
+		
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+
+	</body>
+	
+	<script type="text/javascript">
+		var  oDiv=document.getElementById('div1');
+		var  aInput=document.getElementsByTagName('input');
+		
+		//aInput是一个集合，成员表达：aInput[0],aInput[1]
+		
+		console.log(aInput.length);   //集合的成员个数
+		
+		var  flg=true;
+		
+		oDiv.onclick=function(){
+			
+            if(flg)
+            {
+            	for (var i=0;i<aInput.length;i++) {
+		   			aInput[i].checked=true;   //选中
+		         }	
+		         flg=false;
+            }else{
+            	
+            	for (var i=0;i<aInput.length;i++) {
+		   			aInput[i].checked=false;   //选中
+		         }	
+		         flg=true;
+            }
+		}
+	</script>
+	
+	
+</html>

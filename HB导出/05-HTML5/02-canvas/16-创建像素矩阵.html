@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--canvas：申请一块绘制区域-->
+		<!--画布默认的宽：300px 高度：150px，不能通过css设置宽高-->
+		<canvas width="400" height="400" id="ca">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+			//获取画布
+			var oc = document.getElementById('ca');
+			var ctx = oc.getContext('2d');//绘制场景：只支持2d场景
+			
+			//创建像素矩阵
+			var imgdata = ctx.createImageData(100,100);	
+		
+//			console.log(imgdata.data);	 0,0,0,0
+			//操作像素点修改颜色
+			for(var i = 0;i<imgdata.width*imgdata.height;i++){
+				
+				imgdata.data[4*i] = 255;   //r
+				imgdata.data[4*i+1] = 0; //g
+				imgdata.data[4*i+2] = 0; //b
+				imgdata.data[4*i+3] = 255; //a
+			}
+			
+			//设置新的图像数据
+			ctx.putImageData(imgdata,0,0);
+			
+		</script>
+	</body>
+</html>
+

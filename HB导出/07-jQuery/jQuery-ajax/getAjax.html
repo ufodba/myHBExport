@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<input type="button"  id="btnGet" value="加载数据" />
+		<input type="button"  id="btnGet2" value="加载数据2" />
+		
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#btnGet').click(function(){
+				$.get('m_get.php',function(data,status){
+					if("success" == status){
+						$('#box').html(data);
+					}
+				})
+			});
+			
+			$('#btnGet2').click(function(){
+				$.get('m_get.php?flag=hello',function(data,status){
+					if("success" == status){
+						$('#box').html(data);
+					}
+				})
+			});
+		</script>
+	</body>
+</html>

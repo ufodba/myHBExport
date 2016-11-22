@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box p {
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<!--<p>hello</p>-->
+			<h2>这是一个标题2</h2>
+			<h3>这是一个标题3</h3>
+			<h4>这是一个标题4</h4>
+		</div>
+
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			var h2 = document.getElementsByTagName('h3')[0];
+
+			var p = document.createElement('p');
+			var textN = document.createTextNode('android');
+			p.appendChild(textN);
+
+			//			box.appendChild(p);
+			box.insertBefore(p, h2);
+		</script>
+	</body>
+
+</html>

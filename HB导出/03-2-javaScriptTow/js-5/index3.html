@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			hello
+		</div>
+		
+		<button id="btn">设置属性方式一</button>
+		<button id="btn2">设置属性方式2</button>
+		<button id="btn3">删除属性方式</button>
+		
+		<script type="text/javascript">
+			var box = document.getElementsByClassName('box')[0];
+			var btn = document.getElementById('btn');
+			var btn2 = document.getElementById('btn2');
+			var btn3 = document.getElementById('btn3');
+			
+			
+			btn.onclick = function(){
+					box.id = 'div1';
+					console.log(box.id);
+			}
+			
+			btn2.onclick = function(){
+				box.setAttribute('id','div1')
+			}
+			btn3.onclick = function(){
+				box.removeAttribute('id');
+			}
+		
+			
+			
+		</script>
+	</body>
+</html>

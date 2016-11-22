@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.txt {width: 200px;height: 250px;background-color: gray; position: absolute; top: 60px;}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<input type="checkbox" />1111
+			<input type="checkbox" value=""/>2222
+			<input type="checkbox" value=""/>3333
+			<input type="checkbox" value=""/>4444
+			<input type="checkbox" value=""/>5555
+		</div>
+		<!--<div id="box2">
+			
+		</div>-->
+		
+	</body>
+	<script type="text/javascript">
+		var oDiv1=document.getElementById('box1');
+//		var oDiv2=document.getElementById('box2');
+		var aInput=oDiv1.getElementsByTagName('input');
+		var arr=[];
+		var arrDiv=[];
+		var arrNum=[111,222,333,444,555];
+		for (var i=0;i<aInput.length;i++) {
+			aInput[i].index=i;
+			aInput[i].onclick=function(){
+				if(aInput[this.index].checked){
+					var btn=document.createElement('input');
+					btn.type='button';
+					btn.value=''+arrNum[this.index]+'';
+					arr[this.index]=btn;
+					document.body.appendChild(btn);
+//					arrDiv.splice(this.index,1);
+					arrDiv.length=0;
+					arr[this.index].ind=this.index;
+					arr[this.index].onclick=function(){
+						
+						if(!arrDiv[this.ind]){
+							var div=document.createElement('div');
+							div.className='txt';
+							div.innerHTML=''+arrNum[this.ind]+'';
+							arrDiv[this.ind]=div;
+							document.body.appendChild(div);
+						}
+						else{
+							for(var j=0;j<arrDiv.length;j++){
+								if (!arrDiv[j]) {
+									break;
+								}
+								else{
+									arrDiv[j].style.zIndex=0;
+								}
+								
+							}
+							arrDiv[this.ind].style.zIndex=2;
+						}
+//						
+					}
+				}
+				else{
+					document.body.removeChild(arr[this.index]);
+					document.body.removeChild(arrDiv[this.index]);
+				}	
+				
+			}
+//			console.log(arrDiv);
+				
+			
+//				else{
+//					document.body.removeChild(arr[this.index]);
+//					document.body.removeChild(arrDiv[this.index]);
+//					arrDiv.splice(this.index,1);
+//				}
+				
+			
+			
+		}
+	</script>
+</html>

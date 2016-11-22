@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 50%;
+				margin: 0px auto;
+				border: 1px solid blue;
+			}
+			
+			#box>h1 {
+				background: red;
+			}
+			
+			#box>p {
+				font-size: 1.5em;
+				text-align: center;
+			}
+			
+			#box2 {
+				width: 50%;
+				margin: 0px auto;
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<hello></hello>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.directive('hello', function() {
+				return {
+					/*
+					 *A 属性
+					 *C 类别
+					 *M 注释
+					 *E 元素
+					 * 
+					 */
+					restrict: 'E',
+					template: '<div><div id="box"><h1>这是一个标题</h1><p>这是一段内容</p></div><div id="box2"><button >TEST</button></div></div>',
+					replace:true,
+				};
+			});
+		</script>
+	</body>
+
+</html>

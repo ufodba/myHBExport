@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js-ajax</title>
+		
+	</head>
+	<body>
+		<input type="button" value="请求数据" id="bBtn"/>
+		<ul id="list"></ul>
+		<script type="text/javascript" src="js/JSON.js" ></script><!--是为了做ie的7,6的兼容的-->
+		<script type="text/javascript" src="js/ajax.js" ></script>
+		<script>
+			window.onload = function(){
+				var obBtn = document.getElementById('bBtn');
+				var oList = document.getElementById('list');
+				//按钮做点击事件
+				obBtn.onclick = function(){
+					//1、请求后台的数据(验证后台的接口数据的正确性)
+					ajax('get','getNews.php','',function(data){
+						//alert(data[0].title);
+						//2、json解析
+						var data = JSON.parse(data);
+						//alert(data[0].title);
+						//3、将解析的内容回填到dom模型里  
+						var  str = '';
+						for(var i=0;i<data.length;i++){
+							str+='<li><a href="#">'+data[i].title+'</a><span>'+data[i].date+'</span></li>';
+							
+						}
+						oList.innerHTML = str;
+					});
+				};
+			};
+		</script>
+		
+	</body>
+</html>

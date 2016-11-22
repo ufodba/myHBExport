@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{width: 500px;height: 500px;border: 1px solid black;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="" id="imgid"/>
+		</div>
+		
+		<script>
+			var odiv = document.getElementById('box');
+			var oImg = document.getElementById('imgid');
+			
+			
+			odiv.ondragover = function(ev){
+				var ev = ev || window.event;
+				ev.preventDefault();
+				
+			}
+			
+			odiv.ondrop = function(ev){
+				
+				ev.preventDefault();//阻止默认事件：防止图片文件自动打开
+				//返回拖拽的文件列表
+				var f1 = ev.dataTransfer.files;
+//				alert(f1.length);//拖拽的文件个数
+			//文件类型
+//				alert(f1[0].type); //image/png
+				//读取外部文件信息
+				//1.创建读取文件的对象
+				var fd = new FileReader;
+				//2.将文件读取成dataurl的形式
+				fd.readAsDataURL(f1[0]);
+				
+				//3.读取成功之后调用onload方法
+				
+				fd.onload = function(){
+					//result：文件信息
+//					alert(this.result);
+					if(f1[0].type.indexOf('image')!=-1){
+						oImg.src = this.result;
+					}else{
+						alert('请拖拽图片类型');
+					}
+					
+					
+				}
+				
+			}
+			
+		</script>
+	</body>
+</html>

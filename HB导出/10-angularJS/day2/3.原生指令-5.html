@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				margin: 0 auto;
+			}
+			
+			#box>img{
+				width: 100%;
+				height: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="box">
+			<button ng-click="myClick()">切换图片</button>
+			<img ng-src="{{src}}"/>
+			
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.src = 'img/bigptr.jpg';
+				$scope.flag = true;
+				$scope.myClick = function(){
+					if($scope.flag){
+						$scope.src = 'img/dog.jpg';
+						$scope.flag = !$scope.flag;
+					}else{
+						$scope.src = 'img/bigptr.jpg';
+						$scope.flag = !$scope.flag;
+					}
+				}
+			});
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* reset */
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em { font-style:normal; }
+li { list-style:none; }
+a { text-decoration:none; }
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; }
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:"微软雅黑"; }
+/* end reset */
+
+
+.recommend { width:348px; height:498px; float:left; border-radius:6px; border:1px solid #dbdbdb;  }
+
+.recommend .pic { width:294px; height:168px; padding:12px 12px 0; background:#f8f8f8; position:relative; margin:0 auto; border-radius:6px; }
+.recommend .pic ul { width:223px; height:133px; position:absolute; top:12px; left:12px; }
+.recommend .pic ul li { width:223px; height:133px; border:1px solid #fff; position:absolute; top:0; left:0; }
+.recommend .pic ul img { width:223px; height:133px; }
+.recommend .pic ol { position:absolute; top:12px; right:12px; }
+.recommend .pic ol li,.recommend .pic ol img { width:54px; height:30px; }
+.recommend .pic ol li { border:3px solid #fff; margin-bottom:13px; }
+.recommend .pic ol .active { border:3px solid #d6191d; }
+.recommend .pic p { line-height:32px; position:absolute; left:12px; bottom:0px; }
+

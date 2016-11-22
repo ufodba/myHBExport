@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{ margin:0; padding:0;}
+			li{ list-style:none;width:100px; height:50px; overflow:hidden; position:relative; float:left; margin:10px;}
+			li div{ position:absolute; top:0px;}
+			li img{ border:none; width:100px; height:50px;display:block;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+		    	<div>
+		        	<img src="img/1.gif">
+		            <img src="img/2.gif">
+		        </div>
+		    </li>
+		    <li>
+		    	<div>
+		        	<img src="img/3.gif">
+		            <img src="img/4.gif">
+		        </div>
+		    </li>
+		    <li>
+		    	<div>
+		        	<img src="img/5.gif">
+		            <img src="img/6.gif">
+		        </div>
+		    </li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oDiv=document.getElementsByTagName('div');
+		for(var i=0;i<3;i++){
+			oDiv[i].s=-2;
+			chang(oDiv[i]);
+		}
+//		chang(oDiv[0]);
+//		chang(oDiv[1]);
+//		chang(oDiv[2]);
+		function chang(div){
+			var b=1;
+			var c=0;
+			setInterval(function(){
+				clearInterval(t);  //防止定时器重叠
+			var t=setInterval(function(){
+				if((parseInt(CSS(div,'top'))==0&&b==-1)||(parseInt(CSS(div,'top'))==-50&&b==1)){
+					c=1;
+					if(c==1){
+						b*=-1;
+						div.s*=-1;
+						c=0;
+					}
+					clearInterval(t);
+				}
+				else{
+					div.style.top=parseInt(CSS(div,'top'))+div.s+'px';
+				}
+				
+			},40);
+			},Math.floor(Math.random()*9)*1000);
+		}
+//			
+		function CSS(obj,attr,value)
+		{
+			     if(value==undefined)
+			     {
+			     	  if(window.getComputedStyle)
+			     	  {
+			     	  	  return  getComputedStyle(obj)[attr];
+			     	  }
+			     	  else
+			     	  {
+			     	  	  return  obj.currentStyle[attr];
+			     	  }
+			     }
+		         obj.style[attr]=value;
+		}  
+	</script>
+</html>

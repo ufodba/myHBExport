@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：哈希值操作
+	1、数据保存多张图片的地址，如果没有就是0;
+	2、获取当前的哈希值，并设置当前的图片
+	3、每点击一下图片就会换下一张并修改哈希值
+-->
+	<body>
+		<img src="images/1.jpg" id="img1"/>
+		
+		
+		
+		<script type="text/javascript">
+		
+		  //哈希值 
+//			window.location.hash=3;
+//			
+//			
+//			var   hash=window.location.hash;
+//			console.log(hash.substring(1));
+			
+			
+			var  img=document.getElementById('img1');
+			
+			img.onclick=function(){
+				var   hash=window.location.hash.substring(1);
+				
+				console.log(hash);
+				if(hash=='')
+				{
+					hash=1;
+					window.location.hash=1;
+				}
+				
+			    hash=parseInt(hash);    //转换为number类型
+			   // console.log(typeof hash);
+			   
+			   //换图片
+			   hash++;
+			   if(hash>5)hash=1;
+			   window.location.hash=hash;
+				
+			   img.src='images/'+hash+'.jpg'	
+			}
+			
+		</script>
+	</body>
+</html>

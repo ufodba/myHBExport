@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 2000px;">
+		
+		
+		<script type="text/javascript">
+			document.onkeydown = function(ev){
+				var ev = ev || window.event;
+				
+				if(32 == ev.keyCode){
+					
+					if(ev.preventDefault){
+						//阻止绑定的默认事件
+						ev.preventDefault();
+					}else{
+						//阻止普通默认事件。
+						return false;
+					}
+				}
+			}
+		</script>
+		
+	</body>
+</html>

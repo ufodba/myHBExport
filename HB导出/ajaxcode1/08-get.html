@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="获取" id="btn"/>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			
+			obtn.onclick = function(){
+
+				//1.c创建请求对象
+				
+				var xhr = null;
+				
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					//TODO handle the exception
+					xhr = ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				
+				//2.open
+				//username
+				//age
+				xhr.open('GET','1.get.php?username=lily&age=18',true);
+				
+				//3.send 发送数据
+				
+				xhr.send();
+				//4.
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						if(xhr.status == 200){
+							//拿到后台的数据
+							alert(xhr.responseText);
+							//username  age
+						}
+						
+					}
+					
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{height: 100px;border: 10px solid black;padding: 10px;
+				/*弹性盒模型:并列排列*/
+				display: -webkit-box;
+				display: -moz-box;
+			
+				
+
+					}
+			
+			.wrap div{width: 100px;height: 100px;background: red;border: 1px solid white;}
+			/*box-pack 对Box-flex 定义盒子的弹性空间
+子元素的尺寸=盒子的尺寸*子元素的box-flex属性值 / 所有子元素的box-flex属性值的和 
+*/
+			/*.wrap div:nth-child(1){-moz-box-flex: 2;}
+			.wrap div:nth-child(2){-moz-box-flex: 3;}
+			.wrap div:nth-child(3){-moz-box-flex: 2;}
+			.wrap div:nth-child(4){-moz-box-flex: 1;}*/
+			
+			.wrap div:nth-child(1){-moz-box-flex: 200px;}
+			.wrap div:nth-child(2){-moz-box-flex: 3;}
+			.wrap div:nth-child(3){-moz-box-flex: 2;}
+			.wrap div:nth-child(4){-moz-box-flex: 1;}
+				
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</body>
+</html>

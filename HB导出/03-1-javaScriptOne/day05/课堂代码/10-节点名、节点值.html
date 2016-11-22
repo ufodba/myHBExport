@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：节点名节点值：  nodeName    nodeValue
+	操作：  对象为：     document、     body、      body下的第一个子元素
+	       nodeName     固定            变化              固定
+	       nodeValue    null      null      字符串
+	
+-->
+	<body>
+		 123
+	</body>
+	
+	
+	<script type="text/javascript">
+		
+		console.log(document.nodeName);      //#document
+		console.log(document.nodeValue);    //null
+		
+		console.log(document.body.nodeName);  //BODY
+		console.log(document.body.nodeValue);	 //null
+		
+		console.log(document.body.firstChild.nodeName);   //#text
+		console.log(document.body.firstChild.nodeValue);  //123			
+		
+		
+		
+	</script>
+	
+	
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#div1,#div2,#div3{ width: 300px; height: 300px;border: 2px solid blueviolet;position: absolute;display: none;}
+		    .active{background: red;}
+		   
+		</style>
+	</head>
+	<body>
+	    <input type="button"  value="1"  class="active" />
+	    <input type="button"  value="2" />
+	    <input type="button"  value="3" />
+		
+		
+		<div id="div1" style="display: block;">1111</div>
+		<div id="div2">2222</div>
+		<div id="div3">3333</div>
+	    
+		
+		<script type="text/javascript">
+			var aInput=document.getElementsByTagName('input');
+			var aDiv=document.getElementsByTagName('div');
+			
+         /*
+            aInput[0].onclick=function(){
+            	aInput[0].className='active';
+            }
+         
+           aInput[1].onclick=function(){
+            	aInput[1].className='active';
+            }
+             aInput[2].onclick=function(){
+            	aInput[2].className='active';
+            }
+         */
+        
+           //this
+        
+          for (var i=0;i<3; i++) {
+          	
+          	 aInput[i].index=i;
+             aInput[i].onclick=function(){
+            	
+               
+               //清空  reset
+               for (var i=0; i<3; i++) {
+               	aDiv[i].style.display='none';
+               	aInput[i].className='';
+               }
+               
+               
+               
+               
+               aInput[this.index].className='active';
+               aDiv[this.index].style.display='block';
+               
+              // console.log(this);
+               
+            }
+          }
+        
+         
+
+         
+         
+         
+         
+         
+		
+		</script>
+	</body>
+</html>

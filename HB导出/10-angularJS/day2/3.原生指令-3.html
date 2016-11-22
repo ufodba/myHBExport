@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="checkbox" ng-model="flag" />
+
+		<hr />
+
+		<input type="checkbox" name="like" ng-checked="flag" />
+		<input type="checkbox" name="like" ng-checked="flag" />
+		<input type="checkbox" name="like" ng-checked="flag" />
+		<input type="checkbox" name="like" ng-checked="flag" />
+		<input type="checkbox" name="like" ng-checked="flag" />
+		<input type="checkbox" name="like" ng-checked="flag" />
+
+		<hr />
+		
+		<input type="radio" name="like" ng-checked="!flag" />
+		<input type="radio" name="like" ng-checked="flag" />
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.flag = false;
+			});
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

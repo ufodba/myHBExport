@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+	/*作业0*/
+	table { border-collapse:collapse;}
+	td,th { padding:0;}
+	/*.div1 {width:650px; height:200px; margin:100px auto;background-color:#0F6; position:relative}*/
+	.box { width:640px; margin:100px auto; background-color:#ebeff7;}
+	.box th{ border:#99b0da 1px solid; text-align:center; line-height:28px; font-size:14px; background-color:#dbe3fa; }
+	.box td{ border:#99b0da 1px solid; text-align:center; line-height:28px; font-size:12px; background-color:#fff;}
+	.box .td_1 { background-color:#f4f7fc;}
+	/*.tr3,.tr3 td { position:relative; top:100px;}*/
+	
+	/*作业1*/
+	.test1_box { width:320px; height:321px; border:2px #F00 solid; margin:100px auto; position:relative;}
+	.top_1 { width:100px; height:56px; background-color:red; position:absolute; top:10px; left:10px;}
+	.top_2 { width:100px; height:56px; background-color:red; position:absolute; top:10px; right:10px;}
+	.middle { width:100px; height:56px; background-color:#3333cc; position:absolute; top:110px; left:110px;}
+	.bottom_1 { width:100px; height:56px; background-color:red; position:absolute; bottom:10px; left:10px;}
+	.bottom_2 { width:100px; height:56px; background-color:red; position:absolute; bottom:10px; right:10px;}
+	.test1_text { text-align:center; padding-top:44px; font-size:14px;}
+	
+	/*作业2*/
+	.test2_box { width:400px; height:500px; margin:100px auto; }
+	.test2_box1 { width:100px; height:100px; border:1px solid #cc0000; background-color:#00ccff;}
+	.test2_box2 { width:100px; height:100px; border:1px solid #cc0000; background-color:#00ccff; position:relative; left:50px; top:-50px;}
+	.test2_box3 { width:100px; height:100px; border:1px solid #cc0000; background-color:#ffff66; position:relative; left:100px; top:-100px;}
+	.test2_box4 { width:100px; height:100px; border:1px solid #cc0000; background-color:#00ccff; position:relative; left:150px; top:-150px;}
+	.test2_box5 { width:100px; height:100px; border:1px solid #cc0000; background-color:#00ccff; position:relative; left:200px; top:-200px;}
+	
+	/*作业3*/
+	.test3_box { width:500px; height:400px; margin:100px auto; }
+	ol { margin:0; padding:0; list-style:none;}
+	span { margin:0; padding:0;}
+	.test3_div { position:absolute; z-index:2; }
+	/*.content1
+	.content2*/
+	.li1 { border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; }
+	.li2 { border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-9px;}
+	.li3 { border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-18px;}
+	.li4 { border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-27px;}
+	.li5 { border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-36px;}
+	.li1_1 { border:#ff0000 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative;}
+	.li2_2 { border:#ff0000 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-9px;}
+	.li3_3 { border:#ff0000 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-18px;}
+	.li4_4 { border:#ff0000 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-27px;}
+	.li5_5 { border:#ff0000 1px solid; padding:13px 20px; color:#f06000; font-size:12px; position:relative; left:-36px;}
+	/*.li1_1:hover { z-index:3;}
+	.li2_2:hover { z-index:2;}
+	.li3_3:hover { z-index:2;}
+	.li4_4:hover { z-index:2;}
+	.li5_5:hover { z-index:2;}*/
+	/*.test3_list .li1 { float:left; border:#0000f0 1px solid; padding:13px 20px; color:#f06000; font-size:12px;}*/
+	.li1:hover {border:#ff0000 1px solid; position:relative; left:-1px;}
+	.li2:hover {border:#ff0000 1px solid; position:relative; left:-10px;}
+	

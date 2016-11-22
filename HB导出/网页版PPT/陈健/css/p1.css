@@ -1,0 +1,55 @@
+//第一个页
+#warp {
+	position: relative;
+}
+
+#phone {
+	width: 180px;
+	height: 220px;
+	position: absolute;
+	top: 200px;
+	left: 100px;
+}
+
+#tablet {
+	width: 200px;
+	height: 300px;
+	position: absolute;
+	top: 180px;
+	left: 422px;
+}
+
+#watch {
+	width: 180px;
+	height: 220px;
+	position: absolute;
+	top: 200px;
+	left: 744px;
+}
+
+.p1_txt {
+	position: absolute;
+	position: absolute;
+	bottom: 10.2%;
+	left: 345px;
+}
+
+.p1_txt span {
+	display: block;
+}
+
+.title {
+	font-size: 40px;
+	font-family: "华文新魏";
+	color: #d99694;
+	text-align: center;
+}
+
+.writer {
+	font-size: 32px;
+	line-height: 40px;
+	font-family: "华文新魏";
+	text-align: center;
+}
+
+.disabled { pointer-events: none; }

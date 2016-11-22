@@ -1,0 +1,37 @@
+<!--
+	作者：1135757639@qq.com
+	时间：2016-09-08
+	描述：
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>11</title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>4</li>
+			<li>0</li>
+			<li>6</li>
+			<li>2</li>
+			<li>3</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		var arr=[];
+		for(var i=0;i<aLi.length;i++){
+			arr.push(aLi[i]);
+		}
+		arr.sort(function(a,b){
+			return a.innerHTML-b.innerHTML;
+		});
+		for(var i=0;i<aLi.length;i++){
+			oUl.appendChild(arr[i]);
+		}
+	</script>
+</html>

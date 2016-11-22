@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{width: 100px;height: 100px;background: blue;
+			/*ease 默认  ease-in 加速  ease-out减速  linear 匀速*/
+			/*贝塞尔曲线自定义运动形式*/
+			transition:2s width cubic-bezier(1.000, 0.025, 0.100, 0.960);}
+		
+			#box:hover{width:500px;}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

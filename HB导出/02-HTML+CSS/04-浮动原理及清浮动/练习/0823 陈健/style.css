@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+	/*作业1*/
+	.test1_box { width:500px; height:400px; border:10px solid #cccccc; margin:100px auto;}
+	.left { width:200px; height:400px; background-color:#77aa11; float:left;}
+	.right { width:300px; height:400px;float:right;}
+	.right_1 { width:300px; height:80px; background-color:#ff9900;}
+	.right_2 { width:300px; height:160px;}
+	.right_2_1 { width:150px; height:160px; background-color:#ff6699; float:left;}
+	.right_2_2 { width:150px; height:160px; background-color:#44ffcc; float:right;}
+	.right_3 { width:300px; height:160px; background-color:#336699;}
+	
+	/*作业2*/
+	.test2_box { width:500px; height:152px; background:#cccccc; margin:100px auto; padding:15px 10px;}
+	.test2_left { width:300px; height:152px; float:left;}
+	.test2_left_1 { width:300px; height:17px; background:#336699;}
+	.test2_left_2 { width:300px; height:10px;}
+	.test2_right { width:200px; height:152px; float:right;}
+	.test2_right_1 { width:200px; height:17px; background:#ff9900;}
+	.test2_right_2 { width:200px; height:10px;}
+	
+	/*作业3*/
+	.test3_box { width:400px; height:400px; border:2px solid #000; margin:100px auto;}
+	.test3_top { width:400px; height:300px;}
+	.test3_top1 { width:296px; height:296px; border:2px solid #fff; background:#ff00ff; float:left;}
+	.test3_top2 { width:100px; height:300px; float:right;}
+	.test3_top2_green { width:100px; height:100px; background:#77cc11;}
+	.test3_top2_yellow { width:100px; height:100px; background:#ffff00;}
+	.test3_bottom { width:400px; height:100px;}
+	.test3_bottom div { display:inline-block; float:left;}
+	
+	/*作业4*/
+	.test4_box { width:299px;margin:100px auto; border:1px solid #000;}
+	.test4_left{ width:100px; float:left;}
+	.test4_right{ width:99px; float:left;}
+	.test4_i { height:99px; border-right:1px solid #000; border-bottom:1px solid #000; background:#ffffcc;}
+	.test4_r { height:99px; border-right:1px solid #000; background:#ffffcc;}
+	.test4_t { height:99px; border-bottom:1px solid #000; background:#ffffcc;}
+	.test4_o { height:99px; background:#ffffcc;}
+	.clear{zoom:1;}
+	.clear:after{content:"";display:block; clear:both;}
+	
+	/*作业5*/
+	.test5_box { width:731px;margin:100px auto; border:1px solid #ccc;}
+	.test5_left{ width:61px; float:left;}
+	.test5_right{ width:60px; float:left;}
+	.test5_1 { height:100px; border-right:1px solid #ccc; background:#000;}
+	.test5_2 { height:80px; border-right:1px solid #ccc; background:#FFF;}
+	.test5_3 { height:50px; border-right:1px solid #ccc; background:#000;}
+	.test5_4 { height:130px; border-right:1px solid #ccc; background:#FFF;}
+	.test5_5 { height:50px;  background:#000;}
+	.test5_6 { height:130px; background:#FFF;}
+	.clear{zoom:1;}
+	.clear:after{content:"";display:block; clear:both;}
+	
+	
+	
+	
+

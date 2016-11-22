@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="保存"/>
+		<input type="button" value="获取"/>
+		<input type="text"/>
+		<input type="button" value="删除"/>
+		
+		<script>
+			var ainputs = document.getElementsByTagName('input');
+			
+			//数据保存
+			ainputs[0].onclick = function(){
+
+				//永久存储：数据一直存在
+				window.localStorage.setItem('value',ainputs[2].value);
+				
+				
+			}
+			
+				//数据获取
+			ainputs[1].onclick = function(){
+		
+
+				alert(window.localStorage.getItem('value'));
+			}
+			
+				//数据删除
+			ainputs[3].onclick = function(){
+
+
+				//删除所有数据
+				window.localStorage.clear();
+			
+			}
+			
+			//存储事件:数据修改获取删除，触发，触发页面是共享页面
+			window.addEventListener('storage',function(ev){
+				
+				//alert(666);
+				
+				console.log(ev.key);//获取数据改变的key
+				console.log(ev.oldValue);//旧的值
+				console.log(ev.newValue);//新值
+				console.log(ev.url);//触发当前页面改变的url
+				
+				
+			},false);
+				
+		</script>
+	</body>
+</html>

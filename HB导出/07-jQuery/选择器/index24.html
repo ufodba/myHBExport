@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+			
+			.my_c2{
+				background: blue;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+
+		<ul>
+			<li>John</li>
+			<li>Karl</li>
+			<li>Brandon</li>
+		</ul>
+		<ul>
+			<li>Glen</li>
+			<li>Tane</li>
+			<li>Ralph</li>
+		</ul>
+		
+		
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("ul li:nth-child(3)").addClass('my_c');
+			
+			$("ul li:nth-last-of-type(1)").addClass('my_c2');
+		</script>
+	</body>
+
+</html>

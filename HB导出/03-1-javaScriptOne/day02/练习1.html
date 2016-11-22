@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="inp1" />元
+		<input type="text" id="inp2" />个
+		<input type="button" id="btn2" value="点击"/>
+		<ul id="li1"></ul>
+		
+		<script type="text/javascript">
+			var oInp1=document.getElementById('inp1');
+			var oInp2=document.getElementById('inp2');
+			var oBtn1=document.getElementById('btn2');
+			var oLi=document.getElementById('li1');
+//			var a=oInp1.value;
+//			var b=oInp2.value;
+			
+//			oBtn1.a=oInp1.value;
+//			oBtn1.b=oInp2.value;
+			oBtn1.onclick=function(){
+				oLi.innerHTML='';
+				var a=oInp1.value;
+				var b=oInp2.value;
+				var c=0;
+				var e=0;
+				var g=a*100-b
+				for(var i=0;i<b;i++){
+					if(i<b-1){
+						c=Math.floor(g*Math.random(g));
+						f=(c+1)/100;
+						e=g-c;
+						g=e;
+						oLi.innerHTML+='<li>'+f+'</li>';
+					}
+					if(i==b-1){
+						f=(g+1)/100;
+						oLi.innerHTML+='<li>'+f+'</li>';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

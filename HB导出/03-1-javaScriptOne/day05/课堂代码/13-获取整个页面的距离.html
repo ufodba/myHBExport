@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<style type="text/css">
+		
+			 *{margin: 0; padding: 0;}
+			#box3{width:300px; height:300px; border: 3px solid black;background: red; margin: 33px;}
+			#box2{width:200px; height:200px; border: 2px solid black;background: green;padding: 20px;}
+			#box1{width:100px; height:100px; border: 1px solid black;background: blue;}
+		</style>
+		<script type="text/javascript" src="../base1.js">
+			
+		</script>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：获取到整个页面的距离 
+	思考：由于可能父级有定位，所以必须递归获取，直到没offsetParent对象
+	
+	
+	
+	
+-->
+	<body>
+		<div id="box3">
+			<div id="box2">
+				<div id="box1">
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			var  oDiv1=document.getElementById('box1');
+			var len=windowOffsetLeft(oDiv1);
+			console.log(len);
+			
+			
+			
+			
+		   function  windowOffsetLeft(obj)
+		   {
+		   	   var sum=0;
+		   	   
+		   	   if(obj)
+		   	    {
+		   	    	sum -=parseInt(CSS(obj,'borderLeftWidth'));
+		   	    }
+		   	   while(obj)
+		   	   {
+		   	   	sum+=obj.offsetLeft;
+		   	   	sum+=parseInt(CSS(obj,'borderLeftWidth'));    //因为内部的所有边框都 要计算，只有最开始的对象的边框不参与计算
+		   	   	
+		   	   	obj=obj.offsetParent;   // 让obj指向obj.offsetParent，然后再计算（现在的）obj的offsetLeft;（现在的obj就是之前obj的offsetParent）
+		   	   }
+		   	   
+		   	   return  sum;
+		   }
+			
+			
+			
+			
+			function CSS(obj,attr,value)
+			{
+				if(value!=undefined)
+				{
+					obj.style[attr]=value;
+				
+				}
+				
+				//获取 最终样式
+				if(window.getComputedStyle)
+				{
+					  return   getComputedStyle(obj)[attr];
+				}else
+				{
+					
+					 return   obj.currentStyle[attr];
+				}
+
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

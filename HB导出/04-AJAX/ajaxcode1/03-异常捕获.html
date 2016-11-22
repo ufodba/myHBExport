@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			//try的代码块如果有错误，把错误信息传到catch中参数，并且执行catch当中的代码
+			//try的代码没有错误，catch不执行，执行try
+			try{
+				
+				//alert(a);//a 没有定义---出错
+//				alert(window);
+				
+				//手动抛错
+				
+				throw new Error('手动抛错');
+				
+			}catch(e){
+				//TODO handle the exception
+				alert(e);//a 没有定义
+				alert('出错出错了');
+				
+			}
+			
+		</script>
+	</body>
+</html>

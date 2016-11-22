@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			*{margin: 0;padding: 0;}
+			li{list-style: none;width: 200px;height: 50px;background: red;margin-top: 50px;}
+			#box{width: 300px;height: 300px;background: yellow;margin: 100px;}
+		</style>
+		
+	</head>
+	<body>
+		<ul>
+			<!--设置元素可以拖拽-->
+			<li draggable="true">1</li>
+			<li draggable="true">2</li>
+			<li draggable="true">3</li>
+		</ul>
+		
+		<div id="box">
+			
+		</div>
+		
+		<img src="2.png" id="img" style="display: none;"/>
+		
+		<script>
+			
+			var aLi = document.getElementsByTagName('li');
+			var odiv = document.getElementById('box');
+			var oImg = document.getElementById('img');
+			
+			for (var i = 0;i<aLi.length;i++) {
+				
+				//拖拽开始触发
+				aLi[i].ondragstart = function(ev){
+					var ev = ev || window.event;
+					this.style.background = 'blue';
+					
+					
+					//设置拖拽的样式
+//					ev.dataTransfer.effectAllowed ="copy";
+					ev.dataTransfer.effectAllowed='copy';
+					//设置拖拽的图片
+					//参数1：设置图片对象
+					//参数2：图片在鼠标中的位置
+					ev.dataTransfer.setDragImage(oImg,0,0);
+					
+					//设置数据
+					ev.dataTransfer.setData('name','lily');
+					
+					
+				}
+				
+				//拖拽中，连续触发
+				var num = 0;
+				
+				aLi[i].ondrag = function(){
+//					num++;
+//					console.log(num);
+				}
+				
+				//拖拽结束事件
+				
+				aLi[i].ondragend = function(){
+					this.style.background = 'red';
+				}
+	
+			}
+			
+			//目标元素事件
+			
+			//拖拽元素进入目标元素
+			odiv.ondragenter = function(){
+				
+				this.style.background = 'blue';
+			}
+			
+			var num = 0;
+			//拖拽元素在目标元素身上
+			odiv.ondragover = function(ev){
+				
+				//目的：drop正常触发
+				ev.preventDefault();
+				console.log(num++);
+			}
+			
+			odiv.ondragleave = function(){
+				
+				this.style.background = 'yellow';
+			}
+			
+			//在目标元素身上释放鼠标
+			//触发条件：必须在ondragover事件阻止默认事件
+			odiv.ondrop = function(ev){
+				
+//				alert('6666');
+				//通过key获取
+				alert(ev.dataTransfer.getData('name'));
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>

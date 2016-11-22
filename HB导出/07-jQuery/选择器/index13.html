@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c {
+				background: gold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<h1>Header 1</h1>
+			<p>Contents 1</p>
+			<h0>Header 2</h0>
+			<p>Contents 2</p>
+		</div>
+		
+		<h1>Header 1</h1>
+		<p>Contents 1</p>
+		<h2>Header 2</h2>
+		<p>Contents 2</p>
+
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('div :header').addClass('my_c');
+		</script>
+	</body>
+
+</html>

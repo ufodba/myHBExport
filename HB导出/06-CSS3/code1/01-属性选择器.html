@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{height: 30px;border: 1px solid black;}
+			/*属性名*/
+			/*p[name]{background:red};*/
+			
+			/*属性名跟属性值*/
+			/*p[name="alicy"]{background: yellow;}*/
+			
+			/*属性以属性值为某一个单词*/
+			/*p[name~="T"]{background: blue;}*/
+			
+			/*属性值以指定的词开头*/
+			/*p[name^="l"]{background: blue;}*/
+			
+			/*属性值以指定的词结尾*/
+			/*p[name$="y"]{background: yellow;}*/
+			
+			/*属性值中包含指定的词*/
+			
+			/*p[name*="l"]{background: red;}*/
+			
+			/*属性值以指定的值加中划线开头或者属性值就是指定的值*/
+			p[name|="abc"]{background: yellow;}
+			
+		</style>
+		
+	</head>
+	<body>
+		<p name="lily">lily</p>
+		<p name="abc Tom">abc Tom</p>
+		<p name="abc">abc</p>
+		<p name="abc-lily">abc-lily</p>
+		<p name="abcTom">abcTom</p>
+	</body>
+</html>

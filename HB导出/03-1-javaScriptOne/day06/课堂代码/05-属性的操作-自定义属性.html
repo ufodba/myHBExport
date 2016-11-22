@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-03
+	描述：自定义属性  --- 标签不显示，只用作数据存储空间
+		如： oDiv.label      label本来是没有的，是程序员添加的，只要对其赋值就表示添加 了
+		
+		自定义属性操作：1、点语法（只用于IE6~IE8）          2、Attribute方法
+-->
+	<body>
+		<div id="div1" title="hello"  kk='前端'  >aaaa</div>
+		
+		
+		<script type="text/javascript">
+			var div=document.getElementById('div1');
+			
+			var  value=div.getAttribute('kk');
+			console.log(value);
+			
+		</script>
+	</body>
+</html>

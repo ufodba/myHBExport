@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：子节类型：   nodeType
+		 document   9
+		 元素节点   1
+		 文本节点    3
+	
+-->
+	<body>
+		<div  id="box">123</div>
+		<!--
+        	123:为文本节点                                                3
+        -->
+		
+		<script type="text/javascript">
+			
+			
+			var   node=document.nodeType;
+			console.log(node);      //  9
+			console.log(document.doctype.nodeType);     //10
+			
+			
+			var oDiv=document.getElementById('box');			
+			console.log(oDiv.nodeType);                  //1
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

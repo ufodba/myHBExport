@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				background: green;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body style="height: 3000px;">
+		<div id="box"></div>
+
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+
+			document.onmousemove = function(ev) {
+				var ev = ev || window.event;
+				// 相对于可视区域的。
+//				console.log("x: " + ev.clientX + " ,y: " + ev.clientY);
+
+				//相对于整个页面
+				console.log("x: " + ev.pageX + " ,y: " + ev.pageY);
+//
+//								var x = ev.clientX;
+//								var y = ev.clientY;
+				var x = ev.pageX;
+				var y = ev.pageY;
+
+				box.style.left = x + "px";
+				box.style.top = y + "px";
+
+			}
+		</script>
+	</body>
+
+</html>

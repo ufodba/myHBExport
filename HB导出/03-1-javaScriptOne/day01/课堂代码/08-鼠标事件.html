@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id="box">
+			点我
+		</div>
+		
+		<script type="text/javascript">
+              var oDiv= document.getElementById('box');
+              
+              //鼠标点击事件
+              oDiv.onclick=function(){
+              	
+              	//alert(123);
+              	oDiv.style.backgroundColor='green';
+              }
+              
+              
+              //鼠标悬停
+              oDiv.onmouseover=function(){
+              	
+              	oDiv.style.backgroundColor='red';
+              }
+              
+              //鼠标离开
+              oDiv.onmouseout=function(){
+              	
+              	oDiv.style.backgroundColor='blue';
+              }
+            
+             
+             
+             //当双对应的事件发生时，就会执行对应的函数;
+             
+             //函数结构
+            // function(){
+            // 	事件发生时,执行的处理;
+            // }
+              
+		</script>
+	</body>
+</html>

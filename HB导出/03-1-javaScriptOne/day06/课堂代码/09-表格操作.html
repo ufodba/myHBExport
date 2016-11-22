@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="base.js" ></script>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：点语法获取元素属性值和添加表格行
+	点语法获取元素属性值操作：  表格元素对象.tBodies[N].rows[y].cells[x].innerHTML
+	添加操作：  
+		1、数据源、点击按钮
+		2、底色红黄间隔
+		3、创建行tr添加到tbody中
+		4、创建两个td赋值并添加到新创建的th中
+-->
+	<body>
+		<input  type="text"/><input type="button" value="添加"/>
+		
+		<table id="tab1" border="1">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>年龄</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>张三</td>
+					<td>19</td>
+				</tr>
+				
+				<tr>
+					<td>李四</td>
+					<td>18</td>
+				</tr>
+				
+				<tr>
+					<td>王二</td>
+					<td>20</td>
+				</tr>
+				
+				<tr>
+					<td>哈哈</td>
+					<td>25</td>
+				</tr>
+			</tbody>
+			
+		</table>
+		
+		
+	
+	
+	  <script type="text/javascript">
+	  	var  oTab=document.getElementById('tab1');
+	  //	var txt=oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[0].innerHTML;
+	  //	var txt=oTab.tBodies[0].rows[1].cells[0].innerHTML;
+	  	
+         var aInput=document.body.getElementsByTagName('input');
+     
+
+         aInput[1].onclick=function(){
+         	
+        
+          //数据准备
+          var value=aInput[0].value;
+          var arr=value.split(' ');
+          console.log(arr);
+          
+          //去空格或空对象
+          
+//        for(var i=0; i<arr.length; i++)
+//        {
+//        	if(arr[i]==''||arr[i]==' ')
+//        	{
+//        	   arr.splice(i,1);
+//        	}
+//        	
+//        }
+
+          removeArrObj(arr,' ');  
+          removeArrObj(arr,''); 
+          console.log(arr);
+          
+          
+          //创建行
+          var tr=document.createElement('tr');
+          var  cnt=oTab.tBodies[0].rows[0].cells.length;
+          
+          //创建行中的cell
+          var td0=document.createElement('td');
+          var td1=document.createElement('td');
+          
+          //初始化
+          td0.innerHTML=arr[0];
+          td1.innerHTML=arr[1];
+          
+          
+          //添加 到父级
+          tr.appendChild(td0);
+          tr.appendChild(td1);
+          
+          oTab.tBodies[0].appendChild(tr);
+        
+         }
+
+	  	
+	  </script>
+		
+	</body>
+</html>

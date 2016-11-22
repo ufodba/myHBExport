@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<progress max="100" value="20" id="pro"></progress>
+		<span id="sp">0</span>%
+		
+		<script>
+			var oP = document.getElementById('pro');
+			var ospan = document.getElementById('sp');
+			
+			
+			var timer = null;
+			
+			timer = setInterval(function(){
+				//不断累积progress的value值
+				oP.value += 10;
+				ospan.innerHTML = oP.value;
+				
+				if(oP.value == 100){
+					//清空定时器
+					clearInterval(timer);
+				}
+				
+				
+			},1000);
+			
+		</script>
+	</body>
+</html>

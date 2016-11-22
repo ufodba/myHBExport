@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+		
+	<body>
+		<script type="text/javascript">
+			var day=["日","一","二","三","四","五","六"];
+			var tda='';
+			var date1=new Date();
+			var value1=date1.getTime();//Date.new()
+			console.log(date1);
+			console.log(value1);
+			var yy=date1.getFullYear();
+			var mm=date1.getMonth()+1;
+			var dd=date1.getDate();
+			var td=date1.getDay();
+			var hh=date1.getHours();
+			var ms=date1.getMinutes();
+			var ss=date1.getSeconds();
+			for(var i in day){
+				if(td==i) tda=day[i];
+			}
+			console.log(yy+'-'+mm+'-'+dd+' 星期'+tda+' '+hh+':'+ms+':'+ss);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="text" />
+		<textarea id="ta" autofocus="autofocus"></textarea>
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('textarea:focus').addClass('my_c');
+		</script>
+	</body>
+</html>

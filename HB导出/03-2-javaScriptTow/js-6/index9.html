@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			.box1 {
+				width: 300px;
+				height: 300px;
+				background: red;
+				margin: 0 auto;
+				color: white;
+				font-size: 1.5em;
+			}
+			
+			.box2 {
+				width: 200px;
+				height: 200px;
+				background: blue;
+				color: white;
+				font-size: 1.5em;
+			}
+			
+			.box3 {
+				width: 100px;
+				height: 100px;
+				background: pink;
+				color: white;
+				font-size: 1em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box1">
+			<div class="box2">
+				<div class="box3">
+					box3
+				</div>
+				box2
+			</div>
+			box1
+		</div>
+
+		<script type="text/javascript">
+			var ds = document.getElementsByTagName('div');
+
+			for(i in ds) {
+				ds[i].onclick = function(ev) {
+					var ev = ev || window.event;
+					alert(this.className);
+					
+//					ev.cancelBubble = true;//取消冒泡。
+					ev.stopPropagation();
+				}
+			}
+			
+			document.onclick = function(){
+				alert('....');
+			}
+		</script>
+	</body>
+
+</html>

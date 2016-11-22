@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn1" value="post提交" />
+		<input type="button" name="" id="btn2" value="get提交" />
+		<script type="text/javascript">
+			var btn=document.getElementById('btn1');
+			var xhrP=null;
+			btn.onclick=function(){
+				try{
+					xhrP=new XMLHttpRequest();
+				}catch(e){
+					//TODO handle the exception
+					xhrP=ActiveXObject('Microsoft.XMLHTT');
+				}
+				xhrP.open('POST','post.php',true);
+				xhrP.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhrP.send('username=张珊&age=19');
+				xhrP.onreadystatechange=function(){
+					if(xhrP.readyState==4){
+						if(xhrP.status==200){
+							alert(xhrP.responseText);
+						}
+					}
+				}
+			}
+			
+			var btn=document.getElementById('btn2');
+			var xhrG=null;
+			btn.onclick=function(){
+				try{
+					xhrG=new XMLHttpRequest();
+				}catch(e){
+					//TODO handle the exception
+					xhrG=ActiveXObject('Microsoft.XMLHTT');
+				}
+				xhrG.open('POST','get.php?username='+encodeURI('小路')+'&age=30',true);
+				xhrG.send();
+				xhrG.onreadystatechange=function(){
+					if(xhrG.readyState==4){
+						if(xhrG.status==200){
+							alert(xhrG.responseText);
+						}
+					}
+				}
+			}
+			
+
+		</script>
+	</body>
+</html>

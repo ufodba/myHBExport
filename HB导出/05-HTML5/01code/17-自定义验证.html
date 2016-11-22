@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="text" id="text" name="user"/>
+			<input type="submit"/>
+			
+		</form>
+		<script>
+			var oinput = document.getElementById('text');
+			
+			//输入触发的事件
+			
+			oinput.oninput = function(){
+				//添加自定义验证
+				this.setCustomValidity('输入错误');
+				
+			}
+			
+			//取消自定义验证
+			oinput.onblur = function(){
+				
+				this.setCustomValidity('');
+			}
+			
+			
+			//表单验证
+			oinput.addEventListener('invalid',fn,false);
+			function fn(ev){
+				
+				var ev = ev || window.event;
+				
+				alert(this.validity.customError);//true
+				
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

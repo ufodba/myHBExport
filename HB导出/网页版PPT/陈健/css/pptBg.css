@@ -1,0 +1,61 @@
+//背景
+
+body,html {
+	margin: 0;
+	padding: 0;
+}
+
+img {border: none;}
+
+body {
+	background: black;
+}
+
+#warp {
+	width: 1024px;
+	margin: 0 auto;
+	background: white url(../img/bg/logo.png) no-repeat right top;
+	position: relative;
+}
+
+.topLine {
+	width: 922px;
+	height: 4px;
+	background: #336666;
+	position: absolute;
+	top: 20.8%;
+	left: 51px;
+}
+
+.bottomLine {
+	width: 922px;
+	height: 4px;
+	background: #336666;
+	position: absolute;
+	bottom: 8.3%;
+	left: 51px;
+}
+
+.url {
+	display: block;
+	font-size: 18px;
+	position: absolute;
+	left: 422px;
+	bottom: 2.6%;
+}
+
+.left {
+	display: none;
+	font-size: 80px;
+	color: white;
+	position: absolute;
+	left: -50px;
+}
+
+.right {
+	display: none;
+	font-size: 80px;
+	color: white;
+	position: absolute;
+	right: -50px;
+}

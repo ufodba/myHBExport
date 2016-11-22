@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="请求" id="btn"/>
+		
+		<script>
+		//获取button
+			var obtn = document.getElementById('btn');
+			//点击请求后台文件
+			obtn.onclick = function(){
+				
+				//1.创建ajax请求对象
+				var xhr = new XMLHttpRequest();
+				//2.open方法
+				//参数：参数1：请求方式 GET POST
+				      //参数2：请求url地址
+				      //参数3：同步异步  true：异步   false：同步
+				xhr.open('GET','11.txt',true);
+				
+				//3.send方法:发送数据，相对于表单中的submit
+				xhr.send();
+				
+				//4.请求状态监控
+				
+				xhr.onreadystatechange = function(){
+					/*
+					 0	（未初始化）还没有调用open()方法
+					1	（载入）已调用send()方法，正在发送请求
+					2	（载入完成）send()方法完成，已收到全部响应内容
+					3	（解析）正在解析响应内容
+					4	（完成）响应内容解析完成，可以在客户端调用了
+
+					 * */
+					//xhr.status:请求资源的状态码  200 成功   404 资源不存在
+					//判断是否请求完成
+					if(xhr.readyState==4 && xhr.status==200){
+						
+						console.log('success');
+						//获取到后台数据内容
+						alert(xhr.responseText);
+						
+						
+					}else{
+						alert(xhr.status);
+					}
+					
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

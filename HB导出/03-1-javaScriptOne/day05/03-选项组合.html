@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>6000</li>
+			<li>4000</li>
+			<li>2000</li>
+			<li>1000</li>
+		</ul>
+		<ul id="ul2">
+			<li>南山</li>
+			<li>福田</li>
+			<li>罗湖</li>
+			<li>龙华</li>
+		</ul>
+		<ul id="ul3">
+			<li>三房两厅</li>
+			<li>两房一厅</li>
+			<li>一房一厅</li>
+			<li>独立单间</li>
+		</ul>
+		<!--<div id="div1">
+			
+		</div>-->
+	</body>
+	<script type="text/javascript">
+		var aUl=document.getElementsByTagName('ul');
+		for (var i=0;i<aUl.length;i++) {
+			addDiv(aUl[i]);
+		}
+		function addDiv(obj){
+			var aLi=obj.getElementsByTagName('li');
+			var oDiv=null;
+			for (var i=0;i<aLi.length;i++) {
+				aLi[i].index=i;
+				aLi[i].onclick=function(){
+					if(!oDiv){
+						oDiv=document.createElement('div');
+						oDiv.innerHTML=this.innerHTML;
+						document.body.appendChild(oDiv);
+					}
+					else{
+						oDiv.innerHTML=this.innerHTML;
+					}
+				}
+			}
+		}
+	</script>
+</html>

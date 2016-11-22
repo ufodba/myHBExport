@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			var a=['a','b'];
+			var b=12;
+			//方法三的兼容操作
+			if(typeof Array.isArray==="undefined" ){
+				Array.isArray=function(arg){
+					return Object.prototype.toString.call(arg)==="[object Array]";
+				}
+			}
+			//一、错误
+			console.log(typeof a);
+			//二、正确但是IE兼容性不好
+			console.log(a instanceof Array);
+			//三、完美
+			console.log(Array.isArray(a) );
+			//测试兼容性
+			console.log(window.innerHeight );
+		</script>
+	</body>
+</html>

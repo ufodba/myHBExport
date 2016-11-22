@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas width="500px" height="500px" id="can">
+			浏览器不兼容时显示
+		</canvas>
+		
+		<script type="text/javascript">
+			var can = document.getElementById('can');
+			var cax = can.getContext('2d');
+			can.style.border='1px solid black';
+			var num=0;
+			var num1=0;
+			var t1 = setInterval(function(){
+				cax.clearRect(num,num,40,40)
+				num+=10;
+				cax.fillRect(num,num,40,40);
+				if(num>450){
+					clearInterval(t1);
+				}
+			},100);
+			
+			var t2 = setInterval(function(){
+				cax.clearRect(num1-1,80-1,42,42)
+				num1+=10;
+				cax.beginPath();
+				cax.save();
+				cax.rect(num1,80,40,40);
+				cax.stroke();
+				cax.closePath();
+				cax.fill();
+				cax.restore();
+				if(num1>450){
+					clearInterval(t2);
+				}
+			},100);
+
+			
+		</script>
+	</body>
+</html>

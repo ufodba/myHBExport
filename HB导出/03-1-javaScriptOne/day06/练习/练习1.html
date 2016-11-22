@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+html{overflow-x: hidden;}
+
+ul{ position:fixed; right:0; top:50%; margin-top:-30px;}
+ul li{ width:20px; height:20px; background:white; border-radius:50%; margin:5px; cursor:pointer;}
+ul li.active{ background:red;}
+</style>
+
+</head>
+
+<body>
+    
+<div>11111111111</div>
+<div>22222222222</div>
+<div>33333333333</div>
+<div>44444444444</div>
+<div>55555555555</div>
+
+
+<ul>
+	<li class="active"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+	var aDiv = document.getElementsByTagName('div');
+	var aLi  = document.getElementsByTagName('li');
+	
+	var arr = ['yellow', 'gray', 'black', 'green', 'blue'];
+	
+	//1. 页面宽度
+	for (var i=0; i<aDiv.length; i++) {
+		aDiv[i].style.width = viewWidth()+'px';
+		aDiv[i].style.height = viewHeight()+'px';
+		aDiv[i].style.background = arr[i];
+	}
+	
+	//2. 跳转页面
+	for (var i=0; i<aLi.length; i++) {
+		aLi[i].index = i;
+		
+		aLi[i].onclick = function(){
+			//初始化:active
+			for (var i=0; i<aLi.length; i++) {
+				aLi[i].className='';
+			}
+			this.className = 'active';
+			
+			//跳转那个页面
+			setScrollY(this.index*viewHeight());
+		};
+	}
+	
+	//3. 滚动页面
+	window.onscroll = function(){
+		var index = Math.floor((getScrollY()+viewHeight()/2) / viewHeight());
+		
+		for (var i=0; i<aLi.length; i++) {
+				aLi[i].className='';
+		}
+		aLi[index].className = 'active';
+		
+	};
+	
+	
+	function viewWidth(){
+		return document.documentElement.clientWidth;
+	};
+	function viewHeight(){
+		return document.documentElement.clientHeight;
+	};
+	function getScrollY(){
+		return window.pageYOffset || document.documentElement.scrollTop;
+	};
+	function setScrollY(num){
+		return window.pageYOffset = document.documentElement.scrollTop = num;
+	};
+	
+
+</script>
+</body>
+</html>

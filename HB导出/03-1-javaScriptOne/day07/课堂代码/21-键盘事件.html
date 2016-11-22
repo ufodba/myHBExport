@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：键盘事件
+	
+	document.onkeydown: 键盘按下
+	document.onkeyup  : 键盘抬起
+	如果元素可以获取光标，那么是可以加键盘事件. 不能获取光标的标签，就给document加
+			
+		event对象: keyCode(键盘键值, 可检测键盘的每一个按键)			
+			键盘操作中有3个特殊按键(真、假):
+			ctrlkey  shiftkey  altkey 
+			
+	测试：回去车键判断 		
+-->
+	<body>
+		
+		<script type="text/javascript">
+			window.onkeydown=function (ev){
+				ev=ev||window.event;
+				
+				console.log(ev.keyCode);  //所有按键的值
+				
+				if(ev.shiftKey)
+				{
+					console.log('shift');
+				}
+				
+				if(ev.ctrlKey)
+				{
+					console.log('ctrlKey');
+				}
+				
+				if(ev.altKey)
+				{
+					console.log('altKey');
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

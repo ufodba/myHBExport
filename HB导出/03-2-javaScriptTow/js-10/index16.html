@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			/*
+			 * lichao@126.com
+			 * 一串字符、数字、下划线 @ 一串字符、数字 .一串字符
+			 * \w+              @ [a-z0-9]+ \.[a-z]{2,3}
+			 */
+			
+			var re = /^\w+@[a-z0-9]+\.[a-z]{2,3}$/g;
+			var str = '中国人lichao@126.com哈哈';
+			alert(re.test(str));
+			
+		</script>
+	</body>
+</html>

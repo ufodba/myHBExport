@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="text1" rows="10" cols="50"></textarea>
+		<button id="btn">过滤</button>
+		<textarea id="text2" rows="10" cols="50"></textarea>
+		
+		<script type="text/javascript">
+			var t1 = document.getElementById('text1');
+			var t2 = document.getElementById('text2');
+			var btn = document.getElementById('btn');
+			
+			btn.onclick = function(){
+				var t1Str = t1.value;
+				var re = /难民|移民|李克强/g;
+				var newStr = t1Str.replace(re,'**');
+				t2.value = newStr;
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+		
+		
+	</body>
+</html>

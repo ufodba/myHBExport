@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+body{font-family: "微软雅黑",sans-serif;}
+.navbar-default .navbar-brand{ font-size: 30px; color:#40D2B1; font-weight: bold; height: 70px; line-height: 35px;}
+.navbar-default .navbar-nav>li>a{height: 70px; line-height: 35px; font-size: 16px; font-weight:bold ;}
+.navbar-default .navbar-toggle{ margin-top: 15px;}
+.navbar-default{ background-color: #ffffff; box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.25);}
+.navbar-default .navbar-toggle .icon-bar{background-color: #1C9982;}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{background-color:#40D2B1 ;}
+
+/*home start*/
+#home{ background: url(../img/home-bg.jpg) no-repeat ; background-size: cover; color: #fff; text-align: center;}
+.lvjing{ background: rgba(0,0,0,0.7); padding: 70px 0px;} 
+#home h1{ font-weight: bold; margin-top:60px ; margin-bottom: 30px;}
+#home p{ line-height: 20px;}
+#home img{ margin-top: 30px;}
+
+/*home end*/
+
+/*home1 start*/
+.jz{text-align: center;padding-top: 50px;padding-bottom: 50px;}
+.jz h2{font-weight: bold;}
+#home1 .col-md-4:hover{
+	 background: #f1f1f1;
+    box-shadow: 1px 1px 4px #ccc;
+
+}
+/*home1 end*/

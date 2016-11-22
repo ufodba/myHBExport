@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body style="height: 3000px;">
+		
+		
+		<script type="text/javascript">
+			
+			
+			document.onclick = function(ev){
+				var ev = ev || window.event;
+				// 相对于可视区域的。
+				console.log("x: "+ev.clientX+" ,y: "+ev.clientY);
+				
+				//相对于整个页面
+				console.log("x: "+ev.pageX+" ,y: "+ev.pageY);
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			body{height: 2000px;}
+		</style>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：对象事件  window.event
+
+	1、event对象: 连接事件与事件细节的桥梁
+	2、 事件:  onclick  onmouseover  onfocus
+	3、事件细节: 键盘键值、鼠标坐标、阻止默认行为 等 
+	4、IE下都有window.event， event对象必须出现在事件函数中
+	5、标准浏览器下（只有IE6~IE8是没有）: 事件函数的第一个参数作为event对象
+	6、鼠标事件：鼠标位置  clientX  clientY (鼠标坐标相对于可视区)
+	7、pageX  pageY(鼠标坐标相对于整个页面， IE6~8不支持该方法)
+			
+-->
+	<body>
+	   
+	    <script type="text/javascript">
+	    	
+	    	document.onclick=function(ev){
+	    		
+	    		console.log(window.event);   //IE   firefox不可以使用
+	    	
+	    	     console.log(ev);    //标准
+	    	    
+	    	    
+//	    	   //兼容
+//	    	  ev=ev || window.event;    
+//	    	   console.log(ev);
+//	    	   
+//	    	   //鼠标
+//	    	   console.log(ev.clientX); 
+//	    	   console.log(ev.clientY);
+//	    	   
+//	    	   
+//	    	   console.log(ev.pageX); 
+//	    	   console.log(ev.pageY);
+	    	   
+	    	}
+	    </script>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box0 {display:inline-block;width: 70px; height: 160px;border: #000 2px solid; float: left;position: relative;}
+			.box1,.box2,.box3,.box4,.box5,.red1 {background-color:none;width: 300px; height: 350px;border: #000 2px solid; background: #fff; float: left; margin-left: 10px;position: absolute;display: none;}
+			.box0 .red2 {background-color: red;}
+			#box1 {display: inline-block;}
+			.boxB {width: 250px; height: 300px;background: #666666;margin: 10px 25px 0 25px;}
+			.tow_1 {margin: 3px 7px;}
+			.tow_2 {margin: 10px 0 0 20px;}
+		</style>
+	</head>
+	<body>
+		<div id="box0" class="box0">
+			<input class="tow_1" type="button" value="Tab1" /><br />
+			<input class="tow_1" type="button" value="Tab2" /><br />
+			<input class="tow_1" type="button" value="Tab3" /><br />
+			<input class="tow_1" type="button" value="Tab4" /><br />
+			<input class="tow_1" type="button" value="Tab5" /><br />
+		</div>
+		<div id="box1" class="box1">
+			<div class="boxB" ></div>
+			<input class="tow_2" type="button" value="Tab1_1" />
+			<input class="tow_2" type="button" value="Tab1_2" />
+			<input class="tow_2" type="button" value="Tab1_3" />
+		</div>
+		<div id="box2" class="box2">
+			<div class="boxB"></div>
+			<input class="tow_2" type="button" value="Tab2_1" />
+			<input class="tow_2" type="button" value="Tab2_2" />
+			<input class="tow_2" type="button" value="Tab2_3" />
+		</div>
+		<div id="box3" class="box3">
+			<div class="boxB"></div>
+			<input class="tow_2" type="button" value="Tab3_1" />
+			<input class="tow_2" type="button" value="Tab3_2" />
+			<input class="tow_2" type="button" value="Tab3_3" />
+		</div>
+		<div id="box4" class="box4">
+			<div class="boxB"></div>
+			<input class="tow_2" type="button" value="Tab4_1" />
+			<input class="tow_2" type="button" value="Tab4_2" />
+			<input class="tow_2" type="button" value="Tab4_3" />
+		</div>
+		<div id="box5" class="box5">
+			<div class="boxB"></div>
+			<input class="tow_2" type="button" value="Tab5_1" />
+			<input class="tow_2" type="button" value="Tab5_2" />
+			<input class="tow_2" type="button" value="Tab5_3" />
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		var arr=[]; //标签页的div
+		for(var i=0;i<6;i++){
+			 arr[i]='oBox'+i;
+		}
+		arr[0]=document.getElementById('box0');
+		for(var i=1;i<6;i++){
+			arr[i]=document.getElementById('box'+i+'');
+		}
+		var oArr=[];                    //各个input的
+		for(var i=0;i<6;i++){
+			
+			oArr[i]=arr[i].getElementsByTagName('input');
+		}
+		var oDiv=document.getElementsByClassName('boxB');
+		console.log(oDiv.length);
+		for(var j=0;j<5;j++){
+			oArr[0][j].index=j;
+			oArr[0][j].onclick=function(){
+				for(var i=1;i<6;i++){
+					arr[i].style.display='none';
+					oArr[0][i-1].style.cssText='background-color:none';
+				}
+				this.style.backgroundColor='red';
+				oDiv[this.index].innerHTML='tab'+(this.index+1)+'';
+				arr[this.index+1].style.display='inline-block';
+			}
+		}
+		
+		for(var j=0;j<3;j++){
+			for(var i=1;i<6;i++){
+			oArr[i][j].a=i;
+			oArr[i][j].b=j;
+			oArr[i][j].onclick=function(){
+				for(var j=0;j<3;j++){
+					for(var i=1;i<6;i++){
+						oArr[i][j].style.cssText='background-color:none';
+					}
+				}
+				oDiv[this.a-1].innerHTML='tab'+this.a+'_'+(this.b+1)+'';
+				this.style.backgroundColor='blue';
+				}
+			}
+		}
+		
+	</script>
+</html>

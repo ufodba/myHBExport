@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bar{
+				width: 100px;
+				height: 200px;
+			}
+			#bar>h1{
+				height: 50px;
+				background: red;
+			}
+			#bar>p{
+				height: 150px;
+				background: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			
+		</div>
+		
+
+		<script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$('#box').load('/data.txt #bar');
+		</script>
+	</body>
+
+</html>

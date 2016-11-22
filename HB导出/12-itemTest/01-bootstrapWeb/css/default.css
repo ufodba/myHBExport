@@ -1,0 +1,188 @@
+@charset "utf-8";
+/*reset start*/
+body{ font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+body,html {
+	height: 100%; 
+}
+
+/*reset end*/
+/*nav start*/
+.navbar-default .navbar-brand {
+    color: #40D2B1; font-size: 30px; height: 70px; line-height: 35px; font-weight: bold;
+}
+.navbar-default .navbar-toggle{margin-top: 15px;}
+.navbar-default .navbar-toggle .icon-bar {
+	
+    background-color: #1C9982;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #40D2B1;
+}
+.navbar-default  .navbar-nav > li > a {
+   /*height: 70px;*/ line-height: 35px; font-size:16px; font-weight: bold;
+}
+.navbar-default{background-color: #fff; box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.25); }
+.nav.navbar-nav.navbar-right li {
+	border-bottom: 1px aquamarine solid;
+}
+/*nav end*/
+/*home start*/
+/*background  如果要有背景图片的话，先显示图片*/
+#home{background: url(../img/home-bg.jpg) ; background-size:cover;margin-top: 70px; text-align: center; color: #fff;}
+.lvjing{background: rgba(0,0,0,0.6); width:100%; height:100%; padding: 90px 0;}
+#home h1{ margin-bottom: 30px; font-weight: bold;}
+#home img{ margin-top: 30px;}
+/*home end*/
+.sectionMargin {
+	padding-top: 90px;
+} 
+.contentH {
+	padding: 200px 0;
+}
+
+/*all start*/
+.sxMarginB {
+	margin-bottom: 20px;
+}
+.rowMargin {
+	margin-top: 50px;
+}
+
+.iconBox {
+	padding: 0 13px;
+	border-radius: 50%;
+	background: #40d2b1;
+	line-height: 40px;
+	text-align: center;
+	color: white;
+}
+
+.imgAlign {
+	width: 100%;
+	padding: 0;
+}
+/*all en*/
+
+/*forum start*/
+
+.forumImgAlign {
+	margin: 0 auto;
+}
+.forumContenAlign h3 {
+	font-weight: bold;
+}
+.forumH {
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.sxMarginB:hover {
+	background: gainsboro;
+}
+/*forum end*/
+/*webDevelop start*/
+.webDevelopImg {
+	width: 100%;
+	padding: 0 65px;
+}
+/*webDevelop end*/
+/*newCourse start*/
+#newCourse {
+	background: #f8f8f8;
+}
+.btnStudy {
+	padding: 10px 55px;
+	color: #40d2b1;
+	border: 1px solid #40d2b1;
+	background: white;
+	margin: 0px auto;
+}
+.row .col-md-3 {
+	margin-top: 20px;
+}.btnBox {
+	width: 100%;
+	padding: 6px 0 8px 0;
+	background: white;
+}
+.btnStudy:hover {
+	color: white;
+	background: #40d2b1;
+}
+/*newCourse end*/
+
+/*moblieAPP start*/
+.contentH5 {
+	padding: 150px 0;
+}
+
+.btnDownLoad {
+	background: #40d2b1;
+	width: 100%;
+	padding: 8px 0;
+	border: none;
+	color: white;
+}
+.colBtnPadding {
+	padding: 0 5px;
+}
+.marginBottom {
+	margin-bottom: 20px;
+}
+.btnDownLoad:hover {
+	background: #00D1A0;
+}
+/*moblieAPP end*/
+
+/*contact start*/
+.imgBg {
+	/*margin-top: 70px;*/
+	background: url(../img/contact-bg.png);
+	background-size: cover !important;
+	color: white;
+}
+.contacHLineH1 {
+	font-family: "微软雅黑";
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+.contacPLineH1 {
+	line-height: 28px;
+}
+.contacPLineH2 {
+	line-height: 40px;
+}
+form .row {
+	margin-top: 20px;
+}
+
+.inputSubmit {
+	background: #40d2b1;
+	border: none;
+}
+.inputWH {
+	width: 100%;
+	padding: 18px 10px;
+	margin: 0;
+	color: black;
+}
+.inputWHSubmit {
+	width: 100%;
+	padding: 18px 10px;
+	margin: 0;
+	color: white;
+}
+.inputSubmit:hover {
+	background: #00D1A0;
+}
+/*contact end*/
+
+/*foot start*/
+.foot {
+	text-align: center;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+.footLineH {
+	display: block;
+	color: black;
+}
+/*foot end*/

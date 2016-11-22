@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" />
+		<input type="button" value="留言" />
+		<ul id="ul1">
+		</ul>
+	</body>
+	
+	<script type="text/javascript">
+		var aInput=document.getElementsByTagName('input');
+		var oUl=document.getElementById('ul1');
+		var index=0;
+		aInput[1].onclick=function(){
+				var li=document.createElement('li');
+				li.innerHTML=aInput[0].value;
+				oUl.appendChild(li);
+				var aLi=oUl.getElementsByTagName('li');
+				oUl.insertBefore(li,aLi[0]);
+				index++;
+				if(index>5){
+					oUl.removeChild(aLi[5]);
+				}
+		}
+	</script>
+</html>

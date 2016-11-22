@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+		</style>
+	</head>
+
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：浏览器BOM
+	1、浏览器滚动条宽：   window.innerWidth
+	2、浏览器滚动条高：   window.innerHeight     IE6~IE8不支持
+	3、可视宽度：clientWidth                   不包含滚动条
+	
+-->
+	<body style="height: 2000px;">
+
+     
+
+
+
+	<script type="text/javascript">
+		
+		
+		//滚动时，有延迟
+		console.log(document.documentElement.clientWidth);  //document的可视区宽度
+		console.log(document.documentElement.clientHeight); 
+		
+		console.log(document.documentElement.offsetWidth);  //document的大小
+		console.log(document.documentElement.offsetHeight); 
+		
+		
+		console.log(window.innerWidth);  //流动条
+		console.log(window.innerHeight);
+	</script>
+		
+	</body>
+</html>

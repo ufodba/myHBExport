@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--canvas：申请一块绘制区域-->
+		<!--画布默认的宽：300px 高度：150px，不能通过css设置宽高-->
+		<canvas width="400" height="400" id="ca">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+			//获取画布
+			var oc = document.getElementById('ca');
+			var ctx = oc.getContext('2d');//绘制场景：只支持2d场景
+			
+			
+			ctx.fillStyle = 'red';
+			//调用旋转，位移，缩放复杂变换，保存画布的状态
+			ctx.save();//保存路径，画布当前的状态
+			//开启路径
+			ctx.beginPath();
+			//指定一个新的目标点(x,y)
+			ctx.moveTo(10,10);
+			//指定目标点 (x,y),连接上一个目标点跟当前目标点
+			ctx.lineTo(100,100);
+			ctx.lineTo(120,50);
+//			ctx.lineTo(10,10);
+			//闭合路径:最后指定的目标点跟起始的目标点之间连线
+			ctx.closePath();
+			
+			//绘制路径线
+			ctx.fill();
+			//恢复路径
+			ctx.restore();
+			
+			
+			ctx.fillStyle = 'blue';
+			ctx.save();
+			ctx.beginPath();
+			ctx.moveTo(10,110);
+			ctx.lineTo(100,200);
+			ctx.lineTo(120,150);
+			ctx.closePath();
+			//填充样式绘制路径
+			ctx.fill();
+			ctx.restore();
+			
+		</script>
+	</body>
+</html>

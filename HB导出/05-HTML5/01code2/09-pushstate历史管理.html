@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="随机"/>
+		<div id="box"></div>
+		
+		<script>
+			
+			var obtn = document.getElementById('btn');
+			var odiv = document.getElementById('box');
+			
+			
+			
+			obtn.onclick = function(){
+				
+		
+				//7位随机数    36
+			
+			var arr = getRandom(7,36);
+			
+			//alert(arr); 11,21...
+			
+			odiv.innerHTML = arr;
+			
+			//参数1：状态
+			//参数2：title（不用）
+			//参数3：url后面
+			history.pushState(arr,'',arr);
+			
+			//取出历史管理状态
+			window.onpopstate = function(){
+				
+				odiv.innerHTML = event.state;
+			}
+			
+			
+			//生成随机数的函数
+			function getRandom(count,num){
+				
+				var newArr = [];
+				
+				//循环生成7个随机数
+				for(var i = 0;i<count;i++){
+					
+					var random = Math.floor(Math.random()*num+1);
+					
+					newArr.push(random);
+				}
+				
+				return newArr;
+			}
+			
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		//视频属性获取必须等视频资源加载完之后才能使用
+			window.onload = function(){
+				
+				var ov = document.getElementById('vd');
+				//视频总时间,单位秒
+				console.log(ov.duration);
+				//设置播放的时间
+				ov.currentTime = 20;
+				//当前播放时间
+				console.log(ov.currentTime);
+				
+				//音量
+				console.log(ov.volume);
+				//静音
+				console.log(ov.muted);
+				//当前资源
+				console.log(ov.currentSrc);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<video id="vd" src="Intermission-Walk-in_512kb.mp4"  controls="controls">
+			温馨提示：您的浏览器不支持音视频
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+	</body>
+</html>

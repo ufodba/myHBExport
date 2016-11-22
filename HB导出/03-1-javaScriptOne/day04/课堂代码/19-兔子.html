@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+		<script type="text/javascript">
+			
+			//func(n)=func(n-1)+func(n-2);   //第N天
+
+			function  func(n)
+			{
+				var  num=0;
+				if(n==1||n==2)
+				{
+					return  1;
+				}
+				
+				num=func(n-1)+func(n-2);
+				return num;
+			}
+			
+			console.log(func(7));
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

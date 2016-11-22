@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+		<script type="text/javascript">
+			
+			var str='abc';
+			
+			//1、拆分			
+			//var arr=str.split();  // ["abc"]
+			var arr=str.split('');  //  ["a", "b", "c"]
+			console.log(arr);
+			
+			
+			//、2拆分
+			var str1='a+b+cd';
+			var arr1=str1.split('+');  //  ["a", "b", "cd"]
+			console.log(arr1);		
+			
+			
+			//合并
+			var  dat=["a","b", " ","cd"];
+			var str2=dat.join();
+			console.log(str2);     //‘a,b,cd’
+			
+			var str3=dat.join('');
+			console.log(str3);     //’abcd‘
+			
+			
+			var str4=dat.join('+');
+			console.log(str4);     //’a+b+cd‘
+
+
+
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

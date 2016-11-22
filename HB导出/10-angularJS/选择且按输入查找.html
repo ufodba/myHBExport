@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<input type="text" ng-model="sc" />
+		<select ng-model="searchItem" >
+			<option value="id">学号</option>
+			<option value="age">年龄</option>
+		</select>
+		<button ng-click="search()">查找</button>
+		<h1>{{ searchItem+':'+searchContent }}</h1>
+		<table border="1">
+			<tr>	
+				<th>学号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>籍贯</th>
+			</tr>
+			<tr hello id="search" ng-repeat="obj in students | filter:{'age':searchContent}">
+				<th>{{obj.id}}</th>
+				<td>{{obj.name}}</td>
+				<td>{{obj.age}}</td>
+				<td>{{obj.city}}</td>
+			</tr>
+		</table>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			
+			app.controller('myController', function($scope) {
+				$scope.sc = '';
+				$scope.searchItem='age';
+//				app.directive('hello', function() {
+//					return {
+//							restrict: 'A',
+//							template: '<tr id="search" ng-repeat="obj in students | filter{'+$scope.searchItem+':'+$scope.sc+'}"><th>{{obj.id}}</th><td>{{obj.name}}</td><td>{{obj.age}}</td><td>{{obj.city}}</td></tr>',
+//							replace: true,
+//						};
+//				});
+				$scope.search=function(){
+					$scope.searchContent=$scope.sc;
+					
+					
+				}
+				$scope.students = [{
+					id: '2000-10-08',
+					name: '小明',
+					age: 18,
+					city: '深圳'
+				}, {
+					id: '2000-10-08',
+					name: '小芳',
+					age: 18,
+					city: '杭州'
+				}, {
+					id: '2000-10-13',
+					name: '小红',
+					age: 17,
+					city: '广州'
+				}, {
+					id: '2000-10-15',
+					name: '小白',
+					age: 19,
+					city: '上海'
+				}, {
+					id: '2000-10-16',
+					name: '小紫',
+					age: 20,
+					city: '北京'
+				}, {
+					id: '2000-10-17',
+					name: '小蓝',
+					age: 17,
+					city: '深圳'
+				}, {
+					id: '2000-10-18',
+					name: '小绿',
+					age: 16,
+					city: '武汉'
+				}, ];
+			});
+		</script>
+	</body>
+
+</html>

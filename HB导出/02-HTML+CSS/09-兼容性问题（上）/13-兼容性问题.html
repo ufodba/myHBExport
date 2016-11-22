@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{width:400px;}
+	.left{float:left;}
+	.right{width:398px;float:right;}
+	
+	/*
+		在IE6下文字溢出BUG
+		子元素的宽度和父级相差小于3px的时候
+		或者两个浮动元素中间有注释或者内嵌元素
+		
+		解决: 使用div把注释或者内嵌元素包含起来
+	*/
+</style>
+
+</head>
+
+<body>
+	<div class="box">
+    	<div class="left"></div>
+        <div> <!--IE6下文字溢出--><span></span> </div>
+        <div class="right">&darr;哪谁是一个大帅哥</div>
+    </div>
+
+</body>
+</html>

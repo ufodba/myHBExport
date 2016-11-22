@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/*li {display: block; height: 20px;}*/
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<script type="text/javascript">
+			var arLi=document.getElementsByTagName('li');
+			for (var i=0; i<arLi.length;i++) {
+				if (i%3==0) {
+					arLi[i].color='red';
+					arLi[i].style.background='red';
+				}
+				if (i%3==1) {
+					arLi[i].color='yellow';
+					arLi[i].style.background='yellow';
+				}
+				if (i%3==2) {
+					arLi[i].color='blue';
+					arLi[i].style.background='blue';
+				}
+				arLi[i].btn=true;
+				arLi[i].onclick=function (){
+					if (this.btn) {
+						this.style.background='black';
+						this.btn=false;
+					
+					} else{
+						this.style.background=this.color;
+						this.btn=true;
+					}
+				}
+				arLi[i].onmouseover=function(){
+					if (this.btn) {
+						this.style.background='green';
+					}
+				}
+				arLi[i].onmouseout=function(){
+					if (this.btn) {
+						this.style.background=this.color;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

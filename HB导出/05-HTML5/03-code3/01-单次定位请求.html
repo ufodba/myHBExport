@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			textarea{width: 500px;height: 500px;}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="请求" id="btn"/><br />
+		<textarea id="text"></textarea>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			var otext = document.getElementById('text');
+			
+			obtn.onclick = function(){
+				//单次定位
+				//参数1：请求成功回调，能够获取信息
+				//参数2：请求失败回调
+				//参数3：数据收集{json格式}
+				navigator.geolocation.getCurrentPosition(function(positon){
+					
+					otext.value += "经度：" + positon	.coords.longitude + '\n';
+					otext.value += "纬度：" + positon	.coords.latitude + '\n';
+					otext.value += "准确度：" + positon.coords.accuracy + '\n';
+					otext.value += "海拔：" + positon.coords.altitude + '\n';
+					otext.value += "时间：" + new Date(positon.timestamp) + '\n';
+					
+					
+				},function(error){
+					//失败编码  1 用户拒绝请求位置  2  尝试请求，失败    3  超时失败 
+					alert(error.code);
+				},{
+					//精准查找。默认false
+					enableHighAccuracy:false,
+					//超时时间
+//					timeout:30000,
+					//位置信息在网页中的缓存时间
+					maximumAge:2000
+					
+				})
+				
+				
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>

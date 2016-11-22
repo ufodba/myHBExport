@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul {margin: 0; padding: 0;}
+			li {list-style: none;}
+			figure {border: 1px solid black; width: 202px; float: left;margin-left: 20px;}
+			img {width: 200px; height: 250px;}
+			figcaption {border-bottom: 1px solid black;}
+			.shoppingBox {border: 1px solid black; width: 400px; height: 400px;margin-top: 20px;margin-left: 20px; clear: both; position: relative;}
+			.total {background: red; position: absolute; right: 10px;}
+			.list {border-bottom: 1px solid black;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<figure draggable="true">
+				<img src="img/img1.jpg"/>
+				<figcaption>JavaScript精选</figcaption>
+				<span>¥30</span>
+			</figure>
+			<figure draggable="true">
+				<img src="img/img2.jpg"/>
+				<figcaption>JavaScript权威指南</figcaption>
+				<span>¥20</span>
+			</figure>
+			<figure draggable="true">
+				<img src="img/img3.jpg"/>
+				<figcaption>精通JavaScript</figcaption>
+				<span>¥50</span>
+			</figure>
+			<figure draggable="true">
+				<img src="img/img4.jpg"/>
+				<figcaption>DOM操作艺术</figcaption>
+				<span>¥45</span>
+			</figure>
+		</div>
+		<div class="shoppingBox" id="shoppingBox">
+			<ul  id="shopping">
+			<!--<li class="list">
+				<span>1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>3</span>
+			</li>-->
+			
+			</ul>
+			<div class="total">¥ <span id="prices">0</span></div>
+		</div>
+		
+		<script type="text/javascript">
+		    var box=document.getElementById('box');
+			var aFigure=box.getElementsByTagName('figure');
+			var aFigcaption=box.getElementsByTagName('figcaption');
+			var aSpan=box.getElementsByTagName('span');
+			var shoppingBox=document.getElementById('shoppingBox');
+			var prices=document.getElementById('prices');
+			var shopping=document.getElementById('shopping');
+			var totalPrices=0;
+			for (var i=0; i<aFigure.length; i++) {
+				aFigure[i].ii=i;
+				aFigure[i].ondragstart = function(ev){
+					var ev = ev || window.event;
+					ev.dataTransfer.setData('name1',''+aFigcaption[this.ii].innerHTML+'');
+					ev.dataTransfer.setData('name2',''+aSpan[this.ii].innerHTML+'');
+				}
+				aFigure[i].ondragend=function(ev){
+					
+				}
+			}
+			shoppingBox.ondragover = function(ev){
+				ev.preventDefault();
+			}
+			shoppingBox.ondrop = function(ev){
+				var book=ev.dataTransfer.getData('name1');
+				var price=ev.dataTransfer.getData('name2');
+				var aLi=shopping.getElementsByTagName('li');
+				var aLiSpan=shopping.getElementsByTagName('span');
+				for (var i=0; i<aLiSpan.length; i++) {
+					if(i%3==1 && aLiSpan[i].innerHTML==book){
+						aLiSpan[i-1].innerHTML=parseInt(aLiSpan[i-1].innerHTML)+1;
+						aLiSpan[i+1].innerHTML='¥'+(parseInt(aLiSpan[i+1].innerHTML.substring(1))+parseInt(price.substring(1)));
+						totalPrices+=parseInt(price.substring(1));
+						prices.innerHTML=totalPrices;
+						console.log('11:'+totalPrices);
+						return;
+					}
+				}
+				var li=document.createElement('li');
+				li.className='list';
+				li.innerHTML='<span>1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'+book+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'+price+'</span>';
+				shopping.appendChild(li);	
+				totalPrices+=parseInt(price.substring(1));
+				console.log('22:'+totalPrices);
+				prices.innerHTML=totalPrices;
+			}
+		</script>
+	</body>
+</html>

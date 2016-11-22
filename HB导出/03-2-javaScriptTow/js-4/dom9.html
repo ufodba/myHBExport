@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box p{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<!--<p>hello</p>-->
+		</div>
+		
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			
+			var p = document.createElement('p');
+			console.log(p.nodeName+":"+p.nodeType);
+			
+			var textN = document.createTextNode('android');
+			console.log(textN.nodeName+":"+textN.nodeType);
+			
+			p.appendChild(textN);
+			box.appendChild(p);
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			
+			var json = {
+				"city": [{
+					'name': '深圳'
+				}, {
+					'name': '广州'
+				}]
+			};
+			
+			
+			var jsonStr = JSON.stringify(json);
+//			console.log(typeof jsonStr);
+//			console.log( jsonStr);
+//			
+
+			var jsonObj = JSON.parse(jsonStr);
+			console.log(typeof jsonObj);
+			console.log(jsonObj.city[0].name)
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

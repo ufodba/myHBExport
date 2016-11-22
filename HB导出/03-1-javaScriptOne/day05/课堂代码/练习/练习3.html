@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var aUl = document.getElementsByTagName('ul');
+				
+				for (var i=0; i<aUl.length;i++) {
+					addDiv(aUl[i])
+				}
+				
+				function addDiv(obj){
+					var aLi = obj.getElementsByTagName('li');
+					var oDiv = null;
+	
+					for (var i=0; i<aLi.length; i++) {
+						aLi[i].onclick = function(){
+							
+							if(!oDiv)
+							{
+								oDiv = document.createElement('div');
+								document.body.appendChild(oDiv);
+							}
+							oDiv.innerHTML = this.innerHTML;
+							
+						};
+					}
+				};
+				
+			};
+			
+		</script>
+		
+	</head>
+	<body>
+		<ul>
+			<li>6000</li>
+			<li>4000</li>
+			<li>2000</li>
+			<li>1000</li>
+		</ul>
+		
+		<ul>
+			<li>南山</li>
+			<li>福田</li>
+			<li>罗湖</li>
+			<li>龙华</li>
+		</ul>
+		
+		<ul>
+			<li>三房两厅</li>
+			<li>两房一厅</li>
+			<li>一房一厅</li>
+			<li>独立单间</li>
+		</ul>
+		
+	</body>
+</html>

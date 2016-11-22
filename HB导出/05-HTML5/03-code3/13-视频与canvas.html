@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			window.onload = function(){
+				
+				var ov = document.getElementById('vd');
+				var oc = document.getElementById('ca');
+				//设置视频的宽高
+				ov.width = ov.videoWidth;
+				ov.height = ov.videoHeight;
+				//设置画布的宽高
+				oc.width = ov.width;
+				oc.height = ov.height;
+				
+				var ctx = oc.getContext('2d');
+				
+				setInterval(function(){
+					//画布画视频
+					ctx.drawImage(ov,0,0);
+				},10);
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<video src="Intermission-Walk-in_512kb.mp4" id="vd" controls="controls">
+			温馨提示：您的浏览器不支持音视频
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+		<canvas id="ca"></canvas>
+	</body>
+</html>

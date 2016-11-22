@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div { width: 200px; margin: 100px auto;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn" value="反选" />
+			<br>
+			<input type="checkbox" id="chk1" />
+			<input type="checkbox" id="chk2" />
+			<input type="checkbox" id="chk3" />
+			<input type="checkbox" id="chk4" />
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+			var obtn=document.getElementById("btn");
+			var ochk=document.getElementsByTagName('input');
+			var a=0;
+			obtn.onclick=function () {
+				a++;
+				if(a%2) {
+					var i=1;
+					while (i<=ochk.length){
+						ochk[i].checked=true;
+						i++;
+					}
+					
+				}else{
+					var i=1;
+					while (i<=ochk.length){
+						ochk[i].checked=false;
+						i++;
+					}
+				}
+			}
+		</script>
+</html>

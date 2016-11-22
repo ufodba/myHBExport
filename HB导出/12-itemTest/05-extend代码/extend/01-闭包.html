@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>闭包</title>
+		<style>
+			#div1{width:100px; height: 50px; background-color: deeppink;}
+			p{width:100px; height: 50px; background-color: green; margin-bottom: 10px;
+			color: #fff; font-size: 20px; font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">div内容</div>
+		<p>0</p><p>1</p><p>2</p><p>3</p><p>4</p>
+		<script>
+			//1、变量作用域
+			var num =11;//全局变量
+			function fun1(){
+				alert(num);
+			}
+			//fun1();
+			
+			//点击div，让i自加，并且打印
+			//是不是闭包？     不是闭包
+			function fun2(){
+				var i=0;
+				var div1 = document.getElementById('div1');
+				div1.onclick = function(){
+					i++;
+					alert(i);
+				};
+			}
+			//fun2();
+			
+			function fun3(){
+				var num1 = 22;//局部变量
+				num2 = 33;//全局变量
+			}
+			//fun3();
+			//alert(num1);//num1等于 defind， num1是局部变量，在函数外访问不到
+			//alert(num2);//全局变量，所以可以访问
+			
+			//2、函数的外面想要调用函数里面的局部变量，需要使用闭包
+			/*
+			function fun4(){
+				var num1 = 22;
+				function inner(){
+					num1++;
+					alert(num1);
+				}
+				return inner;
+			}*/
+			//var init4 = fun4();
+			//init4();
+			//init4();
+			
+			//var init2 = fun4();
+			//init2();
+			
+			//3、闭包在数组循环中的使用
+			//p有元素的属性，但是没使用闭包
+			function init1(){
+				var oP = document.getElementsByTagName('p');
+				for(var i=0;i<oP.length;i++){
+					oP[i].index = i;//属性 
+					oP[i].onclick = function (){
+						alert(this.index);
+					};
+				}
+			}
+			//init1();
+			
+			//使用闭包来解决数组的循环 
+			//闭包  1、函数的外面想要调用函数里面的局部变量，需要使用闭包    2、我们可以使用闭包来保留某些变量的值
+			//内层变量可以访问外层变量的值
+			function init2(){
+				var oP = document.getElementsByTagName('p');
+				for(var i=0;i<oP.length;i++){
+					//添加一层闭包，使用的自执行函数匿名函数
+					(function(){
+						var temp = i;
+						oP[i].onclick = function (){
+							alert(temp);
+						};
+					})();
+				}
+			}
+			//init2();
+			//使用参数的传递，来实现的闭包
+			function init3(){
+				var oP = document.getElementsByTagName('p');
+				for(var i=0;i<oP.length;i++){
+					//添加一层闭包，使用的自执行函数匿名函数
+					(function(arg){
+						oP[i].onclick = function (){
+							alert(arg);
+						};
+					})(i);
+				}
+			}
+			init3();
+			//用普通的函数来实现的闭包
+			function init4(){
+				var oP = document.getElementsByTagName('p');
+				for(var i=0;i<oP.length;i++){
+					//添加一层闭包，使用的自执行函数匿名函数
+					function inner(){
+						var temp = i;
+						oP[i].onclick = function (){
+							alert(temp);
+						};
+					}
+					inner();
+				}
+			}
+			init4();
+			
+			
+			//闭包的使用特点：
+			/**
+			 * 1、闭包可以将内容永久的保存在内存里，所以内存消耗比较大，容易造成内存泄漏，使用闭包要谨慎
+			 * 2、闭包会在父函数的外面改变父函数的内部变量的值  ，会把内部变量的值更改，写的时候要谨慎
+			 * var  a = 10;
+			 * a = undefined;//表示变量在内存空间释放了
+			 */
+			
+		</script>
+	</body>
+</html>

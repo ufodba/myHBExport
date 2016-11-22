@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>原型继承</title>
+	</head>
+	<body>
+		<script>
+			function Animal(name){
+				this.name = name;
+			}
+			Animal.prototype.say = function(){
+				console.log('呜呜呜呜呜呜');
+			}
+			var  animal1 = new Animal('猫');
+			//animal1.say();
+			//function对  有没有“叫”的功能
+			function Dog(dogName){
+				this.dogName = dogName;
+			}
+			//继承
+			Dog.prototype = Object.create(Animal.prototype);
+			//Dog.prototype = animal1;
+			var dog1 = new Dog('泰迪');
+			dog1.say();
+			
+			
+		</script>
+	</body>
+</html>

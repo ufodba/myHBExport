@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+//			var  a = {
+//				name:'hello'
+//			};
+//			//对象引用
+//			var b = a;
+//			b.name = 'hi';
+//			alert(a.name);//hi 浅拷贝：只拷贝内容，能够改变原来的值
+//			
+			//深拷贝：拷贝内容还会拷贝新的地址，不能修改原来的值
+			//forin
+		
+		/*
+			var a = {
+				name:'hello'
+			};
+			
+			var b = {};
+			
+			for(var attr in a){
+				//遍历赋值
+				b[attr] = a[attr];
+			}
+			
+			b.name = 'hi';
+			alert(a.name);//hello
+			
+			
+			*/
+			//json新方法实现深拷贝
+			var a = {
+				name:'hello'
+			};
+			
+			//1.将json对象转成字符串
+			
+			var str = JSON.stringify(a);
+			
+			//2.将字符串转json
+			var strjson = JSON.parse(str);
+			
+			strjson.name = 'hi';
+			alert(a.name);//hello
+			
+			
+		</script>
+	</body>
+</html>

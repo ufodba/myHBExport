@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：改this的指向
+	
+	1、call方法
+		param1: show函数中this的指向
+		param2: 第二参数开始都是show函数实际参数
+		例： 被调函数名.call(param1,param2,param3);
+		
+	2、	
+		param1: show函数中this的指向
+		param2: 一个集合  []
+		没有第3个参数了
+		例：	被调函数名.apply(param1, param2);	
+	
+-->
+	<body>
+		<div id="div1">aaaa</div>
+
+
+       
+		<script type="text/javascript">
+			
+			var div=document.getElementById('div1');
+			
+			div.onclick=function(){
+				
+				//show();    //this---- >windos
+				
+				show.call(div,2,9);   //this---- >div
+				
+//				show.apply(div,[2,9])   //this---- >div
+			}
+			
+			
+			function show(a,b)
+			{
+				
+				alert(this.id);
+				alert(a);
+				alert(b);
+			}
+			
+			
+		</script>
+	</body>
+</html>

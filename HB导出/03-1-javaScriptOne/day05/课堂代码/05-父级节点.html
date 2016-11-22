@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：父级节点  parentNode
+	
+	    操作：点击，设置你节点的背影颜色（嵌套关系）
+-->
+	<body>
+		<ul>
+			<li>11111<span>点击</span></li>
+			<li>22222<span>点击</span></li>
+			<li>33333<span>点击</span></li>
+			<li>44444<span>点击</span></li>
+			<li>55555<span>点击</span></li>
+			<li>66666<span>点击</span></li>
+		</ul>
+		
+		
+		
+	<script type="text/javascript">
+		
+		var   aSpan=document.getElementsByTagName('span');
+		
+		for (var i=0; i<aSpan.length; i++) {
+			
+			aSpan[i].onclick=function(){
+				
+				this.parentNode.style.backgroundColor='red';
+			}
+		}
+		
+		
+	</script>	
+		
+		
+	</body>
+</html>

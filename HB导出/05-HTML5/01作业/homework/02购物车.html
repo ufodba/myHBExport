@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			li{list-style: none;width: 200px;border: 1px solid black;float: left;margin: 5px;}
+			img{width: 100%;height: 200px;}
+			#shopcar{border: 1px solid deepskyblue;width: 500px;height: 500px;clear: both;margin: 10px;}
+			.span1,.span2,.span3{margin-right: 50px;}
+			p{border-bottom: 1px solid black;}
+			#totalId{background: red;float: right;}
+		</style>
+		<script>
+			window.onload = function(){
+				
+				var ali = document.getElementsByTagName('li');
+				var odiv = document.getElementById('shopcar');
+				var obj = {};//存放拖拽的书本
+				
+				var onoff = true;//开关
+				var total = null;//总价标签
+				
+				for (var i = 0;i<ali.length;i++) {
+					//拖拽开始保存数据
+					ali[i].ondragstart = function(ev){
+						
+						var ev = ev || window.event;
+						var ap = this.getElementsByTagName('p');
+						//保存书名
+						ev.dataTransfer.setData('name',ap[0].innerHTML);
+						ev.dataTransfer.setData('price',ap[1].innerHTML);
+					}
+					
+				}
+				
+				//目标元素事件
+				odiv.ondragover = function(ev){
+					
+					ev.preventDefault();
+				}
+				
+				odiv.ondrop = function(ev){
+					
+					//获取书名跟价格
+					var name = ev.dataTransfer.getData('name');
+					var price = ev.dataTransfer.getData('price');//￥40
+					var aspan3= document.getElementsByClassName('span3');//price
+					
+					if(onoff){
+						//创建总价标签
+						total = document.createElement('div');
+						total.id = 'totalId';
+						total.innerHTML = '1';
+						odiv.appendChild(total);
+						onoff = false;
+					}
+					
+					
+					if(!obj[name]){
+						
+						//创建标签
+					var wrap = document.createElement('p');
+					
+					//数量
+					var span1 = document.createElement('span');
+					span1.innerHTML = 1;
+					span1.className = 'span1';
+					wrap.appendChild(span1);
+					
+					//书名
+					var span2 = document.createElement('span');
+					span2.innerHTML = name;
+					span2.className = 'span2';
+					wrap.appendChild(span2);
+					
+					//价格
+					var span3 = document.createElement('span');
+					span3.innerHTML = price;
+					span3.className = 'span3';
+					wrap.appendChild(span3);
+					
+//					odiv.appendChild(wrap);
+					odiv.insertBefore(wrap,total);
+						//保存书本到json数据
+						//name:javascript
+						obj[name] = name;
+						getTotalMoney(total,aspan3);
+					}else{
+						//obj[name] = name;
+//						alert('该书本已经添加过了');
+					//获取书本信息	
+					var aspan1 = document.getElementsByClassName('span1');//数量
+					var aspan2 = document.getElementsByClassName('span2');//name
+				
+					
+					//遍历所有的书名	
+					for(var i = 0;i<aspan2.length;i++)
+						
+						if(aspan2[i].innerHTML == obj[name]){
+							//修改数量跟价格
+							aspan1[i].innerHTML = parseInt(aspan1[i].innerHTML)+1;
+							var str = parseInt(aspan3[i].innerHTML.substring(1));
+							aspan3[i].innerHTML = '￥' +(parseInt(price.substring(1))+str);
+							
+						}
+						getTotalMoney(total,aspan3);
+					}
+					
+					//计算总价
+					function getTotalMoney(obj,money){
+						
+						var num = 0;
+						for (var i = 0;i<money.length;i++) {
+
+							num += parseInt(money[i].innerHTML.substring(1));		
+						}
+						obj.innerHTML = '￥' + num;
+					}
+					
+					
+					
+				}
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li draggable="true">
+				<img src="img/img1.jpg"/>
+				<p>javascript</p>
+				<p>￥40</p>
+			</li>
+			<li draggable="true">
+				<img src="img/img2.jpg"/>
+				<p>javascript精选</p>
+				<p>￥60</p>
+			</li>
+			<li draggable="true">
+				<img src="img/img3.jpg"/>
+				<p>DOM操作艺术</p>
+				<p>￥20</p>
+			</li>
+			<li draggable="true">
+				<img src="img/img4.jpg"/>
+				<p>javascript权威指南</p>
+				<p>￥45</p>
+			</li>
+		</ul>
+		<div id="shopcar">
+			<!--<p>
+				<span>1</span>
+				<span>name</span>
+				<span>price</span>
+			</p>-->
+		</div>
+	</body>
+</html>

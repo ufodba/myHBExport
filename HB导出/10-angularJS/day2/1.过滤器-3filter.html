@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<ol>
+			<!--<li ng-repeat="val in students | filter:'小明'"><h3>{{val}}</h3></li>-->
+			
+			<li ng-repeat="val in students | filter:{age:18,city:'深圳'}"><h3>{{val}}</h3></li>
+		</ol>
+
+		<script src="js/angular-1.3.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.students = [
+					{name:'小明',age:18,city:'深圳'},
+					{name:'小芳',age:18,city:'杭州'},
+					{name:'小红',age:17,city:'广州'},
+					{name:'小白',age:19,city:'上海'},
+					{name:'小紫',age:20,city:'北京'},
+					{name:'小蓝',age:17,city:'深圳'},
+					{name:'小绿',age:16,city:'武汉'},
+				];
+			});
+		</script>
+	</body>
+
+</html>

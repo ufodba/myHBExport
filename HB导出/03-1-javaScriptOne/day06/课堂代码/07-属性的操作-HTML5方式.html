@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-03
+	描述：自定义属性之HTML5
+	如：data-label        获取方法： 对象元素.dataset.label       data-:格式固定    
+	IE低版本不支持
+-->	
+	
+	<body>
+		<div id="div1" title="hello"  data-label='前端' >aaaa</div>
+		<img id="img1" src="images/log.png"/>
+
+		<script type="text/javascript">
+			var div =document.getElementById('div1');			
+//		console.log(div.data-label);
+		var  value=div.getAttribute('data-label');
+		console.log(value);
+		console.log(div.dataset.label);	
+		</script>
+	</body>
+</html>

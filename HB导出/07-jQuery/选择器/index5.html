@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1 .s1{
+				display: block;
+				width: 100px;
+				height: 30px;
+				background: red;
+				border: white 1px solid;
+			}
+			
+			.my_span{
+				background: blue;
+				line-height: 30px;
+				font-size: 2em;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<span class="s1">苹果</span>
+			<span class="s1">香蕉</span>
+			<span class="s1">西瓜</span>
+			<span class="s1">菌株</span>
+		</div>
+		
+		<button>btn</button>
+		
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('button').click(function(){
+				$('#box1 .s1').addClass('my_span');
+			});
+		</script>
+	</body>
+</html>

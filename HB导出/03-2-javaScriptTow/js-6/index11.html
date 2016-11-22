@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">button</button>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			/*
+			 * 重复的批定事件时，后面的会覆盖前面。
+			 */
+			btn.onclick = function(){
+				alert('2');
+			}
+			
+			btn.onclick = function (){
+				alert('1');
+			}
+			
+			
+		</script>
+	</body>
+</html>

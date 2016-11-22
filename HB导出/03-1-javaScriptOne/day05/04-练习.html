@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="base.js" type="text/javascript" charset="utf-8"></script>	  //导入外部JS文件	
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			body{height: 2000px;}
+			#img1{position: absolute; left: 0;top: 400px;}
+		</style>
+	</head>
+	<body>
+		<img src="line.gif"  id="img1"/>
+		
+		
+		
+		<script type="text/javascript">
+			var img=document.getElementById('img1');
+			
+			
+			var  offTop=windowOffsetTop(img);   //先获取定位值
+			
+			
+			document.onscroll=function(){
+				
+				//获取滚动高度
+			    var height=getScrollTop();
+			   
+			   //判断滚动高度与   定位的关系
+			   if(offTop<=height)
+			   {
+			   	   CSS(img,'top',height+'px');   //定位小于滚动时，参考滚动
+			   }else
+			   {
+			   	   CSS(img,'top',offTop+'px');  //否则 ，参考定位
+			   }
+			   
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

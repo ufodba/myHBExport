@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+
+		
+		
+	</head>
+	<body>
+		<div id="box">点击</div>
+		
+		
+		<script type="text/javascript">
+			var   oDiv=document.getElementById('box');
+			
+			//普通函数
+//			function show()
+//			{
+//				var  a=0;
+//				a++;
+//				console.log(a);
+//			}
+			
+//			function  show()
+//			{
+//				var a=0;
+//				function abc()
+//				{
+//					a++;
+//					console.log(a);
+//				}
+//				abc();
+//				abc();
+//			}
+
+
+      //局部变量，当函数执行完之后，就会被系统释放
+      //因为func指向bbb,所以show函数得不到行完成,func一直拥有bbb,
+      //资源只要还有其他资源使用它，那么它就不会被释放   func一直使用bbb
+
+			function  show()
+			{
+				var a=0;
+				function bbb()
+				{
+					a++;
+					console.log(a);
+				}
+				console.log('++++'+a);
+				return bbb;
+			}
+			
+			var func=show();
+			
+			oDiv.onclick=function(){
+				
+				//show();
+			   console.log(func);
+                func();
+			}
+			
+			var a=200;
+			
+			
+			
+		</script>
+	</body>
+</html>

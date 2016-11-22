@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<ul id="ul">
+			<li>苹果</li>
+			<li>草莓</li>
+			<li>香蕉</li>
+			<li>西瓜</li>
+		</ul>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+
+			var ul = document.getElementById('ul');
+			var box = document.getElementById('box');
+			 var obj = fistNode(ul);
+			 box.innerHTML = obj.nodeType+":"+obj.nodeName;
+			
+			
+			function fistNode(obj){
+				return obj.firstElementChild || obj.firstChild;
+			}
+			
+			function lastNode(obj){
+				return obj.lastElementChild || obj.lastChild;
+			}
+			function nextNode(obj){
+				return obj.nextElementSibling || obj.nextSibling;
+			}
+			function previousNode(obj){
+				return obj.previousElementSibling || obj.previousSibling;
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

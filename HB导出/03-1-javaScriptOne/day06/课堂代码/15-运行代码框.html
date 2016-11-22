@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述:找开新网页，并往网页窗口写入内容
+-->
+	<body>
+		<textarea id="t1">
+		</textarea>
+		<input type="button" value="运行" id="input1"/>
+		
+		
+		
+		
+	   <script type="text/javascript">
+	     var newWindow=null;
+	   
+	   	//自动调用，会被阻止
+	   //	window.open("http://www.163.com");
+	   	
+	   	//主动打开
+	   	var aInput=document.getElementById('input1');
+	   	var txt=document.getElementById('t1');
+	   	
+	   	aInput.onclick=function(){
+	   		
+	   		//window.open("http://www.163.com",'_self');  //_self:打方式 当前窗口打开
+	   		newWindow=window.open("http://www.163.com");
+	   		
+	   		//newWindow.document.write('abc');
+	   		newWindow.document.write(txt.value);  //往新窗口写入内容
+	   	}
+	   	
+
+	   </script>	
+	</body>
+</html>

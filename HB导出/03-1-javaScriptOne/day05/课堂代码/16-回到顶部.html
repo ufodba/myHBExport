@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<style type="text/css">
+		
+		   body{height: 2000px;}
+			#bb{display:none;width: 100px; height: 100px; background: red; position: fixed;right: 0;bottom: 0;}
+		</style>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：拖动滚动条时，显示返回顶部按键
+		 按下按键，滚动到0位置
+	  
+	     pageYoffset
+	     document.documentElement.scrollTop
+-->
+	<body>
+		<div id="bb">
+			
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			var  oDiv=document.getElementById('bb');
+		
+		document.onscroll=function(){
+			console.log(document.documentElement.scrollTop||window.pageYOffset);
+			var  len=document.documentElement.scrollTop||window.pageYOffset;
+			console.log(len);
+			//当滚动距离 大于100显示 ，小于100隐藏
+			if(len>100)
+			{
+				CSS(oDiv,"display",'block');
+			}else
+			{
+				
+				CSS(oDiv,"display",'none');
+			}
+
+		}
+		
+	
+	oDiv.onclick=function(){
+		
+	
+		document.documentElement.scrollTop=document.body.scrollTop=0;
+		
+		
+	}
+	
+	
+	
+	
+	
+			function CSS(obj,attr,value)
+			{
+				if(value!=undefined)
+				{
+					obj.style[attr]=value;
+				
+				}
+				
+				//获取 最终样式
+				if(window.getComputedStyle)
+				{
+					  return   getComputedStyle(obj)[attr];
+				}else
+				{
+					
+					 return   obj.currentStyle[attr];
+				}
+
+			}
+		</script>
+	</body>	
+</html>

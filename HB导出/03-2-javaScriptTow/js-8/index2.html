@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			//构造函数。（构造方法）
+			function createPerson(name,sex) {
+				var obj = new Object();
+				obj.name = name;//属性，静态特征
+				obj.sex =sex;
+				//方法， 动态特征。
+				obj.msg =function(){
+					//this 当前对象
+					alert(this.name+","+this.sex);
+				}
+				
+				
+				return obj;
+			}
+
+			var p1 = createPerson('小明','男');
+			var p2 = createPerson('小红','女');
+			var p3 = createPerson('小张','女');
+
+			console.log(p1.name);
+			console.log(p2.name);
+			console.log(p3.name);
+			
+//			p1.msg();
+			p2.msg();
+		</script>
+	</body>
+
+</html>

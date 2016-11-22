@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+		<script type="text/javascript">
+			
+			
+			var  date=new  Date(2016,11,3,18,5,12);   //未来的时间
+			var  value1=date.getTime();
+			
+			
+			var		year=date.getFullYear();  
+			var  	month=date.getMonth()+1;  
+			var  	dat=date.getDate();
+		    	var  	day=date.getDay();
+			var  	h=date.getHours();
+			var  	m=date.getMinutes();
+			var  	s=date.getSeconds();
+			
+			
+			console.log(''+year+'-'+month+'-'+dat+' '+day+' '+h+':'+m+':'+s);
+			
+			
+		var  t =setInterval(function(){
+			var  newDate=new  Date();
+		    var value2=newDate.getTime();     //获取当前时间的毫秒值
+		    var  value= value1-value2;        //相差值
+		      
+		    value=Math.floor(value/1000);    //转换为秒
+		     
+//		    var  iD=Math.floor(value/86400);   //计算天数
+//		   	value -=iD*86400;
+//		    var  ih=Math.floor(value/3600);    //小时
+//		    value -=ih*3600;
+//		    var  iM=Math.floor(value/60);      //分
+//		    var  iS=value-iM*60;               //秒
+
+            var iS=value%60;        //秒
+            value-=iS;
+            
+            var iM=value%3600/60;  
+            value-=iM*60;
+            //分
+            
+            var  ih=value%86400/3600;
+            value -=ih*3600;
+            
+           var  iD=value/86400;
+  
+			console.log(''+iD+'天'+ih+'小时'+iM+'分'+iS+'秒');
+			
+			
+		},1000);
+			
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

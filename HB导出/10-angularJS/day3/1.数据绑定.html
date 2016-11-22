@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<div ng-controller="myController">
+			<!-- 方式一  -->
+			<h1>{{num}}</h1>
+			<!-- 方式二  -->
+			<h1 ng-bind="num"></h1>
+			
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.num = 1998;
+			});
+		</script>
+
+	</body>
+
+</html>

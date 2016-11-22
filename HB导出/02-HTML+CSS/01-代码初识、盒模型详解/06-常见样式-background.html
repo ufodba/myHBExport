@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style type="text/css">
+    	#box{
+			width:500px;
+			height:200px;
+			background:blue url(icon.gif) no-repeat center center;
+			/*
+				background:
+				no-repeat repeat-x repeat-y		重复
+				50px（X轴） 100px（Y轴）
+				center	   center
+				40%		   60%	（比较少用）
+			*/	
+		}
+		
+		#bg{
+			height:1500px;
+			background:url(girl.jpg) no-repeat fixed gray;
+			
+			/*
+			background-attachment: fixed; 背景是否滚动
+			background-color: gray; 背景颜色
+			background-image: url(bg.jpg);  背景图
+			background-repeat: no-repeat; 背景图是否重复
+			background-position: center 0px; 背景图位置
+			*/
+			/*
+				复合属性: 一个属性多个属性值
+			*/
+		}
+    </style>
+
+</head>
+
+<body id="bg">
+	<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+			
+			.my_c1{
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			<li>可乐1</li>
+			<li>雪碧2</li>
+			<li>可乐3</li>
+			<li>雪碧4</li>
+			<li>可乐5</li>
+			<li>雪碧6</li>
+			<li>可乐7</li>
+			<li>雪碧8</li>
+		</ul>
+		
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			console.log($('li').length);
+			$('li:eq(0)').addClass('my_c');
+			$('li:gt(5)').addClass('my_c1');
+		</script>
+	
+	</body>
+</html>

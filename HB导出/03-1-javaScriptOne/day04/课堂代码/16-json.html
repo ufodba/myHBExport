@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var json={width:'200px',height:'300px',backgroundColor:'red'}
+			
+			
+			var oDiv=document.getElementById('box');
+			
+
+			for(var i  in json)   //i为键   直到结束
+			{
+				console.log(i);
+			    oDiv.style[i]=json[i];	
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			//内部程序调用
+			function fun1() {
+				var a = 18;
+
+				function fun2() {
+					a++;
+					console.log(a);
+				}
+
+				fun2();
+				fun2();
+				fun2();
+				fun2();
+				fun2();
+			};
+			//			fun1();
+
+			//外部调用
+			function fun1() {
+				var a = 18;
+
+				function fun2() {
+					a++;
+					console.log(a);
+				}
+
+				return fun2;
+			};
+
+			var fun3 = fun1();
+			fun3();
+			fun3();
+			fun3();
+			fun3();
+			fun3();
+			fun3();
+		</script>
+	</body>
+
+</html>

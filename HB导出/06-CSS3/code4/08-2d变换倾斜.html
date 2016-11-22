@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{width: 500px;height: 500px;border: 1px solid black;}
+			#box{width: 200px;height: 200px;margin: 100px auto;background: red;
+			transition: 2s;
+			}
+			/*倾斜：
+			 * 参数：角度deg  正：左边（上）   负：右边（下）*/
+			body:hover #box{-webkit-transform: skew(30deg,30deg);}
+			/*body:hover #box{-webkit-transform: skewX(45deg);}*/
+		</style>
+	</head>
+	<body>
+		<div id="box">2222</div>
+	</body>
+</html>

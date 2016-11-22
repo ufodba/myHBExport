@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery-ajax</title>
+	</head>
+	<body>
+		<input type="button" value="请求数据" id="bBtn"/>
+		<ul id="list"></ul>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js" ></script>
+		<script>
+			$(function(){
+				//$.ajax()访问函数  
+				//$().attr()  访问元素的属性的
+				var obBtn = $('#bBtn');
+				var oList = $('#list');
+				obBtn.on('click',function(){
+					//1、进行ajax请求
+					$.ajax({
+						type:"get",
+						url:"getNews.php",
+						async:true,
+						dataType:'json',
+						success:function(data){
+							//jquery 的ajax 返回的数据可以直接使用，不需要再进行json的解析
+							//2、回填dom
+							var  str = '';
+							for(var i=0;i<data.length;i++){
+								str+='<li><a href="#">'+data[i].title+'</a><span>'+data[i].date+'</span></li>';
+							}
+							oList.html(str);
+							
+						}
+					});
+				});
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>

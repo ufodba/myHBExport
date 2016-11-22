@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+
+		<div data-role="page" id="pageone">
+			<div data-role="main" class="ui-content">
+				<h2>页面一</h2>
+				<a href="#pagetwo">跳转到第二个页面</a>
+			</div>
+		</div>
+
+		<div data-role="page" id="pagetwo">
+			<div data-role="main" class="ui-content">
+				<h2>页面二</h2>
+				<a href="#pageone">跳转到第一个页面</a>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(document).on("pagecreate", "#pageone", function() {
+				console.log('页面一初始化数据');
+			});
+			
+			$(document).on("pagecreate", "#pagetwo", function() {
+				console.log('页面二初始化数据');
+			});
+		</script>
+
+	</body>
+
+</html>

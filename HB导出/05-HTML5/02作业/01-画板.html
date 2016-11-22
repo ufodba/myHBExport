@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+			div{width: 50px;height: 50px;float: left;}
+		</style>
+	</head>
+	<body>
+		<div style="background: red;"></div>
+		<div style="background: yellow;"></div>
+		<div style="background: blue;"></div>
+		<canvas id="ca" width="400" height="400">
+			温馨提示：浏览器不支持
+		</canvas>
+		
+		<script>
+			var oc = document.getElementById('ca');
+			var ctx = oc.getContext('2d');
+			
+			
+			var adiv = document.getElementsByTagName('div');
+			for (var i = 0;i<adiv.length;i++) {
+				
+				//点击选择颜色
+				adiv[i].onclick = function(){
+					
+					ctx.strokeStyle = this.style.backgroundColor;
+					
+				}
+			}
+			//绘制
+			
+			oc.onmousedown = function(ev){
+				
+				var ev = ev || window.event;
+				
+				ctx.beginPath();
+				//设置每一次绘制新目标点
+				ctx.moveTo(ev.pageX-oc.offsetLeft,ev.pageY-oc.offsetTop);
+				
+				//移动鼠标
+				
+				oc.onmousemove = function(ev){
+					var ev = ev || window.event;
+					ctx.lineTo(ev.pageX-oc.offsetLeft,ev.pageY-oc.offsetTop);
+					//绘制
+					ctx.stroke();
+				}
+				//鼠标弹起--绘制结束
+				oc.onmouseup = function(){
+					
+					oc.onmousemove = null;
+					
+				}
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

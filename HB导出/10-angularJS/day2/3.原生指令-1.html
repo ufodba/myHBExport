@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='app' ng-controller="myController">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+	
+		<input type="text" placeholder="text" ng-disabled="flag" />
+		<input type="password" placeholder="password" ng-disabled="flag" />
+		<input type="radio" placeholder="radio" ng-disabled="flag" />
+		<input type="checkbox" placeholder="checkbox" ng-disabled="flag" />
+		<input type="email" placeholder="email" ng-disabled="flag" />
+		<input type="submit" placeholder="submit" ng-disabled="flag" />
+		<input type="reset" placeholder="reset" ng-disabled="flag" />
+		
+		<textarea ng-disabled="flag"></textarea>
+				
+			
+		</form>
+		<div>同意.....<input type="checkbox" ng-model="flag"/></div>
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var app =  angular.module('app',[]);
+			app.controller('myController',function($scope){
+				$scope.flag = false;
+			});
+		</script>
+	
+	</body>
+</html>

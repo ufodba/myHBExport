@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+		
+			document.onclick = function(ev){
+//				console.log(ev);
+
+//				console.log(ev.clientX);
+//				console.log(ev.clientY);
+				var ev = ev || window.event;
+				
+				
+				box.innerHTML = ev.clientX+" ";
+				box.innerHTML += ev.clientY;
+			}
+		</script>
+	</body>
+</html>

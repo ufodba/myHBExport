@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+		body,#box1,#box2,#box3{
+			margin: 0;
+			padding: 0;
+		}
+		
+		#box1{
+			height: 150px;
+			width: 150px;
+			background: red;
+			padding-left: 15px;
+		}
+		#box2{
+			height: 100px;
+			width: 100px;
+			background: blue;
+			padding-left: 10px;
+			border: 5px solid white;
+			margin-left: 15px;
+		}
+		</style>
+	</head>
+
+	<body>
+		
+
+		<div id="box1" style="zoom: 1;position: absolute;">
+			<div id="box2" >
+				<div id="box3"></div>
+			</div>
+		</div>
+
+		<span id="s1">
+			
+		</span>
+
+		<script type="text/javascript">
+			var box3 = document.getElementById('box3');
+			var span = document.getElementById('s1');
+			
+			/*
+			 * 1.offsetLeft获取当前元素到左侧的偏移距离。
+			 * 2. 定位会影响到左侧目标位置 .注：标准浏览器并不会受 haslayout影响。
+			 * 3. IE 6 7会受到 haslayout影响。
+			 * 4. 定位和 haslayout影响在当前标签中时，不受影响。
+			 * 
+			 * 
+			 * 
+			 */
+
+//			console.log(box3.offsetLeft);
+
+			span.innerHTML = box3.offsetLeft;
+		</script>
+	</body>
+
+</html>

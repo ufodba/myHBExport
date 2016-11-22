@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		
+		<script type="text/javascript">
+			
+			
+			var  str='abcd';
+			
+			//转换为大写；
+			var  str1=str.toUpperCase();
+			console.log(str1);   //ABCD
+			console.log(str);    //abcd
+			
+			//转换为小写
+			var  string='ABCD';
+			var newStr=string.toLowerCase();
+			console.log(newStr);   //abcd
+			
+			
+			//  abcdef;
+//			var  str='AbCdEf';
+//			var str1=str.substring(0,3);  //前3个
+//			var str2=str.substring(3);    //后面的、
+//	
+//			str1=str1.toUpperCase();
+//			str2=str2.toLowerCase();
+//			
+//			str=str1+str2;
+//			console.log(str);
+			
+			//函数方式 
+			var  str='AbCdEf';
+			str=func(str,4);
+			console.log(str);
+			
+			
+			
+			function  func(str,index)
+			{
+				
+				var str1=str.substring(0,index);  //前3个
+				var str2=str.substring(index);    //后面的、
+		
+				str1=str1.toUpperCase();
+				str2=str2.toLowerCase();
+				
+				str=str1+str2;
+				
+				return str;			
+			}
+			
+			
+			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

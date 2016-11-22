@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;background: url(img/4.jpg) no-repeat center 0;}
+			#box {width: 300px; margin: 50px auto;display: ;}
+			span {display: block;font:bold 40px "微软雅黑"; color: white; text-align: center;margin-top: 20px;background: #b9c0d7)}
+			input {width: 300px;height: 80px;margin-top: 20px; color:#1a154f;background: #b9c0d7; border: none;text-align: center;font: 30px "微软雅黑";}
+			#bb {height: 160px;border:white solid 10px;background: #494569;color: white;padding: 10px;}
+			.tt {height: 30px;font:bold 30px "微软雅黑"; color: darkmagenta;}
+			.dd {cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>猜数字游戏</span>
+			<input class="tt" type="text" />
+			<input type="text" value="请输入对数字的猜测" />
+			<input class="dd" type="button" value="确定" />
+			<div id="bb">
+				游戏规则：<br>系统随机产生一个 0~100 之间的随机数，玩家共有10次机会去猜，系统会提示相对于真实值的高低
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		var oInput=document.getElementsByTagName('input');
+			var a=Math.floor(Math.random()*100);
+			oInput[1].value='请输入对数字的猜测';
+			oInput[1].onmouseover=function(){
+				oInput[1].value='';
+			}
+			oInput[2].onclick=function(){
+				estimate(a);
+			}
+			function estimate(k){
+				oInput[0].value='';
+				if(oInput[1].value==k){
+					oInput[1].value='恭喜，猜对了！';
+					oInput[0].value='牛逼';
+					a=Math.floor(Math.random()*100);
+				}
+				if(oInput[1].value<k){
+					oInput[1].value='小了哦！';
+					oInput[0].value='尴尬';
+				}
+				if(oInput[1].value>k){
+					oInput[1].value='大了哦！';
+					oInput[0].value='尴尬';
+				}
+			}
+		</script>
+	</body>
+</html>

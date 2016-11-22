@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：父级的方法
+	    1、插入元素  	父级元素.insertBefore(新元素, 位置元素);  （位置元素不存在，则为最后）
+	    2、删除节点   	父级元素.removeChild(子元素);
+	    3、改(创建--替换)    父级元素.replaceChild(子元素);
+	    4、appendChild, insertBefore： 不仅可以针对创建的节点，也可以针对页面已有的节点，默认都是剪切功能
+-->
+	<body>
+		<ul  id="ulK">
+			<li>0000</li>
+			<li>1111</li>
+			<li>2222</li>
+			<li>3333</li>
+			<li>4444</li>
+			<li>5555</li>
+			<li>6666</li>
+		</ul>
+		
+	<script type="text/javascript">
+		
+		var  oul=document.getElementById('ulK');
+		var  aLi=oul.getElementsByTagName('li');
+		
+		
+		//创建一个元素
+		var li=document.createElement('li');
+		li.innerHTML='kkkk';
+		
+		oul.replaceChild(li,aLi[0]);   //参数1为替换元素，  参数2为被替换元素
+
+		oul.replaceChild(aLi[2],aLi[4]);   //先剪切，后替换
+		
+		  //复制  ---插入z
+		  //复制 ---替换
+		
+		
+		
+		
+		
+		
+//		//插入一个元素
+//		var  a=document.createElement('li');
+//		a.innerHTML='aaaa';
+//		oul.insertBefore(a,aLi[3]);  //如果第2个参数不存在，则插入到最后
+//		
+//		
+//		// 删除
+//		oul=document.getElementById('ulK');
+//		aLi=oul.getElementsByTagName('li');   //重新获取
+//		
+//		for(var i=0; i<aLi.length; i++)
+//		{
+//			console.log(typeof aLi[i].innerHTML);
+//			console.log(aLi[i].innerHTML.length);
+//			
+//			
+//			if(parseInt(aLi[i].innerHTML)==5555)
+//			{
+//			  
+//			   oul.removeChild(aLi[i]);
+//			}
+//		}
+//				
+		
+		
+		
+	</script>	
+		
+	</body>
+</html>
+ 

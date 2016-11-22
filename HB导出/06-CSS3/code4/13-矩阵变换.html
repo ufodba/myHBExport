@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{width: 500px;height: 500px;border: 1px solid black;}
+			#box{width: 200px;height: 200px;margin: 100px auto;background: red;
+			transition: 2s;
+			}
+			/*矩阵函数变换
+			 *       matrixa,b,c,d,e,f)
+			 初始状态 matrix(1,0,0,1,0,0)
+			 缩放：a（x轴） d（y轴） 决定
+			 **/
+			body:hover #box{-webkit-transform: matrix(1,0,0,2,0,0);}
+		</style>
+	</head>
+	<body>
+		<div id="box">2222</div>
+	</body>
+</html>

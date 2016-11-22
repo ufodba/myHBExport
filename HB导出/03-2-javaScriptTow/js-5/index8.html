@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="height: 2000px;">
+		
+		<div id="box">
+			
+		</div>
+		
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+			
+			/*
+			 * ie6.8 不支持
+			 */
+//			box.innerHTML = "window.innerHeight: "+window.innerHeight;
+//			box.innerHTML += "window.innerWidth: "+window.innerWidth;
+			
+			/*
+			 * 支持所有浏览
+			 */
+			box.innerHTML = "clientWidth: "+document.documentElement.clientWidth;
+			box.innerHTML += "clientHeight: "+document.documentElement.clientHeight;
+
+
+
+		</script>
+	</body>
+</html>

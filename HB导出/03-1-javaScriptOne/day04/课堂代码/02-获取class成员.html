@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul  class="bg"> k
+			<li class="bg">0</li>
+			<li class="bg">1</li>
+			<li >2</li>
+			<li >3</li>
+			<li class="bg">4</li>
+			<li class="bg">5</li>
+		</ul>
+		
+		
+		
+		<script type="text/javascript">
+			//var ali=document.getElementsByClassName('bg');  //getElementsByClassName,IE8以下低本版不可使用
+			var  ali=getClassObject(document,'bg')
+			
+			for (var i=0; i<ali.length; i++) {
+				console.log(ali[i].innerHTML);
+			}
+			
+			
+			//解决兼容性问题
+           function  getClassObject(obj,sClass){
+				var  array=obj.getElementsByTagName('*');  //* 表示所有   低版本IE也可以使用
+				console.log(array.length);
+				var arr=[];  
+				for (var i=0; i<array.length; i++) {
+					if(array[i].className==sClass)
+					{
+						arr.push(array[i]);
+					}
+				}
+           	 return  arr;
+           }
+			
+			
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

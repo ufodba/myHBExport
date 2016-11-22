@@ -1,0 +1,89 @@
+
+
+
+第3天总结：
+
+一、光标事件
+二、事件的属性成员
+三、事件传递
+四、绑定事件
+五、this问题
+六、取消绑定
+七、捕获演示
+八、键盘事件
+九、右键事件
+
+
+一、光标事件
+	1、移入：onfocus
+	2、移出：onblur
+	3、自动获取光标         元素对象.focus() 
+	
+	
+二、事件的属性成员
+1、鼠标值： 	clientX  clientY    pageX    pageY
+2、键盘值： keyCode     
+
+
+三、事件（流）传递
+ 冒泡、捕获（绑定事件才有，使用较少）
+
+
+四、绑定事件
+一个事件，可以添加两个方法
+绑定事件: 不会出现该问题
+		IE6~8 : attachEvent   	
+		IE9~10: attachEvent   addEventListener
+		IE11  : addEventListener	
+		
+	    attachEvent 
+	   		parm1: 事件名字     
+	   		pram2: 函数名字
+	   		
+	   	addEventListener
+	   	    parm1: 事件名字（不加on）
+			pram2: 函数名字
+			para3: 布尔值: true-捕获阶段	  false-冒泡阶段
+
+onload两个：
+	1、同一 个script内绑定两个函数
+	2、分别在两个script内各绑定一个
+	3、在两个外部js文件中实现但名称有一定要求
+	
+
+五、this问题
+	1、call方法
+		param1: show函数中this的指向
+		param2: 第二参数开始都是show函数实际参数
+		例： 被调函数名.call(param1,param2,param3);
+		
+	2、	
+		param1: show函数中this的指向
+		param2: 一个集合  []
+		没有第3个参数了
+		例：	被调函数名.apply(param1, param2);	
+		
+
+六、取消绑定
+普通事件取消：让事件指向空（null）
+绑定取消：参数与绑定一样
+	1、removeEventListener
+	2、detachEvent
+
+七、捕获演示
+removeEventListener的第2个参数，可以设置
+
+
+八、键盘事件
+   ev.keyCode
+   ctrlkey、shiftkey、altkey
+   
+九、默认事件
+ev.preventDefault()  绑定事件
+
+return   false;   阻止事件 
+
+
+  
+十、右键事件
+oncontextMenu

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background: #333333;
+			}
+			#div {
+				margin: 90px auto;
+				padding: 100px;
+				height: 100px;
+				width: 400px;
+				font-size: 80px;
+				font-weight: 900;
+				font-family: "楷体","微软雅黑";
+				color: rgba(0, 0, 0, 0);
+				-webkit-text-stroke: 1px #000;
+				text-align: center;
+				background: url(img/1.jpg);
+				/*background: #cecece;*/
+				background-clip: text;
+				-webkit-background-clip: text;
+				/*transition: 1s;*/
+			}
+			/*#div:hover {background-position: -300px;}*/
+		</style>
+	</head>
+	<body>
+		<div id="div">滑动解锁</div>
+		<script type="text/javascript">
+			var div=document.getElementById('div');
+			var now=0;
+			var tinmer=setInterval(function(){
+				now+=1;
+				div.style.backgroundPosition=now+'px';
+			},10);
+						
+		</script>
+	</body>
+</html>

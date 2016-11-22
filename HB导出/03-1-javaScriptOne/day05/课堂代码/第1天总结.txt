@@ -1,0 +1,74 @@
+
+今天内容可分3个部分：
+一、节点操作
+二、offset操作
+三、scroll操作
+
+
+
+前置知识：
+节点：DOM
+节点获取：obj.nodetype
+一、节点操作
+1、子节点方法 （得到的是一个集合）
+    childNodes    标准IE可获取空白节点（IE6~IE8中，只获取元素节点）
+    children      只获取元素节点
+
+2、父节点
+	parentNode 
+	
+					标准IE                IE6~IE8
+	 第一个子节点：  firstElementChild、   firstChild
+	 最后一个子节点：lastElementChild、     lastChild
+	 上一个兄弟节点：previousElementSibling、previousSibling
+	 下一个兄弟节点：nextElementSibling、   nextSibling
+	 (注意：前者在IE6~IE8不支持并且只获取元素节点，后者会获取文本节点，所以设计程序时要作处理)
+	 
+	 
+3、创建节点
+    document.createElement('元素类型')；     返回元素对象
+ 	
+ 	父节点obj.appendChild(新节点)   添加节点
+    
+
+
+
+4、添加、删除、插入、替换（都是父方法）
+  添加：appendChild(obj)；     参数obj为新对象
+  删除：removeChild（obj);     参数obj为要删除的对象  
+  插入：insertBefore(obj1,obj2);     obj1插入obj2前
+  替换：replaceChild(obj1,obj2);          obj1替换obj2  
+
+
+
+二、offset操作
+1、offsetParent:  解决兼容方法：body和html都去CSS样式且元素自身加定位
+元素的定位祖先元素，如果没有则为body;     (IE6~IE7有所区别：haslayout、html有关)
+2、offsetLeft、offsetTop: 元素的边框到定位祖先元素的距离
+3、offsetWidth:可肉眼看到元素的宽度
+4、clientWidth: offsetWidth减去边框的大小
+5、getBoundingClientRect() :元素到可视范围的距离
+6、掌握获取元素到浏览器边框的距离：制作成函数，方便后期使用
+
+
+
+三、scroll操作 （低版本浏览器没有滚动）
+1、body滚动距离：
+	window.pageYOffset：    						【获取】    		<!低版本IE不支持>
+	document.documentElement.scrollTop;      	【设置+获取】  	chrome不支持(其他浏览器的方法) 
+    document.body.scrollTop                     	【设置+获取】		chrome支持(其他浏览器支持)
+        
+2、元素的滚动距离：
+   元素.scrolltop
+
+3、滚动宽度、高度：
+  scrollWidth、scrollHeight 
+
+
+
+
+练习 ：吸顶效果
+要点：
+1、元素的位置与滚动的关系
+2、下拉滚动跟随滚动(有可视空间时)  scrollTop<=定位位置，那么设置为固定值
+3、没有可视空间时，再拉，offsetTop小于scrollTop，那么offsetTop设置为scrollTop

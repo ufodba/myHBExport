@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<p>Hello</p>
+		</div>
+		<div><span>Hello again!</span></div>
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("div:has(span)").addClass("my_c");
+		</script>
+	</body>
+
+</html>

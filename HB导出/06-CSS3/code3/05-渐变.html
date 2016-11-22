@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{width: 200px;height: 200px;margin-bottom: 5px;}
+			/*给定渐变颜色：默认top*/
+			.box1{
+				background: linear-gradient(red,blue,yellow);
+				background: -webkit-linear-gradient(red,blue,yellow);
+			background: -moz-linear-gradient(red,blue,yellow);
+			/*兼容ie 1 左右渐变 0上下渐变*/
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='red',endColorstr='blue',GradientType='0');
+			}
+			/*位置：单词(一个（边），二个（角）)  角度 单位deg*/
+			.box2{background: -webkit-linear-gradient(right top,red,blue);}
+			.box3{background: -webkit-linear-gradient(45deg,red,blue);}
+			
+			/*渐变点的位置设置:百分数  像素*/
+			.box4{background: -webkit-linear-gradient(45deg,red 50%,blue 80%);}
+			
+			.box5{background: -webkit-linear-gradient(left,red 100px,blue);}
+			/*rgba设置颜色*/
+			.box6{background: -webkit-linear-gradient(left,rgba(0,255,0,0.5),blue);}
+			
+			/*背景图片结合渐变*/
+			.box7{background: -webkit-linear-gradient(rgba(0,255,0,0.5),rgba(0,255,255,0.5)),url(img/1.jpg);}
+			
+			/*重复性渐变,后面的渐变点位置决定渐变次数*/
+			.box8{background: -webkit-repeating-linear-gradient(top,red,blue 20%);}
+			/*同一个位置设置不同的颜色---》跳变*/
+			.box9{background: -webkit-linear-gradient(left,red 20%,blue 20%);}
+			/*径向渐变:默认椭圆*/
+			.box10{width:300px;background: -webkit-radial-gradient(red,blue);}
+			/*设置渐变形状*/
+			.box11{width:300px;background: -webkit-radial-gradient(center,circle,red,blue);}
+			/*重复性渐变*/
+			.box12{background: -webkit-repeating-radial-gradient(center,red,blue 10%);}
+			/*关键字控制渐变*/
+			.box13{background: -webkit-radial-gradient(contain,red,blue);}
+		
+		
+		</style>
+	</head>
+	<body>
+		<div class="box1">1</div>
+		<div class="box2">2</div>
+		<div class="box3">3</div>
+		<div class="box4">4</div>
+		<div class="box5">5</div>
+		<div class="box6">6</div>
+		<div class="box7">7</div>
+		<div class="box8">8</div>
+		<div class="box9">9</div>
+		<div class="box10">10</div>
+		<div class="box11">11</div>
+		<div class="box12">12</div>
+		<div class="box13">13</div>
+	</body>
+</html>

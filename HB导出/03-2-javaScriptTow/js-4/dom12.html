@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box1" style="position: fixed;">
+			<div id="box2" style="width: 100px;">
+				<div id="box3">
+				</div>
+			</div>
+		</div>
+
+		<span id="s1">
+			
+		</span>
+
+		<script type="text/javascript">
+			var box3 = document.getElementById('box3');
+
+			var span = document.getElementById('s1');
+
+			// 标准浏览器中offsetParent 如果没有定位那么offsetParent body。
+			// 标准浏览器中offsetParent 如果有定位那么offsetParent 定位元素。
+						 console.log(box3.offsetParent);
+
+
+			/*
+			 * 1. 在IE6、7 没有定位或者是触发haslayout的情况下，offsetParent html。
+			 * 2. 如果有 定位 或者是 触发 haslayout 那么offsetParent就是定位或者是触发haslayout 标签元素。
+			 * 3. 如果同时有定位或者是 触发 haslayout 那么遵循就近原则。
+			 * 
+			 * ！！！！！！！！注： haslayout 影响  offsetParent只在IE 6.7 下。标准浏览器并不受影响。
+			 * 
+			 */
+			span.innerHTML = box3.offsetParent.id;
+		</script>
+	</body>
+
+</html>

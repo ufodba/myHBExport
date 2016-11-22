@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<style>
+			#box {
+				font-size: 2em;
+				height: 5em;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<span>点击事件</span>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(window).on("orientationchange", function(event) {
+//				console.log(event.orientation);
+				switch (event.orientation){
+					case 'portrait':
+						console.log('竖屏');
+						break;
+					case 'landscape':
+						console.log('横屏');
+						break;
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

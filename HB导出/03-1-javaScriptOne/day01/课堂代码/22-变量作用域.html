@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+	  <script type="text/javascript">
+//	  	var  a=7;
+	  	
+	  	function show1()
+	  	{
+	  		//alert(a);
+	  	}
+	  	show1();  //7
+	  	
+	  	
+	  	function show2()
+	  	{
+	  		var a=100;	
+	  		var k=99;
+	  		//alert(a);
+	  	}
+	  	show2();   //100
+	  		  	
+	  	//alert(a);  //7
+	  	
+	  //	alert(k);   //k是局部变量，只限定义大括号范围 ,出错
+	  	
+	  
+	  var a=70;
+	    function  show3()
+	    {	
+	    	console.log('1----'+a);
+	        var a=77;
+	        console.log('2----'+a);
+	        {
+	        	console.log('3----'+a);
+	        	var a=66;
+	        	console.log('4----'+a);
+	        	{
+	        		console.log('5----'+a);
+	        		var a=55;
+	        		console.log('6----'+a);
+	        	}
+	        	console.log('7----'+a);
+	        }
+	    	console.log('8----'+a);
+	    }
+	  show3();
+	  
+	  //从show3看的问题容易产生错误，建议统一在第一个括号里这定义
+	  
+	  	    function  show4()
+	    {
+	        var a1=77;
+	        var a2=66;
+	        var a3=55;
+	        console.log('8----'+a1);
+	        {
+	        	console.log('8----'+a1);
+	        	{
+	        	 console.log('8----'+a2);
+	        	}
+	        }
+	    }
+	  show4();
+	  
+	  
+	  
+	  
+	  </script>	
+		
+		
+		
+	</body>
+</html>

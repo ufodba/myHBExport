@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-03
+	描述：路径问题    src
+	
+	1、点语法，得到的是绝对路径
+	2、Attribute方法，得到的是相对路径
+-->	
+	<body>
+		<div id="div1" title="hello"  label='前端'>aaaa</div>
+		<img id="img1" src="images/log.png"/>
+		
+
+      <script type="text/javascript">
+      	var img=document.getElementById('img1');
+      	
+      	console.log(img.src);
+      	
+      	
+      	var  value=img.getAttribute('src');
+      	console.log(value);
+      	
+      	
+      </script>
+      
+	</body>
+</html>

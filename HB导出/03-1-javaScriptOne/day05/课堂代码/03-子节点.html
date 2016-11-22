@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：子节点方法：childNodes(所有节点)   children（只获取元素节点）   length:节点个数
+	      IE6~IE8不会获取空白节点
+	  
+	      测试方法：设置子节点的背景色
+-->
+	
+	<body>
+		<ul  id="ulk">
+			<li>1111</li>
+			<li>2222</li>
+			<li>3333</li>
+			<li>4444</li>
+			<li>5555</li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			var  oUl=document.getElementById('ulk');
+			
+			//获取子节点
+			
+//			var  aNode=oUl.childNodes;
+//			
+//			console.log(aNode.length);   //查看节点个数
+//			
+//			for (var i=0;i<aNode.length; i++) {
+//				console.log(aNode[i].nodeType);
+//				
+//               setBgColor(aNode[i],'red');
+//			}
+			
+		
+			var  aNode=oUl.children;
+			
+			console.log(aNode.length);   //查看节点个数
+			
+			for (var i=0;i<aNode.length; i++) {
+				console.log(aNode[i].nodeType);
+				
+                 setBgColor(aNode[i],'red');
+			}		
+		
+		
+		function  setBgColor(obj,color)
+		{
+			   //if(obj.nodeType==1)
+                {
+				   obj.style.backgroundColor=color;
+
+                }
+			
+		}
+		
+		
+		
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,60 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			body {height: 1500px; position: relative;}
+			.masking {display: none;background: grey; opacity: 0.5;position: absolute;top: 0;left: 0; z-index:1;}
+			.login {display:none; width: 200px;height: 250px;border:black solid 1px;background: white; position: absolute; z-index:2;}
+			#close {position: absolute;right: 5px;top: 0;}
+		</style>
+		<script type="text/javascript" src="../day05/base1.js"></script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="登录" />
+		<div class="masking"></div>
+		<div class="login">
+			<span id="close">
+				X
+			</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.getElementById('btn');
+		var aDiv=document.getElementsByTagName('div');
+		var oSpan=document.getElementById('close');
+		var w=0;
+		var h=0;
+		var masking=null;
+		var login=null;
+		oBtn.onclick=function(){
+			w=windowWidth();
+			h=windowHeight();
+			CSS(aDiv[0],'width',w+'px');
+			CSS(aDiv[0],'height',h+'px');
+			CSS(aDiv[0],'display','block');
+			CSS(aDiv[1],'display','block');
+			CSS(aDiv[1],'top',(h-250)/2+'px');
+			CSS(aDiv[1],'left',(w-200)/2+'px');
+		}
+		window.onresize=function(){
+			w=windowWidth();
+			h=windowHeight();
+			CSS(aDiv[0],'width',w+'px');
+			CSS(aDiv[0],'height',h+'px');
+			CSS(aDiv[1],'top',(h-250)/2+'px');
+			CSS(aDiv[1],'left',(w-200)/2+'px');
+		}
+		window.onscroll=function(){
+			var top=document.documentElement.scrollTop|| window.pageYOffset;
+			CSS(aDiv[0],'top',top+'px');
+			CSS(aDiv[1],'top',top+(h-250)/2+'px');
+		}
+		oSpan.onclick=function(){
+			CSS(aDiv[0],'display','none');
+			CSS(aDiv[1],'display','none');
+		}
+	</script>
+</html>

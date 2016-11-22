@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<style>
+			*{margin:0;padding:0;font-size:12px;}
+			li{list-style:none}
+			.select{width:100px;float:left;margin-right:5px;position:relative;z-index:1;}
+			.select h3{cursor:pointer;font-weight:700;border:1px solid #ccc;background:#e2eff8;height:20px;line-height:20px;padding:0 5px;}
+			.select ul{display:block;background:#fff;border: 1px solid #ccc;border-top:0;border-bottom:0;display:none;position:absolute;top:22px;left:0;width:98px;z-index:2;}
+			.select ul li{border-bottom:1px solid #ccc;height:20px;line-height:20px; text-indent:6px;cursor:pointer;}
+			.select ul li.active{background:#e2eff8;}
+			.wrap{width:300px;margin:100px auto;}
+			.tst{border:1px solid #ccc;height:20px;line-height:20px; vertical-align:middle;color:#ccc;}			
+		</style>
+		<script>
+			window.onload = function(){
+				var oSel = document.getElementById('select');
+				var oH3  = oSel.getElementsByTagName('h3')[0];
+				var oUl  = oSel.getElementsByTagName('ul')[0];
+				var aLi  = oUl.getElementsByTagName('li');
+				var oInput=document.getElementById('tst');
+				
+				
+				var iNow=0;
+				var onoff = true;
+				
+				//1. 点击主题, 显示下拉菜单
+				oH3.onclick = function(ev){
+					var ev = ev || window.event;
+					oUl.style.display = 'block';
+					
+					//阻止冒泡
+					ev.cancelBubble = true;
+				};
+				document.onclick = function(){
+					oUl.style.display = 'none';
+				};
+				
+				
+				//2. 选择下拉菜单
+				for (var i=0; i<aLi.length; i++) {
+					aLi[i].index = i;
+					
+					aLi[i].onclick = function(){
+						oH3.innerHTML=this.innerHTML;	
+						oInput.focus();
+						oInput.value='';
+						
+						iNow=this.index;
+					};
+				}
+				
+				//3. 获取默认值
+				oInput.value = aLi[iNow].getAttribute('tips');
+				
+				//4. 鼠标移入和移出
+				oInput.onfocus = function(){
+					if (onoff) {
+						this.value = '';
+						onoff=false;
+					}
+				};
+				oInput.onblur = function(){
+					if (this.value=='') {
+						var title=aLi[iNow].getAttribute('tips');
+						this.value = title;
+						onoff=true;
+					}
+				};
+
+			};
+		
+		
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+		<div class="select" id="select">
+			<h3>歌曲</h3>
+			<ul>
+				<li tips="111111">歌曲</li>
+				<li tips="222222">专辑</li>
+				<li tips="333333">歌手</li>
+				<li tips="444444">歌词</li> 
+				<li tips="555555">MV</li>
+				<li tips="666666">票务</li>
+			</ul>
+		</div>
+		<input type="text" value="小苹果" class="tst" id="tst">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			//函数大白话的理解：制造了一台机器（面包），或创建一个公式
+			function show(a,b)    //a,b都形参（形式参数）  ,相当于a,b同时在这里定义
+			{
+				//功能代码
+				console.log(a);
+				console.log(b);
+				a=a+b;
+				console.log(a);
+			}
+			
+			//调用函数
+			show(2,3);  //2,3属于实参
+			
+			/*
+			  当调用函数时，函数的实参就会传给形参（复制）
+			  2--a     3---b
+			  
+			  1、形参在函数调用时，才会分配空间;
+			  2、函数执行结束后，形参就会被释放;
+			 * */
+			
+			show();
+			
+			
+			
+			var  m=9;
+			show(m,8);
+			console.log(m);   //还是9，函数不能对实参产生改变
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

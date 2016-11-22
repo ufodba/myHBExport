@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style: none;
+			}
+			#ul1{
+				width: 200px;
+				height: 200px;
+				border: 1px solid blue;
+				
+				display: none;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>桃子</li>
+			<li>李子</li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			var ul = document.getElementById('ul1');
+			document.oncontextmenu = function(ev){
+				var ev = ev || window.event;
+				ul.style.display = 'block';
+				ul.style.left = ev.clientX+"px";
+				ul.style.top = ev.clientY + 'px';
+				
+				if(ev.preventDefault){
+					//阻止绑定的默认事件
+					ev.preventDefault();
+				}else{
+					//阻止普通默认事件。
+					return false;
+				}
+			}
+			
+			document.onclick = function(){
+				ul.style.display = 'none';
+			}
+			
+			
+		</script>
+	</body>
+</html>

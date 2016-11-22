@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style type="text/css">
+			.ui-block-a {
+				background: dodgerblue;
+				border: white 1px solid;
+			}
+			
+			.ui-block-b {
+				background: orange;
+				border: white 1px solid;
+			}
+			
+			.ui-block-c {
+				background: yellow;
+				border: white 1px solid;
+			}
+			
+			.ui-block-d {
+				background: goldenrod;
+				border: white 1px solid;
+			}
+			
+			.ui-block-e {
+				background: greenyellow;
+				border: white 1px solid;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page" id="pageone">
+			<div data-role="main" class="ui-content">
+
+				<div class="ui-grid-solo">
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+				</div>
+				<!-- 这是一个两列的网络 Start -->
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+					<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+				</div>
+				<!-- 这是一个两列的网络 End -->
+
+				<div class="ui-grid-b">
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+					<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+					<div class="ui-block-c"><strong>I'm Block c</strong> and text inside will wrap</div>
+				</div>
+
+				<div class="ui-grid-c">
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+					<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+					<div class="ui-block-c"><strong>I'm Block c</strong> and text inside will wrap</div>
+					<div class="ui-block-d"><strong>I'm Block c</strong> and text inside will wrap</div>
+				</div>
+
+				<div class="ui-grid-d">
+					<div class="ui-block-a"><strong>I'm Block A</strong> and text inside will wrap</div>
+					<div class="ui-block-b"><strong>I'm Block B</strong> and text inside will wrap</div>
+					<div class="ui-block-c"><strong>I'm Block c</strong> and text inside will wrap</div>
+					<div class="ui-block-d"><strong>I'm Block c</strong> and text inside will wrap</div>
+					<div class="ui-block-e"><strong>I'm Block c</strong> and text inside will wrap</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	</body>
+
+</html>

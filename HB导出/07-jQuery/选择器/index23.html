@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="n1">
+			<div id="n2" class="abc">
+				<label id="n3">label1</label>
+				<div class="s1" id="n4">span1</div>
+				<div class="s1" id="n5" class="abc">span2</div>
+				<div class="s1" id="n6">span3</div>
+			</div>
+			<div id="n7">
+				<div class="s1" id="n8" class="abc">span1</div>
+				<div class="s1" id="n9">span2</div>
+			</div>
+			
+			<div id="n7">
+				<strong>strong</strong>
+				<!--<div class="s1" id="n8" class="abc">span1</div>
+				<div class="s1" id="n9">span2</div>-->
+				<div class="s1">
+					<div class="s1" id="n8" class="abc">xxxx</div>
+					<div class="s1" id="n9">xxxxx</div>
+				</div>
+				
+				<div class="s1" id="n9">span2</div>
+			</div>
+		</div>
+		
+		
+		<div id="n8">
+				<strong>strong</strong>
+				<span class="s1" id="n8" class="abc">span8</span>
+				<span class="s1" id="n9">span2</span>
+		</div>
+
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".s1:first-of-type").addClass('my_c');
+		</script>
+	</body>
+
+</html>

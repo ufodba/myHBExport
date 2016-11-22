@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：window.location:位置  及其主要成员
+	1、href:完整URL(字符串类型)
+	2、search：参数?name=hello  表单数据格式  name   
+	3、hash：哈希值
+	4、reload:刷新
+-->
+	<body>
+		
+		<input type="button"  id="btn"   value="刷新" />
+		
+		
+		
+		
+		<script type="text/javascript">
+			
+			console.log(window.location);
+			
+			/*
+			 
+			
+toJSON		undefined
+hash		""              哈希值         
+host		"127.0.0.1:8020"
+hostname	"127.0.0.1"
+href		"http://127.0.0.1:8020/ww...%A4%A9/16-location.html"    完整URL地址
+origin		"http://127.0.0.1:8020"
+pathnam		"/www/JavaScript%E4%B8%AD...%A4%A9/16-location.html"
+port		"8020"
+protocol	"http:"    //协议
+search		""         //参数      AJAX
+			 **/
+			
+			var btn=document.getElementById('btn');
+			
+			btn.onclick=function(){
+				
+				window.location.reload();
+			}
+			
+		</script>
+	</body>
+</html>

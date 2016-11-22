@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js-jsonp</title>
+	</head>
+	<body>
+		<input type="button" value="请求数据" id="bBtn"/>
+		<ul id="list"></ul>
+		<script type="text/javascript" src="js/JSON.js" ></script><!--是为了做ie的7,6的兼容的-->
+		<script>
+			function jsonpCallback(result){
+				//alert(result);
+				//1.做了跨域请求，并且返回了数据   (jsonp  返回的数据，不需要做json的解析)
+				var oBbtn = document.getElementById('bBtn');
+				var oList = document.getElementById('list');
+				oBbtn.onclick = function(){
+					var str ='';
+					for(var i=0;i<result.length; i++){
+						str+= '<li><a href="#">'+result[i].title+'</a><span>'+result[i].date+'</span></li>';
+						
+					}
+					oList.innerHTML = str;
+				};
+				
+			}
+		</script>
+		<script type="text/javascript" src="http://www.phpdata.com/getNewsJsonp.php?callback=jsonpCallback"></script>
+	</body>
+</html>

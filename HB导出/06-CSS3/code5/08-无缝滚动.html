@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*定义动画状态*/
+		@-webkit-keyframes move{
+			from{left: 0;}
+			to{left: -500px;}
+		}
+			*{margin: 0;padding: 0;}
+			#wrap{width: 500px;height: 100px;border: 1px solid black;overflow: hidden;position: relative;margin: 100px auto;}
+			.list{list-style: none;width: 200%;height: 100px;position: absolute;left: 0;top: 0;
+			/*动画*/
+			animation: 2s move linear infinite;
+			}
+			li{float: left;width: 98px;height: 98px;border: 1px solid white;background: black;
+				text-align: center;
+				color: white;
+				font: 80px "微软雅黑";
+			}
+			div:hover .list{animation-play-state: paused;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<ul class="list">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ul>
+		</div>
+	</body>
+</html>

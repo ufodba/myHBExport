@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//新建worker对象，与另一个文件做交互
+			//参数：交互的js文件
+			var w1 = new Worker('test.js');
+			//传递数据
+			w1.postMessage('hello');
+			
+			w1.onmessage = function(ev){
+				alert(ev.data);
+			}
+			
+		</script>
+	</body>
+</html>

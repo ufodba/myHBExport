@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="number" id="num" placeholder="请输入数字" />
+		<strong id="ss"></strong>
+		<button id="btn">求阶乘</button>
+
+		<script type="text/javascript">
+			var input = document.getElementById('num');
+			var btn = document.getElementById('btn');
+			var ss = document.getElementById('ss');
+
+			btn.onclick = function() {
+				var num = parseInt(input.value.toString());
+				var value = jieCheng(num);
+				ss.innerHTML = value;
+
+			}
+
+			function jieCheng(num) {
+				if(1 == num)
+					return 1;
+				return num * jieCheng(num - 1);
+			}
+		</script>
+	</body>
+
+</html>

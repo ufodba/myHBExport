@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<div data-role="page" id="pageone">
+			<div data-role="header">
+				<h1>欢迎来到我的主页</h1>
+				<div data-role="navbar" data-iconpos="left">
+					<ul>
+						<li><a href="#" data-icon="search">返回</a></li>
+						<li><a href="#" data-icon='action'>主页</a></li>
+						<li><a href="#" data-icon="calendar" >设置</a></li>
+						<li><a  href="#" data-icon="user" class="ui-btn-active">用户</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<strong>主体内容</strong>
+			</div>
+
+			<div data-role="footer">
+				<h1>底部文本</h1>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		
+		<script type="text/javascript">
+			$('.ui-btn-active').removeClass('ui-btn-active');
+		</script>
+
+	</body>
+
+</html>

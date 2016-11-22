@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	/*重置默认样式(CSS reset)*/
+	body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0;}
+	ol,ul{margin:0;padding:0;list-style:none;}
+	img{border:none;}
+	a{text-decoration:none;}
+	
+	/*
+	块的特征
+	1、默认独占一行 
+	2、没有宽度时，默认撑满一排
+	3、支持所有css命令
+
+
+	内嵌(内联、行内)的特征
+	1、同排可以继续跟同类的标签
+	2、内容撑开宽度
+	3、不支持宽高
+	4、不支持上下的margin和padding
+	5、代码换行被解析
+
+	*/
+	
+	span,div{background:blue;  width:100px; height:100px;}
+	
+</style>
+
+</head>
+
+<body>
+	<span>区分样式</span>
+    <span>区分样式</span>
+    <span>区分样式</span>
+    
+    <div>块</div>
+    <div>块</div>
+    <div>块</div>
+    
+
+</body>
+</html>

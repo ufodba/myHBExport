@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<script type="text/javascript">
+			
+//			//转换为字符串
+//			var   num=123;
+//			var   str=num.toString();
+//			console.log(typeof str);
+			
+			//将字符串转换为数值
+			var  str='1234.7';
+			var  num1= +str;
+			console.log(num1);
+			console.log(typeof num1);
+			
+//			//方法2
+//			var num2=parseInt(str);   //转换为整形的数据 
+//			console.log(num2);
+//			console.log(typeof num2);
+			
+			//方法3
+			var num3=parseFloat(str);   //转换为浮点型的数据 
+			console.log(num3);
+			console.log(typeof num3);
+			
+			
+//			//4、保留小数位
+//			var  value=1234.5678;
+//			var dat=value.toFixed(2);
+//			console.log(dat);
+//			console.log(value);
+			
+			
+			//5、字符串 带进制转换
+			var str='1000';      //字符串是一个进制数
+			var  num=parseInt(str,8);    //转出来的是10进制的数
+			console.log(num);
+			
+			
+			//6、
+			var str='120px';
+			var num=parseInt(str);
+			console.log(num);   //120
+			
+			
+			//6、
+			var str='px';
+			var num=parseInt(str);
+			console.log(num);   //NaN     not a  number
+			
+			
+			//判断是否为数值
+			var str='123';
+			var num=123;
+			if(isNaN(str))
+			{
+				console.log('NaN');
+			}			
+			
+			if(isNaN(num))
+			{
+				console.log('NaN');
+			}else
+			{
+				console.log('NOT NaN');
+			}
+			
+			//只要值相等，与类型无关
+			if(str==num)
+			{
+				console.log('相等');
+			}
+			else
+			{
+				console.log('不相等');
+			}
+			
+			//类型和值都相等
+			if(str===num)
+			{
+				console.log('相等');
+			}
+			else
+			{
+				console.log('不相等');
+			}			
+			
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

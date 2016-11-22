@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<img id="img1" src="img/1.jpg" alt='...' />
+
+		<script type="text/javascript">
+			var img = document.getElementById('img1');
+			var arr = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg'];
+
+			var iNow = window.location.hash.substring(1) || 0;
+			img.src = arr[iNow];
+			window.location.hash = iNow;
+
+			img.onclick = function() {
+				if(iNow == arr.length - 1) {
+					iNow = 0;
+				} else {
+					iNow++;
+				}
+
+				this.src = arr[iNow];
+
+				window.location.hash = iNow;
+			}
+		</script>
+	</body>
+
+</html>

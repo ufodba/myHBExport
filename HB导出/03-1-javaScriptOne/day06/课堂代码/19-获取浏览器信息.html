@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：获取浏览器信息      
+		window
+			navigator
+				userAgent    
+	
+	"Mozilla/5.0 (Windows NT ...o/20100101 Firefox/48.0"
+	判断是否存在某字符串
+  
+-->
+	<body>
+
+		<script type="text/javascript">
+			
+			console.log(window.navigator);
+			
+			var  txt=window.navigator.userAgent;
+			
+			if(txt.indexOf('Firefox')!=-1)
+			{
+				
+				console.log("Firefox");
+			}else if(txt.indexOf('Chrome')!=-1){
+				console.log("Chrome");
+			}else
+			{
+				
+				console.log("其他浏览器");
+			}
+			
+			
+		</script>
+	</body>
+</html>

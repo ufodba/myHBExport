@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="MyController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+			number 
+		-->
+		<!-- 默认情况下小数位有三位 -->
+		<h2>{{ num | number }}</h2>
+		<!-- 参数 可以限制小数位 -->
+		<h2>{{ num | number:5 }}</h2>
+		<hr />
+		<!-- 如果传入的值是一个空值，返回空字符串 -->
+		<h3>{{ numStr | number:1 }}</h3>
+		
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('MyController', function($scope) {
+				$scope.num = 11123200000.1235677878;
+				$scope.numStr = '11123200000.1235@77878';
+			});
+		</script>
+
+	</body>
+
+</html>

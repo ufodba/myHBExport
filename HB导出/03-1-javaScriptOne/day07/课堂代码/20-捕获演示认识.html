@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box1{width: 300px; height: 300px; background: red;}
+			.box2{width: 200px; height: 200px; background: yellow;}
+			.box3{width: 100px; height: 100px; background: blue;}
+		</style>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：只有绑定事件帮可以为捕获事件: 使用比较少(IE不兼容)
+	addEventListener第3个参数决定了
+-->
+	<body>
+		<div class="box1">
+			<div class="box2">
+				<div class="box3"></div>
+			</div>
+		</div>
+		
+	
+	
+	   <script type="text/javascript">
+	   	 var   adiv=document.getElementsByTagName('div');
+	   	 
+	   	  
+	   	  for (var i=0; i<adiv.length; i++) {
+	   	  	adiv[i].addEventListener('click',aaa,true);  //捕获
+	   	  }
+	   	 
+	   	 
+	   	 
+	   	 function   aaa()
+	   	 {
+	   	    	
+	   	 	alert(this.className);
+	   	 }
+	   </script>
+	</body>
+</html>

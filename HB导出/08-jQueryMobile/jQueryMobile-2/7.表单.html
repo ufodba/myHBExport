@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+
+		<form method="post" action="#">
+			<label for="fname" class="ui-hidden-accessible">姓名:</label>
+			<input type="text" name="fname" id="fname" placeholder="请输入姓名" data-clear-btn="true">
+
+			<input type="button" value="按钮" data-corners='false'>
+			<input type="reset" value="重置按钮">
+			<input type="submit" value="提交按钮">
+		</form>
+
+		<form method="post" action="demoform.php">
+			<div class="ui-field-contain">
+				<label for="fname">姓:</label>
+				<input type="text" name="fname" id="fname">
+				<label for="lname">姓:</label>
+				<input type="text" name="lname" id="lname">
+			</div>
+		</form>
+
+		<form method="post" action="#">
+			<div class="ui-field-contain">
+				<label for="fullname">全名:</label>
+				<input type="text" name="fullname" id="fullname">
+
+				<label for="bday">生日:</label>
+				<input type="date" name="bday" id="bday">
+
+				<label for="email">E-mail:</label>
+				<input type="email" name="email" id="email" placeholder="你的电子邮箱..">
+
+				<label for="info">附加信息:</label>
+				<textarea name="addinfo" id="info"></textarea>
+
+				<label for="search">搜索:</label>
+				<input type="search" name="search" id="search">
+
+				<label for="male">Male</label>
+				<input type="radio" name="gender" id="male" value="male">
+				<label for="female">Female</label>
+				<input type="radio" name="gender" id="female" value="female">
+
+				<label for="red">Red</label>
+				<input type="checkbox" name="favcolor" id="red" value="red">
+				<label for="green">Green</label>
+				<input type="checkbox" name="favcolor" id="green" value="green">
+				<label for="blue">Blue</label>
+				<input type="checkbox" name="favcolor" id="blue" value="blue">
+			</div>
+			</div>
+		</form>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

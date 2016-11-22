@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="myController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input type="checkbox" ng-model="flag" /><br />
+		<hr />
+
+		<input type="text" placeholder="text" ng-readonly="flag" />
+		<input type="password" placeholder="password" ng-readonly="flag" />
+		<input type="radio" placeholder="radio" ng-readonly="flag" />
+		<input type="checkbox" placeholder="checkbox" ng-readonly="flag" />
+		<input type="email" placeholder="email" ng-readonly="flag" />
+
+		<textarea ng-readonly="flag"></textarea>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.flag = false;
+			});
+		</script>
+	</body>
+
+</html>

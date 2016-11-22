@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			.box1 {
+				width: 300px;
+				height: 300px;
+				background: red;
+				margin: 0 auto;
+				color: white;
+				font-size: 1.5em;
+			}
+			
+			.box2 {
+				width: 200px;
+				height: 200px;
+				background: blue;
+				color: white;
+				font-size: 1.5em;
+			}
+			
+			.box3 {
+				width: 100px;
+				height: 100px;
+				background: pink;
+				color: white;
+				font-size: 1em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box1">
+			<div class="box2">
+				<div class="box3">
+					box3
+				</div>
+				box2
+			</div>
+			box1
+		</div>
+
+		<script type="text/javascript">
+			var ds = document.getElementsByTagName('div');
+			/*
+			 * 重复的批定事件时，后面的会覆盖前面。
+			 */
+			//			btn.onclick =fun1;
+			function fun1(ev) {
+//				alert('2');
+				alert(this.className);
+				var ev = ev || window.event;
+				//标准浏览器下支持。
+//				ev.stopPropagation();
+				//IE6 7 8 支持。
+//				ev.cancelBubble = true;
+			};
+
+			//			btn.onclick = fun2;
+			function fun2() {
+//				alert('1');
+				alert(this.className);
+			};
+			
+			/*
+			 * 标准浏览器支持。
+			 * 参数1：事件名称，注：不要加on
+			 * 参数2： 要绑定的事件函数。
+			 * 参数3.false 冒泡。true 捕获。
+			 */
+			for(var i=0;i<ds.length;i++){
+				bindEventListener(ds[i],'click',fun1,true);
+//				bindEventListener(ds[i],'click',fun2,false);
+			}
+
+//		alert(ds.length);
+			
+//			bindEventListener(ds[0],'click',fun1,false);
+//			bindEventListener(ds[0],'click',fun2,false);
+			function bindEventListener(obj, evStr, fn, flag) {
+				if(obj.addEventListener) {
+					obj.addEventListener(evStr, fn, flag);
+				} else {
+					obj.attachEvent("on" + evStr, fn);
+				}
+			}
+		</script>
+	</body>
+
+</html>

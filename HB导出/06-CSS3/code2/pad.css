@@ -1,0 +1,5 @@
+#header{width: 100%;height: 80px;background: gray;}
+				#section1{width: 50%;height: 500px;background: red;float: left;}
+				#section2{width: 50%;height: 500px;background: orange;float: left;}
+				#section3{display: none;}
+				#footer{width: 100%;height: 80px;background: gray;clear: both;}

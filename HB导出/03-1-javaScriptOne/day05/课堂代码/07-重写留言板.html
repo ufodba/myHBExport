@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#content{width: 500px;min-height: 40px;max-height: 500px;overflow: auto;border: 3px solid black;padding: 20px;margin: 0 auto;}
+		    #text{width: 500px;height: 100px; resize: none; overflow: auto;margin: 0 auto;display: block;}
+		    #btn{width: 500px;height: 100px;margin: 0 auto;display: block;}
+		</style>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：重写留言板，采用节点创建、拼接的方式
+	实现：ul-- >li--- >span（嵌套设计）
+-->	
+	<body>
+		<div id="content"></div>
+		
+		<textarea id="text"></textarea>
+		
+		<input type="button"  id="btn"  value="提交留言"/>
+		
+		
+		
+		
+		<script type="text/javascript">
+		  var  index=1;
+		  var  oDiv=document.getElementById('content');
+		  var  oTxt=document.getElementById('text');
+		  var  oBtn=document.getElementById('btn');
+			
+			
+		oBtn.onclick=function(){
+			
+			//1、创建p标签
+			var  p=document.createElement('p');
+			p.innerHTML += index +'楼';
+			p.innerHTML += ' ';
+			p.innerHTML += oTxt.value;
+			
+			//添加 Odiv中
+			oDiv.appendChild(p);
+			
+			index++;
+		}
+
+		</script>
+		
+		
+		
+	</body>
+</html>

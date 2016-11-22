@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#box{width: 1000px; height: 1000px; border: 3px solid  black;position: relative;margin: 0 auto;}
+			.boxK{width: 100px; height: 100px; background: red; position: absolute;line-height: 100px;text-align: center;font-size: 50px;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+			 	
+
+		</div>
+		
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById('box');
+			
+		     //  y*3+x+1
+			var N=5;
+			for (var y=0; y<N; y++) {
+				for (var x=0; x<N; x++) {
+					var x1=(x*120+20);
+					var y1=(y*120+20);
+					var num =(y*N+x+1);
+					oDiv.innerHTML +='<div  class=\"boxK\"  style=\"left:'
+					                 +x1
+					                 +'px; top: '
+									 +y1
+									 +'px;\">'
+									 +num
+									 +' </div>';
+				}
+			}
+			
+
+		</script>
+	</body>
+</html>

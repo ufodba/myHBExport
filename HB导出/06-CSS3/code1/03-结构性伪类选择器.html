@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*当前元素是父元素当中的第一个子节点*/
+			/*li:first-child{background: red;}*/
+			/*最后一个子节点*/
+			/*li:last-child{background: yellow;}*/
+			/*指定子节点筛选*/
+			/*li:nth-child(4){background: blue;}*/
+			/*奇数行*/
+			/*li:nth-child(odd){background: yellow;}*/
+			/*偶数行*/
+			/*li:nth-child(even){background: blueviolet;}*/
+			/*an+b:n从0开始去正整数*/
+			/*1 4 7....*/
+			li:nth-child(3n+1){background: red;}
+			/*从后往前计算选择子节点*/
+			li:nth-last-child(2){background: purple;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+		</ul>
+		<ul>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+			<li>litag</li>
+		</ul>
+	</body>
+</html>

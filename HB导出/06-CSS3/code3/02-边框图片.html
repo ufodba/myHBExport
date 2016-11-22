@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{width: 200px;height: 200px;border-width: 20px;
+				/*设置边框图片*/
+				/*排列方式：默认拉伸，给一种排列方式：水平垂直都有影响，给二中排列方式。第一个参数控制水平，第二个参数控制垂直方向*/
+				border-image: url(img/border.png) 26 26;
+				/*中间部分，排列方式一个参数：受影响
+				 二个参数：第一个参数控制水平，第二个参数控制垂直
+				 * */
+				-webkit-border-image:  url(img/border.png) 26 26 round stretch;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

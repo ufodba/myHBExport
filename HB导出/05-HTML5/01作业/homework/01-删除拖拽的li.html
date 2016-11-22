@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			*{margin: 0;padding: 0;}
+			li{list-style: none;width: 200px;height: 50px;background: red;margin-top: 50px;}
+			#box{width: 300px;height: 300px;background: yellow;margin: 100px;}
+		</style>
+		
+	</head>
+	<body>
+		<ul id="ul1">
+			<!--设置元素可以拖拽-->
+			<li draggable="true">1</li>
+			<li draggable="true">2</li>
+			<li draggable="true">3</li>
+		</ul>
+		
+		<div id="box">
+			
+		</div>
+		
+		<script>
+			
+			var aLi = document.getElementsByTagName('li');
+			var odiv = document.getElementById('box');
+			var oul = document.getElementById('ul1');
+			
+			for (var i = 0;i<aLi.length;i++) {
+				//设置标记
+				aLi[i].index = i;
+				//拖拽开始触发
+				aLi[i].ondragstart = function(ev){
+					
+					var ev = ev || window.event;
+					
+					ev.dataTransfer.setData('mark',this.index);//保存下标值
+					this.style.background = 'blue';
+				}
+				
+				//拖拽中，连续触发
+				var num = 0;
+				
+				aLi[i].ondrag = function(){
+//					num++;
+//					console.log(num);
+				}
+				
+				//拖拽结束事件
+				
+				aLi[i].ondragend = function(){
+					this.style.background = 'red';
+				}
+	
+			}
+			
+			//目标元素事件
+			
+			//拖拽元素进入目标元素
+			odiv.ondragenter = function(){
+				
+				this.style.background = 'blue';
+			}
+			
+			var num = 0;
+			//拖拽元素在目标元素身上
+			odiv.ondragover = function(ev){
+				var ev = ev || window.event;
+				//目的：drop正常触发
+				ev.preventDefault();
+				console.log(num++);
+			}
+			
+			odiv.ondragleave = function(){
+				
+				this.style.background = 'yellow';
+			}
+			
+			//在目标元素身上释放鼠标
+			//触发条件：必须在ondragover事件阻止默认事件
+			odiv.ondrop = function(ev){
+				
+//				alert('6666');
+				var index = ev.dataTransfer.getData('mark');
+//				alert(index);//ali[index]
+				
+				oul.removeChild(aLi[index]);
+				
+				//重新标记index 
+				for(var i = 0;i<aLi.length;i++){
+					aLi[i].index = i;
+				}
+				
+			}
+			
+		</script>
+		
+	</body>
+</html>

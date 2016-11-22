@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{background: gray;}
+			canvas{background: white;}
+		</style>
+	</head>
+	<body>
+		<!--canvas：申请一块绘制区域-->
+		<!--画布默认的宽：300px 高度：150px，不能通过css设置宽高-->
+		<canvas width="500" height="500" id="ca">
+			温馨提示：该浏览器不支持画布功能
+		</canvas>
+		
+		<script>
+			//获取画布
+			var oc = document.getElementById('ca');
+			var ctx = oc.getContext('2d');//绘制场景：只支持2d场景
+			
+			//图片预加载
+			var img = new Image();
+			img.src = '22.jpg';
+			
+			//图片加载完成调用
+			img.onload = function(){
+				
+				//参数1：图片对象
+				//参数2：x y 坐标
+//				ctx.drawImage(img,0,0);
+				
+				//背景绘制
+				//1.创建背景对象
+				//参数1：图片对象  参数2：平铺方式
+				var bg = ctx.createPattern(img,'repeat');
+				//2.背景对象设置填充样式
+				ctx.fillStyle = bg;
+				
+				//3.指定一个填充的范围
+				ctx.fillRect(0,0,400,400);
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>

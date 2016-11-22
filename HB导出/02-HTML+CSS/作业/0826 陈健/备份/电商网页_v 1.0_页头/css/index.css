@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+/*reset*/
+body,ul,input { margin:0; padding:0;}
+li { list-style:none;}
+a { text-decoration:none;}
+strong { font-weight:normal;}
+/*en reset*/
+
+/*public*/
+body { height:1800px; background:url(../img/body_bg.png) repeat-x #FFF; min-width:960px;}
+.topWrap { width:960px; height:197px; margin:0 auto; }
+.headTop { height:30px; margin-top:0px;}
+.headTopL li { display:inline; float:left;}
+.headTopL li span { float:left; width:3px; height:3px; background:url(../img/top_ico.png) no-repeat; display:inline-block; margin:16px 15px 11px 15px;}
+.headTopL .top1 { background-position:-27px 0px;}
+.headTopL a { text-align:center; color:#c0c0c0; font: 13px/30px Arial;}
+.headTopL a:hover { color:#FFF; text-decoration:underline;}
+.headTopR { float:right;}
+.headTopR li span { float:left; /*width:30px; height:22px; background:url(../img/top_ico.png) no-repeat;*/ display:inline-block; /*margin:16px 15px 11px 15px;*/}
+.headTopR li { display:inline; float:left;}
+.headTopR .top2 { width:24px; height:22px; background:url(../img/top_ico.png) no-repeat 0 -19px; margin-top:4px;}
+.headTopR .top3 { width:30px; height:22px; background:url(../img/top_ico.png) no-repeat 0 -51px; margin-top:4px; margin-left:38px;}
+.headTopR .top4 { width:20px; height:11px; background:url(../img/top_img1.gif) no-repeat; margin-top:9px; margin-left:29px;}
+.headTopR .top5 { width:20px; height:11px; background:url(../img/top_img2.gif) no-repeat; margin-top:9px; margin-left:13px;}
+.headTopR a { text-align:center; color:#fff; line-height:30px; margin-left:8px;  font: bold 13px/30px Arial;}
+.phoneFont { text-align:center; color:#fff; line-height:30px; margin-left:8px; font: 13px/30px Arial;}
+.headTopR a:hover { color:#FFF; text-decoration:underline;}
+.headMid_bg { height:100px;/* margin:0 auto;*/ background:url(../img/header_bg.png);}
+.headMidL { width:278px; height:100px; background:url(../img/shopping_bg.png) no-repeat; position:relative; float:left}
+.headMidL a { display:inline-block; width:114; height:24; background:url(../img/shopping_bg.png) no-repeat 0px -100px; position:absolute;bottom:13px; right:60px; padding:0px 20px; text-align:center; font: bold 15px/23px Arial; color:#ffc200;}
+.headMidL span {font: 20px Arial; color:#f7f7f7; /*display:block;*/  position:absolute; top:32px; right:28px;}
+.headMid { width:238px; height:100px; background:url(../img/logo.png) no-repeat; display:inline; float:left; margin-left:84px;}
+.headMidR { width:292px; height:31px; background:url(../img/search.png) no-repeat; display:inline; float:right; margin-top:33px;}
+.headMidR .input1 { width:240px; height:30px; float:right; margin-right:42px; background:none; border:none; color:#666666;}
+.headMidR .input2 { display:inline-block; background:none; border:none; float:right; padding:8px 20px; position:relative; top:-30px;}
+/*end public*/
+
+<!--nav-->
+.nav { height:44px; }
+.nav ul li { display:inline-block; float:left;  height:28px; /*position:relative;*/margin-top:8px; margin-left:2px;}
+.nav ul li a { padding:0px 14px; display:inline-block; height:28px; text-align:cneter; font:15px/28px Arial; color:#FFF; }
+.nav ul li a strong { display:inline-block; width:5px; height:28px; float:left; position:relative; left:-14px;}
+.nav ul li a  span { display:inline-block; width:5px; height:28px; float:right; position:relative; right:-14px;}
+.nav ul li a:hover,.nav .navActive { background:url(../img/nav_active_bg.png) repeat-x 0 -56px;}
+.nav ul li a:hover strong,.nav .navActive strong { background:url(../img/nav_active_bg.png) no-repeat 0 0;}
+.nav ul li a:hover span,.nav .navActive span { background:url(../img/nav_active_bg.png) no-repeat 0 -28px; }
+<!--end nav-->
+
+/*head*/
+
+/*end head*/

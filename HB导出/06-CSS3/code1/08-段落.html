@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{width: 300px;border: 1px solid black;}
+			/*首行*/
+			p:first-line{background: red;}
+			/*首个字符*/
+			p:first-letter{background: blue;}
+			/*选择文字*/
+			p::selection{background: yellow;}
+			
+			/*生成内容,结合content使用*/
+			p:before{content: "hello";}
+			p:after{content: "world";}
+		</style>
+	</head>
+
+	<body>
+		<p>
+			E:target 表示当前的URL片段的元素类型，这个元素必须是E E:disabled 表
+			示不可点击的表单控件 E:enabled 表示可点击的表单控件 E:checked 表
+			示已选中的checkbox或radio E:first-line 表示E元素中的第一行 E:first-letter 
+			表示E元素中的第一个字符 E::selection表示E元素在用户选中文字时 E:before 
+			生成内容在E元素前
+
+		</p>
+	</body>
+
+</html>

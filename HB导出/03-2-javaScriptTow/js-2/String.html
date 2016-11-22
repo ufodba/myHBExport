@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<base target="_blank" />
+		<style type="text/css">
+			#box {
+				width: 200px;
+				height: 200px;
+				border: blue solid 2px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="box">
+
+		</div>
+
+		<script type="text/javascript">
+			var box = document.getElementById('box');
+		
+			var str = new String('hello');
+			//			var str = "hel lo";
+
+			//			console.log("length: "+str.length);
+			//			if(str.charAt(4) == ''){
+			//				console.log("找不到");
+			//			}else{
+			//				console.log('找到了')
+			//			}
+
+
+
+			var s1 = str.big();
+			var s2 = str.blink();
+			var s3 = str.bold();
+			var s4 = str.small();
+			
+			box.innerHTML = s1;
+			box.innerHTML += s2;
+			box.innerHTML += s3;
+			box.innerHTML += s4.fontcolor('green');
+			
+			
+			var addr = 'baidu';
+			var addrLink = addr.link('https://www.baidu.com');
+			box.innerHTML = addrLink;
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+</html>

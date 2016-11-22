@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="clock" width="500" height="500">
+			温馨提示：浏览器不支持
+		</canvas>
+		
+		<script>
+			
+			var oc = document.getElementById('clock');
+			var ctx = oc.getContext('2d');
+			
+			//
+			function drawclock(){
+				
+				//清空画布
+				ctx.clearRect(0,0,oc.width,oc.height);
+				
+				//获取系统时间时分秒
+				var now = new Date();
+				var sec = now.getSeconds();
+				var min = now.getMinutes();
+				var hour = now.getHours();
+				//24---12小时制
+				hour = hour>12?hour-12:hour;
+				
+				//表盘
+				ctx.lineWidth = 10;
+				ctx.strokeStyle = 'blue';
+				ctx.beginPath();
+				ctx.arc(250,250,200,0,360*Math.PI/180,false);
+				ctx.closePath();
+				ctx.stroke();
+				
+				//小时刻度
+				
+				for(var i = 0;i<12;i++){
+					
+					//位置偏移圆心位置，旋转
+					ctx.save();
+					ctx.lineWidth = 7;
+					ctx.strokeStyle= 'black';
+					//设置基点
+					ctx.translate(250,250);
+					//旋转
+					ctx.rotate(i*30*Math.PI/180);
+					
+					ctx.beginPath();
+					ctx.moveTo(0,-170);
+					ctx.lineTo(0,-190);
+					ctx.closePath();
+					ctx.stroke();
+					
+					ctx.restore();
+					
+				}
+				
+				//分钟刻度
+				
+				for(var i = 0;i<60;i++){
+					
+					//位置偏移圆心位置，旋转
+					ctx.save();
+					ctx.lineWidth = 6;
+					ctx.strokeStyle= 'black';
+					//设置基点
+					ctx.translate(250,250);
+					//旋转
+					ctx.rotate(i*6*Math.PI/180);
+					
+					ctx.beginPath();
+					ctx.moveTo(0,-180);
+					ctx.lineTo(0,-190);
+					ctx.closePath();
+					ctx.stroke();
+					
+					ctx.restore();
+					
+				}
+				
+				//时针
+				ctx.save();
+				ctx.lineWidth= 5;
+				ctx.strokeStyle = 'black';
+				//设置基点
+				ctx.translate(250,250);
+				ctx.rotate(hour*30*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,-100);
+				ctx.lineTo(0,10);
+				ctx.closePath();
+				ctx.stroke();
+				ctx.restore();
+				
+				//分针
+				ctx.save();
+				ctx.lineWidth= 5;
+				ctx.strokeStyle = 'black';
+				//设置基点
+				ctx.translate(250,250);
+				ctx.rotate(min*6*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,-120);
+				ctx.lineTo(0,12);
+				ctx.closePath();
+				ctx.stroke();
+				ctx.restore();
+				
+				//分针
+				ctx.save();
+				ctx.lineWidth= 3;
+				ctx.strokeStyle = 'red';
+				//设置基点
+				ctx.translate(250,250);
+				ctx.rotate(sec*6*Math.PI/180);
+				ctx.beginPath();
+				ctx.moveTo(0,-150);
+				ctx.lineTo(0,15);
+				ctx.closePath();
+				ctx.stroke();
+				ctx.restore();
+				
+				
+			}
+			
+//			drawclock();
+			
+			setInterval(drawclock,1000);
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../day05/base1.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			#div1{width: 100px;height: 100px;background: red; position: absolute;}
+		</style>
+		
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：方块跟随鼠标移动
+	鼠标事件：5个
+		onclick：(按下、抬起后的事件)
+		onmousedown: 鼠标按下事件
+		onmouseup  : 鼠标抬起事件
+		onmousemove: 鼠标移动事件(鼠标一直移动，一直被触发)
+		onmouseout：  离开
+	
+	1、获取鼠标在整个页面的位置
+	2、鼠标移动，更新位置，然后修改方块位置
+	
+	3、思考：鼠标在当前的相对位置？
+-->	
+	
+	<body style="height: 2000px;">
+		<div id="div1"></div>
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+		   var   odiv=document.getElementById('div1');
+		   var   w=parseInt(CSS(odiv,'width'))/2;
+		   var   h=parseInt(CSS(odiv,'height'))/2;
+		
+		  document.onmousemove=function(ev){
+		  	
+		  	ev=ev||window.event;
+		  	
+		  	console.log(ev.clientX+"+"+ev.clientY);
+		  	
+		  	CSS(odiv,'top',ev.clientY-h+'px');
+		  	CSS(odiv,'left',ev.clientX-w+'px');
+		  	
+		  	
+		  	
+		  }
+		
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			strong {font-weight: normal;}
+			.font1 {font-size: 12px;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>4.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>1.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>1.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>1.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>1.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+			<li>
+				<input type="button" value="-"/>
+				<span>0</span>
+				<strong>件</strong>
+				<input type="button" value="+"/>
+				<em>1.00</em><em>元</em>
+				<strong>结果:</strong>
+				<input class="font1" type="text"/>
+			</li>
+		</ul>
+		<input type="button" value="商品总计"/>
+		<input id="input1" class="font1" type="text"/>
+		<input type="button" value="价格总计"/>
+		<input id="input2" class="font1" type="text"/>
+		
+		<script type="text/javascript">
+			//用二维的思想，不要用二维数组
+//			var arrLi=document.getElementsByTagName('li');
+//			var arrInput=arrLi[0].getElementsByTagName('input');
+//				var oSpan=arrLi[0].getElementsByTagName('span')[0];
+//				var oEm=arrLi[0].getElementsByTagName('em')[0];
+//				arrInput[0].onclick=function(){
+////					alert(1);
+//					if(parseInt(oSpan.innerHTML)>0){
+////						alert(1);
+//						oSpan.innerHTML=parseInt(oSpan.innerHTML)-1;
+//						console.log(parseInt(oSpan.innerHTML));
+//						arrInput[2].value=parseInt(oSpan.innerHTML)*parseInt(oEm.innerHTML);
+//						console.log(arrInput[2].value);
+//					}
+//				}
+//				arrInput[1].onclick=function(){
+//						oSpan.innerHTML=parseInt(oSpan.innerHTML)+1;
+//						arrInput[2].value=parseInt(oSpan.innerHTML)*parseInt(oEm.innerHTML);
+//				}
+				
+			var arrLi=document.getElementsByTagName('li');
+			var jianSu=document.getElementById('input1');
+			var zongJia=document.getElementById('input2');
+//			var a=0;
+//			var b=0;
+			jianshu();
+			zongjia();
+			function jiajian(li){
+				var arrInput=li.getElementsByTagName('input');
+				var oSpan=li.getElementsByTagName('span')[0];
+				var oEm=li.getElementsByTagName('em')[0];
+				arrInput[0].onclick=function(){
+//					alert(1);
+					if(parseInt(oSpan.innerHTML)>0){
+//						alert(1);
+						oSpan.innerHTML=parseInt(oSpan.innerHTML)-1;
+						arrInput[2].value=parseInt(oSpan.innerHTML)*parseInt(oEm.innerHTML);
+					}
+					jianshu();
+					zongjia();
+				}
+				arrInput[1].onclick=function(){
+						oSpan.innerHTML=parseInt(oSpan.innerHTML)+1;
+						arrInput[2].value=parseInt(oSpan.innerHTML)*parseInt(oEm.innerHTML);
+						jianshu();
+						zongjia();
+				}
+			}
+			function jianshu(){
+				var a=0;
+				for (var i=0;i<arrLi.length;i++) {
+					var oSpan=arrLi[i].getElementsByTagName('span')[0];
+					a+=parseInt(oSpan.innerHTML);
+				}
+				jianSu.value=a+'件';
+			}
+			function zongjia(){
+				var b=0;
+				for (var i=0;i<arrLi.length;i++) {
+					var arrInput=arrLi[i].getElementsByTagName('input')[2];
+					b+=parseInt(0+arrInput.value);
+				}
+				zongJia.value=b+'元';
+			}
+			
+			for (var i=0;i<arrLi.length;i++) {
+				jiajian(arrLi[i]);
+//				jianshu(arrLi[i]);
+//				zongjia(arrLi[i]);
+			}
+			
+			
+		</script>
+	</body>
+</html>

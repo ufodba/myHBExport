@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			.box {position:relative; width: 256px; height: 536px; background: url(img/iPhone.png) no-repeat; margin: 20px auto;}
+			#box1 {width: 216px; height: 337px; position:absolute; top: 78px; left:21px; overflow: auto;}
+			#poto1 { width: 22px; height: 23px;position:absolute; top:428px; left:28px;}
+			#txt {width: 124px; height: 30px;position:absolute; top:423px; left:58px;/*border: 1px solid greenyellow;*/}
+			#btn {display: inline-block; width: 43px; height: 21px;position:absolute; top:428px; left:191px;border: 1px solid greenyellow;}
+			/*.box1L {color: black; font-size: 14px; }
+			.box1R {color: black; text-align: right;font-size: 14px; }
+			.box1L span {background:greenyellow;line-height: 23px;}
+			.box1R span {background: antiquewhite; line-height: 23px;}*/
+			.content {width: 206px; margin:0 5px;}
+			.content .img1 { display: inline-block;width: 22px; height: 23px;}
+			.content1 {display: inline-block; background:greenyellow;line-height: 23px;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div id="box1">
+				<p>1111111111111111</p>				
+			</div>
+			</div>
+			<img id="poto1" src="img/qq1.gif" />
+			<input id="txt" type="text" />
+			<span id="btn"></span>
+		</div>
+		<script type="text/javascript">
+			var obox=document.getElementById('box1');
+			var opoto1=document.getElementById('poto1');
+			var otxt=document.getElementById('txt');
+			var obtn=document.getElementById('btn');
+			var imgDd=true;
+			opoto1.onclick=function (){
+				if(imgDd){
+					opoto1.src="img/qq2.gif";
+					imgDd=false;
+				}else{
+					opoto1.src="img/qq1.gif";
+					imgDd=true;
+				}
+			}
+			
+			obtn.onclick=function (){
+				if(otxt.value.length<=0){
+					alert('发送不能是空');
+				}else {
+					if(imgDd){
+						obox.innerHTML='<p class="box1L"><img src="'+opoto1.src+'"/><span>'+otxt.value+'</span></p>'+obox.innerHTML;
+					}else{
+						obox.innerHTML='<p class="box1R"><span>'+otxt.value+'</span><img src="'+opoto1.src+'"/></p>'+obox.innerHTML;
+					}
+					otxt.value="";
+				}
+			}
+		</script>
+	</body>
+</html>

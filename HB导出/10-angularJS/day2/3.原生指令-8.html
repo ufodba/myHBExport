@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="MyController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<base target="_blank" />
+	</head>
+
+	<body>
+		
+		<select ng-model="myVar">
+			<option value="runoob">菜鸟</option>
+			<option value="google">谷歌</option>
+			<option value="taobao">淘宝</option>
+		</select>
+		
+
+		<div ng-switch="myVar">
+			<div ng-switch-when="runoob">
+				<h1>菜鸟教程</h1>
+				<p>欢迎访问菜鸟教程</p>
+			</div>
+			<div ng-switch-when="google">
+				<h1>Google</h1>
+				<p>欢迎访问Google</p>
+			</div>
+			<div ng-switch-when="taobao">
+				<h1>淘宝</h1>
+				<p>欢迎访问淘宝</p>
+			</div>
+			<div ng-switch-default>
+				<h1>切换</h1>
+				<p>选择不同选项显示对应的值。</p>
+			</div>
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('MyController', function($scope) {
+				$scope.myVar = '';
+			});
+		</script>
+	</body>
+
+</html>

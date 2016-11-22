@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		@-webkit-keyframes move{
+			25% {-webkit-transform: rotateX(-360deg) rotateY(180deg);}
+			50% {-webkit-transform: rotateX(180deg) rotateY(-180deg);}
+			75% {-webkit-transform: rotateX(-180deg) rotateY(180deg);}
+		}
+		.box {
+			margin: 200px auto;
+			width: 100px;
+			height: 100px;
+			/*border: 1px solid black;*/
+			position: relative;
+			-webkit-transform-style: preserve-3d;
+			/*-webkit-transform: rotateX(-30deg) rotateY(-60deg);*/
+			animation: 12s move infinite;
+		}
+		.box div {
+			width: 98px;
+			height: 98px;
+			border: 1px solid black;
+			line-height: 100px;
+			text-align: center;
+			font-size: 40px;
+			font-weight: 700;
+			font-family: "微软雅黑";
+			color: black;
+			position: absolute;
+			top: 50px;
+		}
+		.box1 {
+			background: red;
+			-webkit-transform: translateZ(50px);
+		}
+		.box2 {
+			background: yellow;
+			-webkit-transform: rotateX(90deg) translateZ(50px);
+		}
+		.box3 {
+			background: blue;
+			-webkit-transform: rotateX(90deg) translateZ(-50px);
+		}
+		.box4 {
+			background: green;
+			-webkit-transform: rotateY(90deg) translateZ(-50px);
+		}
+		.box5 {
+			background: purple;
+			-webkit-transform: rotateY(90deg) translateZ(50px);
+		}
+		.box6 {
+			background: pink;
+			-webkit-transform: translateZ(-50px);
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="box1">1</div>
+			<div class="box2">2</div>
+			<div class="box3">3</div>
+			<div class="box4">4</div>
+			<div class="box5">5</div>
+			<div class="box6">6</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.txt {width: 200px;height: 250px;background-color: gray; position: absolute; top: 60px; display: none;}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<input type="checkbox" />1111
+			<input type="checkbox" value=""/>2222
+			<input type="checkbox" value=""/>3333
+			<input type="checkbox" value=""/>4444
+			<input type="checkbox" value=""/>5555
+		</div>
+		<!--<div id="box2">
+			
+		</div>-->
+		
+	</body>
+	<script type="text/javascript">
+		var oDiv1=document.getElementById('box1');
+//		var oDiv2=document.getElementById('box2');
+		var aInput=oDiv1.getElementsByTagName('input');
+		var arr=[];
+		var arrDiv=[];
+		var arrNum=[111,222,333,444,555];
+		for (var i=0;i<aInput.length;i++) {
+			aInput[i].index=i;
+			aInput[i].onclick=function(){
+				if(aInput[this.index].checked){
+					var btn=document.createElement('input');
+					btn.type='button';
+					btn.value=''+arrNum[this.index]+'';
+					arr[this.index]=btn;
+					document.body.appendChild(btn);
+					
+					var div=document.createElement('div');
+					div.className='txt';
+					div.innerHTML=''+arrNum[this.index]+'';
+					arrDiv[this.index]=div;
+					document.body.appendChild(div);
+					
+					arr[this.index].ind=this.index;
+					arr[this.index].onclick=function(){
+						for (var i=0;i<arrDiv.length;i++) {
+							arrDiv[i].style.zIndex=0;
+							arr[i].style.cssText='background-color:none'
+						}
+						arrDiv[this.ind].style.display='block';
+						arrDiv[this.ind].style.zIndex=1;
+						arr[this.ind].style.backgroundColor='red';
+					}
+				}
+				else{
+					document.body.removeChild(arr[this.index]);
+					document.body.removeChild(arrDiv[this.index]);
+				}	
+				
+			}
+				
+			
+			
+		}
+	</script>
+</html>

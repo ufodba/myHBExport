@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			#box1 {width: 200px;margin: 90px auto;}
+			dl {float: left;}
+			dt,dd {font-size: 14px; border: #cccccc 1px solid;width: 80px; cursor: pointer;}
+			dt {background-color: #e2eff8;}
+			dd {border-top:none; display: none;}
+			#input1 {width: 100px; float: left;margin-left: 10px;font-size: 14px;}
+		</style>
+		<script type="text/javascript" src="baseBoss.js">
+			
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<!--<div id="divL">
+				歌曲
+			</div>-->
+			<dl id="dl1">
+				<dt>歌曲</dt>
+				<dd>歌曲</dd>
+				<dd>专辑</dd>
+				<dd>歌手</dd>
+				<dd>歌词</dd>
+				<dd>MV</dd>
+				<dd>票务</dd>
+			</dl>
+			<input id="input1" type="text" value="11111"/>
+			
+			<script type="text/javascript" >
+				var oDl=document.getElementById('dl1');
+				var oDt=oDl.getElementsByTagName('dt')[0];
+				var aDd=oDl.getElementsByTagName('dd');
+				var oInput=document.getElementById('input1');
+				var arr=[11111,22222,33333,44444,55555,66666];
+				oDt.onclick=function(ev){
+					for (var i=0;i<aDd.length;i++) {
+						CSS(aDd[i],'display','block');
+					}
+					ev=ev || window.event;
+					stopEvent(ev);
+				}
+				for (var i=0;i<aDd.length;i++) {
+					aDd[i].index=i;
+					aDd[i].onclick=function(ev){
+						for (var j=0;j<aDd.length;j++) {
+							CSS(aDd[j],'display','none');
+						}
+						oDt.innerHTML=this.innerHTML;
+						oInput.value=arr[this.index];
+						oInput.bb=this.index;
+						oInput.aa=true;
+						oInput.onfocus=function(){
+							if(this.aa){
+								oInput.value='';
+								this.aa=false;
+							}
+						}
+						oInput.onblur=function(){
+							if(oInput.value==''){
+								oInput.value=arr[this.bb];
+								this.aa=true;
+							}
+						}
+						
+						console.log(this.index);
+						ev=ev || window.event;
+						stopEvent(ev);
+					}
+				}
+				window.onclick=function(){
+					for (var i=0;i<aDd.length;i++) {
+						CSS(aDd[i],'display','none');
+					}
+				}
+				
+			</script>
+			
+		</div>
+	</body>
+</html>

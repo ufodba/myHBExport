@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>桃子</li>
+			<li>李子</li>
+		</ul>
+		<input type="text" id="inp" placeholder="请输入水果名称"/>
+		<button id="btn">确定</button>
+		
+		<script type="text/javascript">
+			var ls = document.getElementsByTagName('li');
+			var inp = document.getElementById('inp');
+			var btn = document.getElementById('btn');
+			var ul = document.getElementById('ul1');
+			
+		
+			btn.onclick = function(){
+				if('' != inp.value){
+					var li = document.createElement('li');
+					li.innerHTML = inp.value;
+					ul.appendChild(li);
+				}
+			}
+			
+				
+			for(i in ls){
+				ls[i].onclick = function(){
+					this.style.background = 'green';
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

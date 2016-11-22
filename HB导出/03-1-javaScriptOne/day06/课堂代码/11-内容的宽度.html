@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：内容宽度
+	1、回顾offsetHeight与clientHeight区别
+	2、滚动条高度:
+	3、滚动的高度或宽度：
+-->
+	<body>
+		<textarea id="t1" style="width: 200px;height: 200px;  ">
+			asdf
+			adfas
+			fasdf
+			asdf
+			asdf
+			asdf
+			asdf
+			sd
+			fasd
+			f
+			
+			asdf
+			adfas
+			fasdf
+			asdf
+			asdf
+			asdf
+			asdf
+			sd
+			fasd
+			f
+			
+			asdf
+			adfas
+			fasdf
+			asdf
+			asdf
+			asdf
+			asdf
+			sd
+			fasd
+			f
+			
+		</textarea>
+		
+
+		<script type="text/javascript">
+			
+			var txt=document.getElementById('t1');
+			
+			//内容的宽度、高度
+			console.log(txt.scrollWidth);
+			console.log(txt.scrollHeight);
+			
+			
+		</script>
+	</body>
+</html>

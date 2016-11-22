@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script>
+			function fn(data){
+				
+				//alert(data);
+				//alert(typeof data); //object
+				var oul = document.getElementById('ul1');
+				
+				for(var i = 0;i<data.length;i++){
+					
+					oul.innerHTML += '<li>'+data[i]+'</li>'; 
+					
+				}
+				
+			}
+		</script>
+		
+		<script>
+			window.onload = function (){
+				
+				var obtn = document.getElementById('btn');
+				obtn.onclick = function(){
+					
+					var js = document.createElement('script');
+					js.src = '1.data.php';
+					
+					document.body.appendChild(js);
+				}
+				
+			}
+		</script>
+		
+	</head>
+	<body>
+		<input type="button" value="获取" id="btn"/>
+		<ul id="ul1">
+			
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<ul>
+			<li>苹果</li>
+			<li id="l1" style="display: none;">桃子</li>
+			<li id='l2' style="display: none;">香蕉</li>
+			<li>荔枝</li>
+		</ul>
+		<button id="btn1">btn1</button>
+		
+		<button id="btn2">btn2</button>
+
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('button:first').click(function() {
+				if ($("#l1:hidden").length == 0) {
+					$('#l1').hide();
+				} else {
+					
+					$('#l1').show();
+				}
+				
+			});
+			
+			$('button:last').click(function() {
+				if ($("#l2:visible").length == 0) {
+					$('#l2').show();
+				} else {
+					$('#l2').hide();
+				}
+				
+			});
+			
+			
+		</script>
+	</body>
+
+</html>

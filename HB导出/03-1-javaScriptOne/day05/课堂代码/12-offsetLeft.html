@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box2{width: 100px; height: 100px;background-color: blue;padding: 10px; border: 5px solid green;margin: 20px;;}
+			body{border: 2px solid black; padding:  50px;}
+			#box1{border:  1px solid  yellow;zoom: 1;  position: relative;}
+		</style>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：
+	
+标准浏览器
+	1. offsetLeft如果offsetParent是body的话，那么offsetLeft到html的左距离
+	2. offsetLeft如果offsetParent是有定位元素, 那么offsetLeft到定位元素的左距离
+			
+IE6，7
+	1. 当前元素(无定位), offsetLeft到 body
+	2. 当前元素(无定位), 祖先节点(绝对定位和相对定位的值不一样)
+	3. 当前元素(无定位), 会收到haslayout影响
+			
+	1. 当前元素(有定位), 不会收到haslayout影响
+	2. 当前元素(有定位), offsetLeft到html
+			
+总结:
+	1. body和html需要保持同一种样式
+	2. IE低版本浏览器必须给元素加上相对定位
+	
+	
+OffsetLeft:
+  1、body不要设置border，否则会受border影响
+  2、OffsetLeft=offfsetParent的padding-left+ 中间的所有div（不存在定位）的（margin、border、padding）+当前元素的margin
+	
+	
+-->
+	<body>
+		<div id="box1">
+			
+				<div id="box2"></div>
+		</div>
+		
+		
+	 <script type="text/javascript">
+	 	var   oDiv=document.getElementById('box2');
+	 	
+	 	console.log(oDiv.offsetLeft);
+	 	
+	 	
+	 	
+	 </script>
+	</body>
+</html>

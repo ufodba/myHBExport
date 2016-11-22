@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div ng-controller="myController">
+			<h1>{{money | currency}}</h1>
+			<h1>{{ str |  lowercase}}</h1>
+			<h1>{{ str |  uppercase}}</h1>
+			<h1>日期过滤器</h1>
+			<h2>{{date | date:'medium'}}</h2>
+			<h2>{{date | date:'short'}}</h2>
+			<br />
+			<h2>{{date | date:'fullDate'}}</h2>
+			<h2>{{date | date:'longDate'}}</h2>
+			<h2>{{date | date:'mediumDate'}}</h2>
+			<h2>{{date | date:'shortDate'}}</h2>
+			<br />
+			<h2>{{date | date:'mediumTime'}}</h2>
+			<h2>{{date | date:'shortTime'}}</h2>
+			
+			<br />
+			<h2>自定义时间格式</h2>
+			<h2>{{date | date:'hh-mm-ss sss'}}</h2>
+			
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.money = 120000.08009;
+				$scope.str = 'hello Java!'
+				
+				$scope.date = new Date();
+
+			});
+		</script>
+
+	</body>
+
+</html>

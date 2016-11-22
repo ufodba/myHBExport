@@ -1,0 +1,263 @@
+a {
+	text-decoration: none !important;
+}
+
+li {
+	list-style: none;
+}
+
+#pageOne {
+	background: #E1E2ED;
+	font-family: "楷体";
+}
+
+#PageOneHeader {
+	background: #C1C3DA;
+	color: #583D50;
+}
+
+/*音乐播放按钮Start*/
+
+.ui-icon-30-play {
+	background: url(../img/play.png) no-repeat 1px 1px;
+}
+
+.ui-icon-31-pause {
+	background: url(../img/pause.png) no-repeat 1px 1px;
+}
+
+.ui-icon-32-adwance {
+	background: url(../img/adwance.png) no-repeat -3px 0px;
+}
+
+.ui-icon-33-retreat {
+	background: url(../img/retreat.png) no-repeat -3px 0px;
+}
+
+.ui-icon-34-forward {
+	background: url(../img/forward.png) no-repeat 2px 2px;
+}
+
+.ui-icon-35-rewind {
+	background: url(../img/rewind.png) no-repeat 2px 2px;
+}
+
+#plaerBtn a {
+	border-radius: 50%;
+	padding: 0em;
+}
+
+#onOff {
+	width: 4em;
+	height: 4em;
+}
+
+#adwance,
+#retreat {
+	width: 2.1em;
+	height: 2.1em;
+}
+
+#rewind,
+#forward {
+	width: 3em;
+	height: 3em;
+}
+
+
+/*音乐播放按钮End*/
+
+
+/*进度条Start*/
+
+.ui-slider-track {
+	height: 2px;
+	top: 12px;
+	width: 100%;
+	margin: 0 0 0 3px;
+}
+
+#miusicRange div div a[class="ui-slider-handle ui-btn ui-shadow"] {
+	background: #00E017;
+	-webkit-transform: scale(0.25, 0.25);
+}
+
+#miusicRange {
+	width: 18.5em;
+}
+
+#rangeNow {
+	width: 100%;
+	height: 2px;
+	background: purple;
+	position: absolute;
+	bottom: 27px;
+	margin-left: 4px;
+}
+
+.ui-slider input[class="ui-shadow-inset ui-body-inherit ui-corner-all ui-slider-input"] {
+	display: none;
+}
+
+#slider1-label {
+	font-size: 12px;
+}
+
+#volumeRange div div a[class="ui-slider-handle ui-btn ui-shadow"] {
+	background: blueviolet;
+	-webkit-transform: scale(0.25, 0.25);
+}
+
+#volumeRange {
+	width: 4em;
+}
+
+.ui-grid-a>.ui-block-a {
+	width: 80%;
+	float: left;
+}
+
+.ui-grid-a>.ui-block-b {
+	width: 20%;
+	float: left;
+}
+
+#volumeLogo {
+	margin: 0;
+}
+
+#volumeLogo img {
+    margin-left: 55px;
+     transform:scaleX(-1);
+}
+
+#miusicVolume {
+	width: 100%;
+	height: 2px;
+	background: purple;
+	position: absolute;
+	bottom: 27px;
+	margin-left: 4px;
+}
+
+#arrRange {
+	height: 3.2em;
+}
+
+/*进度条End*/
+#hiddenScroll {
+	overflow: hidden;
+	/*width: 20em;*/
+	/*border: 1px black solid;*/
+}
+
+#miusicList {
+	overflow: auto;
+	/*border: 1px black solid;*/
+	/*width: 24.5em;*/
+	margin-right: -9px;
+	height: 10em;
+}
+
+#miusicList li {
+	height: 24px;
+	background: url(../img/mp3.png) no-repeat 0 0 ;
+	padding-left: 30px;
+	padding-right: 10px;
+	border-bottom: 1px solid rgba(138,43,226,0.2);
+	transition: 1s;
+	
+}
+
+#miusicList li a {
+	line-height: 24px;
+	color: #666666;
+	font-weight: normal;
+	transition: 0.5s;
+}
+
+#miusicList li span {
+	display: none;
+	width: 24px;
+	height: 24px;
+	float: right;
+	background: url(../img/MPlayerX.png) no-repeat 0 3px;
+}
+
+#miusicList li:hover {
+	padding-right: 5px;
+	
+}
+
+#miusicList li:hover a {
+	color: rgba(138,43,226,1);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+
+#miusicList li:hover span {
+	display: inline-block;
+}
+
+#plaerBtn  {
+	padding: 0 18%;
+}
+
+#miusicTitle {
+	overflow: hidden;
+	height: 1.3em;
+	font-size: 16px;
+	text-align: center;
+}
+#miusicTitleM {
+	color: #BF00FF;
+	font-weight: 700;
+}
+#nextTitle {
+	color: #CA69FA;
+	font-weight: 700;
+}
+
+@-webkit-keyframes move1{
+	0%{height: 1.3em;}
+	40%{height: 1.3em;}
+	50%{height: 0;}
+	55%{height: 0;}
+	60%{height: 1.3em;}
+	100%{height: 1.3em;}
+}
+
+#miusicTitleM {
+	overflow: hidden;
+	animation: 10s move1 infinite alternate;
+}
+
+#miusicLyric {
+	overflow: auto;
+	height: 8em;
+	font-size: 16px;
+	text-align: center;
+	line-height: 24px;
+}
+
+.lyric {
+	color: #4556ED;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+/*.lyricPosition*/
+ /*#miusicLyric li:nth-child(1) {
+	position: absolute;
+	top:-60px
+}*/
+
+/*#ui-controlgroup-controls  {
+	-webkit-transform: scale(0.1, 0.1);
+}*/
+
+#footer {
+	text-align:center;
+	background: #E1E2ED;
+}

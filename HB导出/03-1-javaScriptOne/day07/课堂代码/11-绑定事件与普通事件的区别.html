@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：普通事件与绑定事件的区别
+		普通事件: 同一个元素，加相同的事件, 调用不同的函数，后面的会覆盖前面
+		绑定事件: 不会出现该问题
+		
+		测试：点击事件
+-->
+	<body>
+		<div id="div1">aaaa</div>
+		
+		
+		
+		<script type="text/javascript">
+			var  odiv=document.getElementById('div1');
+			
+			odiv.onclick=aaa;   //添加一次
+			
+			odiv.onclick=bbb;   //第二次添加 
+			
+			function aaa(){
+				alert(1);
+			}
+			
+			function bbb(){
+				alert(2);
+			}
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="../../day05/base1.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			#ul1{width: 200px;height: 200px; border: 1px solid #000; display: none;}
+		</style>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：点击提示菜单
+	1、点击按钮，显示菜单
+	2、点击其他地方菜单隐藏
+	
+	
+	总结:
+	事件流: 在事件中一直存在的一种现象, 并非由实际代码
+	事件流: 冒泡 + 捕获
+			
+	首先捕获和冒泡是不能同时存在
+	IE6~8是没有捕获过程
+	标准下和IE的高版本, 普通的事件操作是看不到捕获阶段， 在绑定事件（另外的一种事件操作方式）的情况下才可以看到捕获阶段
+				
+-->
+	<body>
+		<input type="button" value="点击" id="input1"/>
+		<ul id="ul1">
+			<li>1111111</li>
+			<li>1111111</li>
+			<li>1111111</li>
+			<li>1111111</li>
+			<li>1111111</li>
+		</ul>
+
+		<script type="text/javascript">
+			var  oInput=document.getElementById('input1');
+			var  oUL=document.getElementById('ul1');
+			
+			oInput.onclick=function(ev){
+				ev=ev||window.event;
+				CSS(oUL,'display','block');
+				//alert(1);
+				
+				stopEvent(ev);
+			}
+			
+			
+			oUL.onclick=function(ev){
+				ev=ev||window.event;
+	
+				stopEvent(ev);
+			}
+			
+			
+			document.onclick=function(){
+				
+				CSS(oUL,'display','none');
+			}
+			
+		</script>
+	</body>
+</html>

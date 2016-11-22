@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+		<style type="text/css">
+			
+			body{height: 1500px;}
+			#box{width: 100px; height: 100px;background: red;  position: absolute; left: 200px; top: 200px;  margin: 10px; padding: 7px; border: 1px solid red; }
+		</style>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-02
+	描述：到可视区域的距离   元素.getBoundingClientRect().top
+-->
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById('box');
+			
+			document.onclick=function(){
+				
+				
+			console.log(oDiv.offsetWidth);	  //116 =100+2*1+2*7 =width+border的左右宽度+padding的左右宽度
+			console.log(oDiv.clientWidth);    //114=100+2*7 =width+padding的左右宽度
+				
+				
+			console.log(oDiv.getBoundingClientRect().top);	//可视距离  top
+			}
+		</script>
+	</body>
+</html>

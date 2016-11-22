@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--兼容ie低版本-->
+		<script src="JSON.js"></script>
+	</head>
+	<body>
+		<script>
+			var arr = [1,2,3];
+			//对象转字符串
+			var arrstr = JSON.stringify(arr);
+//			alert(typeof arrstr);  //string
+			
+			//json:标准的json 双引号作为键值的边界符号
+			var jsonobj = {name:'hello'};
+			//json--->string
+			var strJson = JSON.stringify(jsonobj);
+			//alert(typeof strJson);
+			
+			
+			var str1 = '[3,4,5]';
+			//字符串转对象
+			var obj1 = JSON.parse(str1);
+			alert(obj1);
+			//alert(typeof obj1);
+			
+			//json格式字符串：严格格式
+			var str2 = '{"name":"xiaoming"}';
+			
+			var obj2 = JSON.parse(str2);
+			alert(obj2.name);
+			
+			
+		</script>
+	</body>
+</html>

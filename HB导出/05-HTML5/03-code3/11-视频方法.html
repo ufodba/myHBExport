@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+				var ov = document.getElementById('vd');
+				var obtn = document.getElementById('btn');
+				//点击加载视频资源				
+				obtn.onclick = function(){
+					
+//					ov.src= '2.mp4';
+					ov.load();
+				}
+				
+				//播放
+				ov.onmouseover = function(){
+					
+					ov.play();
+				}
+				//暂停
+				ov.onmouseout = function(){
+					
+					ov.pause();
+				}
+				
+				//监听播放结束事件
+				
+				ov.addEventListener('ended',function(){
+					
+					alert('end');
+				},false);
+				
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="加载" id="btn"/><br />
+		<video id="vd" src="Intermission-Walk-in_512kb.mp4" controls="controls">
+			温馨提示：您的浏览器不支持音视频
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+	</body>
+</html>

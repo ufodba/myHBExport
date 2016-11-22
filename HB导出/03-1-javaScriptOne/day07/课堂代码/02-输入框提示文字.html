@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：输入框提示文字 
+	要点：
+		1、默认为提示文字
+		2、点击则清空
+		3、离开时如果为空，则显示为提示文字
+		4、离开时如果不为空，则保留
+-->
+	<body>
+		<input id="input1" type="text" value="电风扇"/>
+		
+		<script>
+			var aInput =document.getElementsByTagName('input');
+            aInput[0].index=true;
+			//移入
+			aInput[0].onfocus=function(){
+				
+				if(this.index)
+				{
+					this.value='';
+					this.index=false;
+				}
+			}
+			
+			//移出
+			aInput[0].onblur=function(){
+				
+			  if(this.value=='')
+			  {
+			  	this.value="电风扇"
+			  	this.index=true;
+			  }
+			}
+		</script>
+	</body>
+</html>

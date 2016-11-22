@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<textarea name="" rows="" cols="" id="txt"></textarea>
+		<span id="num">0</span><span id="">/200</span>
+		<script type="text/javascript">
+			var txt=document.getElementById('txt');
+			var num=document.getElementById('num');
+			txt.onkeyup=function(){
+				num.innerHTML=txt.value.length;
+			}
+		</script>
+	</body>
+</html>

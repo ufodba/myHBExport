@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" value="请求" id="btn"/>
+		
+		
+		<script>
+			document.getElementById('btn').onclick = function(){
+			
+				var xhr = new XMLHttpRequest();
+				
+				//请求豆瓣数据
+				xhr.open('GET','https://api.douban.com/v2/book/1220562',true);
+			
+				xhr.send();
+				
+				
+				xhr.onreadystatechange = function(){
+					
+					if(xhr.readyState == 4){
+						
+						if(xhr.status == 200){
+							
+							alert(xhr.responseText);
+						}
+						
+					}
+					
+					
+				}
+				//错误信息：跨域请求限制
+//				XMLHttpRequest cannot load https:
+//api.douban.com/v2/book/1220562. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost' is therefore not allowed access.
+			
+			}
+			
+			
+		</script>
+	</body>
+</html>

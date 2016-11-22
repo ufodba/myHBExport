@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：绑定事件函数封装----处理this指向的问题
+	bindEvent(oDiv, 'click', aaa);
+              一定要让aaa中的this指向oDiv
+	
+	
+-->
+	<body>
+		<div id="div1">aaaa</div>
+		
+
+	<script type="text/javascript">
+		
+		var div=document.getElementById('div1');
+		
+		
+		  bindEvent(div,'click',aaa,false);
+		
+		
+		function aaa()
+		{
+			alert(this.id);
+			
+		}
+		
+				//兼容性
+		function  bindEvent(obj,event,fn,bl)
+		{
+			if(obj.addEventListener)
+			{
+				obj.addEventListener(event,fn,bl);
+			}else{
+				
+				obj.attachEvent('on'+event,function(){
+					fn.call(obj);
+				});
+			}
+			
+		}
+	</script>	 
+	</body>
+</html>

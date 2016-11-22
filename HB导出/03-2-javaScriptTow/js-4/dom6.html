@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+
+		<ul id="ul"><li>苹果</li>
+			<li>草莓</li>
+			<li>香蕉</li>
+			<li>西瓜</li></ul>
+		<script type="text/javascript">
+
+			var ul = document.getElementById('ul');
+			var child = ul.firstChild;
+			if(1 == child.nodeType){
+				child.style.background = 'red';
+			}else{
+				child.nextSibling.style.background = 'green';
+			}
+			
+			
+			var lChild = ul.lastChild;
+			console.log("lastChild:"+ lChild.nodeType);
+			if(1 == lChild.nodeType){
+				lChild.style.background = 'blue';
+			}else{
+				lChild.previousSibling.style.background='red';
+			}
+			
+			
+//			console.log(child.nodeName+":"+child.nodeType);
+			
+			
+		</script>
+	</body>
+
+</html>

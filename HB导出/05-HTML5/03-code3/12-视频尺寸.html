@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function(){
+								
+				var ov = document.getElementById('vd');
+				//视频宽高设置，数值
+				ov.width = ov.videoWidth;
+				ov.height =ov.videoHeight;
+				
+				//视频实际尺寸：只读
+				//alert(ov.videoWidth );
+				//alert(ov.videoHeight);
+				
+				//设置视频预览图片
+				
+				ov.poster = '2.png';
+				
+			}
+		</script>
+	</head>
+	<body>
+		<video id="vd" src="Intermission-Walk-in_512kb.mp4" controls="controls">
+			温馨提示：您的浏览器不支持音视频
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+	</body>
+</html>

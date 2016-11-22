@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*动画帧定义动画*/
+		
+		/*move1：动画名字*/
+		@keyframes move1{
+			/*动画状态*/
+			from{width: 50px;height: 100px;}
+			to{width: 500px;height: 500px;}
+		}
+		@-webkit-keyframes move1{
+			/*动画状态*/
+			from{width: 50px;height: 100px;}
+			to{width: 500px;height: 500px;}
+		}
+		@-moz-keyframes move1{
+			/*动画状态*/
+			from{width: 50px;height: 100px;}
+			to{width: 500px;height:800px;}
+		}
+		@-ms-keyframes move1{
+			/*动画状态*/
+			from{width: 50px;height: 100px;}
+			to{width: 500px;height: 800px;}
+		}
+			div{width: 100px;height: 100px;background: purple;}
+			.box{animation: 2s move1;}
+		</style>
+	</head>
+	<body>
+		<div id="divid"></div>
+		
+		<script>
+			var odiv = document.getElementById('divid');
+			odiv.onclick = function(){
+				
+				this.className = 'box';
+				
+				//动画完成监听
+				this.addEventListener('webkitAnimationEnd',function(){
+					
+					alert(666);
+					
+				},false);
+			}
+		</script>
+	</body>
+</html>

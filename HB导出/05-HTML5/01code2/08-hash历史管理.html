@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="随机"/>
+		<div id="box"></div>
+		
+		<script>
+			
+			var obtn = document.getElementById('btn');
+			var odiv = document.getElementById('box');
+			var jsonNum = {};//hash与数组对应 
+			
+			
+			obtn.onclick = function(){
+				
+				//生成一个随机数----》作为hash值
+			var hashNum = Math.random()*234556;
+				
+				//7位随机数    36
+			
+			var arr = getRandom(7,36);
+			
+//			alert(arr); //11,21...
+			
+			odiv.innerHTML = arr;
+			
+			//设置hash值
+			window.location.hash = hashNum;
+			
+			jsonNum[hashNum] = arr;
+			
+			//hash值改变的时候触发该方法
+			
+			window.onhashchange = function(){
+				
+				//key-->value--->div内容
+				//hash #随机数
+				//截取#号后面的随机数
+				var key = window.location.hash.substring(1);
+				
+				odiv.innerHTML = jsonNum[key];
+			}
+			
+			
+			
+			//生成随机数的函数
+			function getRandom(count,num){
+				
+				var newArr = [];
+				
+				//循环生成7个随机数
+				for(var i = 0;i<count;i++){
+					
+					var random = Math.floor(Math.random()*num+1);
+					
+					newArr.push(random);
+				}
+				
+				return newArr;
+			}
+			
+			}
+			
+		</script>
+	</body>
+</html>

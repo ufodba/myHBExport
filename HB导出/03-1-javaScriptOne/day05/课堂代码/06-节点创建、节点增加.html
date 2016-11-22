@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-01
+	描述：节点创建  document.createElement(类型)
+	      拼接子节点   (元素对象).appendChild(子节点)
+	    操作：增加新节点
+-->
+	<body>
+		<ul  id="ulK">
+			<li>111</li>
+		</ul>
+		
+		
+		
+		<script type="text/javascript">
+			
+			var oUl=document.getElementById('ulK');
+			
+			document.onclick=function (){
+//				oUl.innerHTML +="<li>"+111+"</li>";
+               
+               //创建节点
+              var li=document.createElement('li');     
+              
+              //初始化节点
+              li.innerHTML=1111;
+              
+              //添加节点到父节点中
+              oUl.appendChild(li);   //追加成员
+
+			}
+			
+		</script>
+		
+	</body>
+</html>

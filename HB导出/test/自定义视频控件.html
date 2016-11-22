@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {cursor: pointer; }
+			#box div  {display: inline-block;}
+			#pro {width: 180px; height: 10px;}
+			#ran {width: 180px; height: 2px;}
+			#ran2 {width: 80px; height: 15px;}
+			#onOff {border: 1px slateblue solid;}
+			#audioOnOff {border: 1px slateblue solid;}
+			#progressObj {position: relative;}
+			#ran {position: absolute; top:5px; left: -2px;}
+		</style>
+	</head>
+	<body>
+		<video id="vd" src="audio/Intermission-Walk-in_512kb.mp4" width="500" height="500"  >
+			浏览器不支持。
+			<source src="audio/Intermission-Walk-in_512kb.mp4"></source>
+			<source src="audio/Intermission-Walk-in_512kb.mp4"></source>
+			<source src="audio/Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+		<div id="box">
+			<div id="onOff">>></div>
+			<div id="time">
+				<span id="timeOn">00:00:00</span>
+				/ <span id="timeAll">00:00:00</span>
+			</div>
+			<div id="progressObj">
+				<progress max="100" value="0" id="pro"></progress>
+				<br />
+				<input type="range" name="" id="ran" value="0" max="100" step="1"/>
+			</div>
+			
+			<div id="audioBox">
+				<span id="audioOnOff">><</span>
+				<input type="range" name="" id="ran2" value="50" max="100" step="1"/>
+			</div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				var vd=document.getElementById('vd');
+				var onOff=document.getElementById('onOff');
+				var timeOn=document.getElementById('timeOn');
+				var timeAll=document.getElementById('timeAll');
+				var pro=document.getElementById('pro');
+				var ran=document.getElementById('ran');
+				var audioOnOff=document.getElementById('audioOnOff');
+				var ran2=document.getElementById('ran2');
+				
+				var flag=true;
+				var flagAudio=true;
+				var t=null;
+				pro.max=vd.duration;
+				ran.max=vd.duration;
+				timeAll.innerHTML=getTime(vd.duration);
+				vd.volume=ran2.value/100;
+//				vd.muted=false;
+				ran.onchange=function(){
+					vd.currentTime=this.value;
+					pro.value=this.value;
+					timeOn.innerHTML=getTime(vd.currentTime);
+				}
+				ran2.onchange=function(){
+					vd.volume=this.value/100;
+				}
+				onOff.onclick=function(){
+					if (flag) {
+						vd.play();
+						this.innerHTML='||';
+						t=setInterval(function(){
+							timeOn.innerHTML=getTime(vd.currentTime);
+							pro.value=vd.currentTime
+							ran.value=vd.currentTime
+						},1000);
+						flag=false;
+					} else{
+						clearInterval(t);
+						vd.pause();
+						this.innerHTML='>>';
+						flag=true;
+					}
+//					if(vd.currentTime==vd) {
+//						vd.load();
+//					}
+				}
+				
+				audioOnOff.onclick=function(){
+					if (!vd.muted) {
+						this.innerHTML='<>';
+						vd.muted=true;
+//						flagAudio=false;
+					} else {
+						this.innerHTML='><';
+						vd.muted=false;
+//						flagAudio=true;
+					}
+				}
+				
+				//根据属性获取时间值
+				function getTime(shuxing){
+					var hh=Math.floor(shuxing/3600);
+					var mm=Math.floor(shuxing%3600/60);
+					var ss=Math.floor(shuxing%60);
+					if (hh<10) hh='0'+hh;
+					if (mm<10) mm='0'+mm;
+					if (ss<10) ss='0'+ss;
+					return hh+':'+mm+':'+ss;
+				}
+			}
+		</script>
+	</body>
+</html>

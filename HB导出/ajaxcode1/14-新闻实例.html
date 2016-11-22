@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js"></script>
+	</head>
+	<body>
+		<input type="button" value="加载新闻" id="btn"/>
+		<ul id="ulid">
+			
+		</ul>
+		
+		<script>
+			var obtn = document.getElementById('btn');
+			var oul = document.getElementById('ulid');
+			obtn.onclick = function(){
+				
+				ajax('get','News.php','',function(data){
+					
+					var arr = JSON.parse(data);
+
+							//遍历
+							for(var i = 0;i<arr.length;i++){
+								
+								oul.innerHTML += '<li><a href="#">'+arr[i].title+'</a>[<span>'+arr[i].date+'</span>]</li>';
+								
+							}
+					
+				});
+				
+			}
+			
+			setInterval(function(){
+				ajax('get','News.php','',function(data){
+					
+					var arr = JSON.parse(data);
+
+							//遍历
+							for(var i = 0;i<arr.length;i++){
+								
+								oul.innerHTML += '<li><a href="#">'+arr[i].title+'</a>[<span>'+arr[i].date+'</span>]</li>';
+								
+							}
+					
+				});
+				
+			},1000);
+			
+			
+//			function show(data){
+//				
+//				alert(data);
+//			}
+//			
+//			show(123);
+//			
+		</script>
+	</body>
+</html>

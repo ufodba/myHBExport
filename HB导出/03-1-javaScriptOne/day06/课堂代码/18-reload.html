@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-04
+	描述：刷新窗口      reload
+	1、修改text      autocomplete： 清除缓存
+	2、刷新
+-->
+	<body>
+		<input type="text" value="" autocomplete="off"/>
+		<input type="button" value="刷新页面" id="input1"/>
+		
+
+	 <script type="text/javascript">
+	 	var  btn=document.getElementById('input1');
+	 	btn.onclick=function(){
+	 		
+	 		window.location.reload();
+	 	}
+	 	
+	 </script>	
+	</body>
+</html>

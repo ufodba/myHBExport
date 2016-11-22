@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<button id="btn">button</button>
+
+		<script type="text/javascript">
+			//			function aaa() {
+			//				function bbb() {
+			//
+			//				}
+			//			}
+			var a = 19;
+			
+			function fun1() {
+			
+				return ++a;
+			}
+			
+			var btn = document.getElementById('btn');
+			btn.onclick = function() {
+				console.log(fun1());
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.my_c{
+				background: yellowgreen;
+			}
+			
+			.my_c2{
+				background: gold;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>草莓</li>
+			<li>桃子</li>
+		</ul>
+		<ul>
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>草莓</li>
+			<li>桃子</li>
+		</ul>
+		
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('ul li:first').addClass('my_c');
+			
+			$('ul li:first-child').addClass('my_c2');
+			
+			console.log($('ul:first-child'));
+		</script>
+	</body>
+</html>

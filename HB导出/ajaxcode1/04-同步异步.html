@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="请求" id="btn"/>
+		
+		<script>
+		//获取button
+			var obtn = document.getElementById('btn');
+			//点击请求后台文件
+			obtn.onclick = function(){
+				
+				//1.创建ajax请求对象
+				var xhr = null;
+
+//				if(window.XMLHttpRequest){
+//					
+//					xhr = new XMLHttpRequest();
+//				}else{
+////					alert(111);
+//					//兼容ie浏览器
+//					xhr = ActiveXObject('Microsoft.XMLHTTP');
+//
+//				}
+				
+				//异常处理的方式兼容
+				try{
+					xhr = new XMLHttpRequest();
+				}catch(e){
+					
+					xhr = ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				
+				//2.open方法
+				//参数：参数1：请求方式 GET POST
+				      //参数2：请求url地址
+				      //参数3：同步异步  true：异步 （非阻塞方式）  false：同步（阻塞方式）
+				xhr.open('GET','1.txt',false);
+				
+				//3.send方法:发送数据，相对于表单中的submit
+				xhr.send();
+				//。。。。。。。。
+				alert(xhr.responseText);//true:空内容
+				
+				//4.请求状态监控
+				
+//				xhr.onreadystatechange = function(){
+//			//0 1 2 3 4
+//					if(xhr.readyState==4){
+//						
+//						if(xhr.status == 200){
+//						
+//						//获取到后台数据内容
+//						alert(xhr.responseText);
+//						
+//						}else{
+//							alert(xhr.status);
+//						}	
+//					}
+//					
+//				}
+//				
+				
+			}
+		</script>
+	</body>
+</html>

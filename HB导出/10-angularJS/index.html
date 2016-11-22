@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div ng-init="mm='初始化变量'" ng-bind="mm">
+			{{mm;}}
+		</div>
+		<div ng-controller="mycontroller" >
+			{{
+				hello;
+			}}
+			<ul>
+				<li ng-repeat="n in array">{{n}}</li>
+			</ul>
+			{{
+				stu.name+'，'+stu.age
+			}}
+			<button ng-click="add(2)">增加</button>
+			<strong >{{num;}}</strong>
+			<br /><br />
+			<strong ng-bind="num"></strong>
+		</div>
+		{{dd;}}
+		
+		
+		<script src="day1/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app=new angular.module('app',[]);
+			app.controller('mycontroller',function($scope,$rootScope){
+				$scope.hello='hello angularJS';
+				$scope.array=['1','2','3','4'];
+				$scope.stu={name:'卓卓',age:25};
+				$scope.num=1;
+				$scope.add=function(i){
+					$scope.num+=i;
+				}
+				$rootScope.dd=123;
+			});
+		</script>
+	</body>
+</html>

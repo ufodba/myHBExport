@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#box1{width: 100px; height: 100px; background:red;}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box1">abcd</div>
+		<div id="box2"  class="box"></div>
+		<div id="box3"  class="box"></div>
+		
+		
+		
+		<script type="text/javascript">
+			//获取方式1;
+			var obj1=document.getElementById('box1');     //box1
+			
+			//方式2;  document.getElementsByTagName是一个集合（数组）   【0】：表示第0个
+			var  obj2= document.getElementsByTagName('div')[0];  //box1
+			
+			//第三种方式  document.getElementsByClassName得到一个集合，
+			var  obj3=document.getElementsByClassName('box')[0];  //box2
+			
+			
+			
+			
+			//修改元素内容
+			
+			//obj1.innerHTML = '内容内容';
+			//obj1.innerHTML += 'abc';
+			
+			
+			//修改内容，也可以添加标签
+			obj1.innerHTML='<a href=\"#\">点击</a>';   //对于双引号，单引号成为字符串，必须之前加\
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

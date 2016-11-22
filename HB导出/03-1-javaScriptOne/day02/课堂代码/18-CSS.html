@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			#box{width: 100px; height: 100px; background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		   
+		
+		
+		<script type="text/javascript">
+			var oDiv=document.getElementById('box');
+			
+			/*
+			 * setCSS:设置元素样式函数
+			 * 参数1：obj   元素
+			 * 参数2：attr  属性         必须是字符串而且是属性名称
+			 * 参数3：value  设置的值   
+			 * 
+			 */
+			function  CSS(obj,attr,value)
+            {
+            	if(value==undefined)
+            	{
+            		
+            		return  obj.style[attr];
+            	}
+            	
+				//第二种操作方式
+				obj.style[attr]=value;	
+			}
+			
+			CSS(oDiv,'backgroundColor','blue');
+			
+			CSS(oDiv,'width','300px');
+			
+			console.log(CSS(oDiv,'backgroundColor'));
+			
+		</script>
+		
+	</body>
+</html>

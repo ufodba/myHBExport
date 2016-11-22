@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<div ng-controller="myController">
+			<input type="text" ng-model="user.name" placeholder="请输入用户名" />
+			<input type="text" ng-model="user.pwd" placeholder="请输入用户密码" />
+
+			<input type="button" ng-click="getUserInfo()" value="获取用户信息" />
+			<input type="button" ng-click="setUserInfo()" value="重置用户信息" />
+
+		</div>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var app = angular.module('app', []);
+			app.controller('myController', function($scope) {
+				$scope.user = new Object();
+				$scope.user.name = '小张';
+				$scope.user.pwd = '1234576';
+
+				$scope.getUserInfo = function() {
+					alert('用户名：' + $scope.user.name + " , 用户密码：" + $scope.user.pwd);
+				}
+				$scope.setUserInfo = function() {
+					$scope.user.name = '小张';
+					$scope.user.pwd = '1234576';
+				}
+
+			});
+		</script>
+
+	</body>
+
+</html>

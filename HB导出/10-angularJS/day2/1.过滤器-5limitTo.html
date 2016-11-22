@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="MyController">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--
+			limito 字符串和数组截取。
+		-->
+		<!-- 截取前面2个字符串 -->
+		<h2>{{ str | limitTo:2 }}</h2>
+		<!-- 截取后面2个字符串 -->
+		<h2>{{ str | limitTo:-2 }}</h2>
+
+		<ol>
+
+			<!-- 截取数组时，数组中元素不能重复 -->
+			<li ng-repeat="i in array | limitTo:-2">
+				<h3>{{ i }}</h3></li>
+		</ol>
+		
+		
+		<ol>
+
+			<!-- 截取数组时，数组中元素不能重复 -->
+			<li ng-repeat="i in students | limitTo:-2">
+				<h3>{{ i }}</h3></li>
+		</ol>
+
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('MyController', function($scope) {
+				$scope.str = '这是一段文字';
+				$scope.array = [1, 2, 3, 5, 7, 8, 9, 0, 19];
+
+				$scope.students = [{
+					id: '2000-10-8',
+					name: '小明',
+					age: 18,
+					city: '深圳'
+				}, {
+					id: '2000-10-8',
+					name: '小芳',
+					age: 18,
+					city: '杭州'
+				}, {
+					id: '2000-10-13',
+					name: '小红',
+					age: 17,
+					city: '广州'
+				}, {
+					id: '2000-10-15',
+					name: '小白',
+					age: 19,
+					city: '上海'
+				}, {
+					id: '2000-10-16',
+					name: '小紫',
+					age: 20,
+					city: '北京'
+				}, {
+					id: '2000-10-17',
+					name: '小蓝',
+					age: 17,
+					city: '深圳'
+				}, {
+					id: '2000-10-18',
+					name: '小绿',
+					age: 16,
+					city: '武汉'
+				}, ];
+
+			});
+		</script>
+
+	</body>
+
+</html>

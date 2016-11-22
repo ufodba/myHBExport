@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 100px;
+				height: 500px;
+				margin: 0px auto;
+			}
+			
+			#menu {
+				border: 1px solid blue;
+				display: none;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<button id="btn">菜单</button>
+			<ul id="menu">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			var menu = document.getElementById('menu');
+			//			var ul = document.getElementById('ul');
+			var time = null;
+
+			btn.onmouseover = function() {
+				clearTimeout(time);
+				menu.style.display = 'block';
+			}
+
+			btn.onmouseout = function() {
+				//				time = -1;
+				//				
+				time = setTimeout(function() {
+					menu.style.display = 'none';
+				}, 500);
+				console.log(time);
+
+			}
+
+			menu.onmouseover = function() {
+				clearTimeout(time);
+			}
+
+			menu.onmouseout = function() {
+				time = setTimeout(function() {
+					menu.style.display = 'none';
+				}, 500);
+
+			}
+		</script>
+	</body>
+
+</html>

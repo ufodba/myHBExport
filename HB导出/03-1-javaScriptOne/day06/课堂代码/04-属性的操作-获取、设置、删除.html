@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{background: red;}
+		</style>
+	</head>
+	
+<!--
+	作者：89025117@qq.com
+	时间：2016-09-03
+	描述：元素属性的操作---获取、设置、删除
+	方式1：  元素对象.style.属性名    或    元素对象['style']['属性名']
+	方式2： 获取   元素对象.getAttribute('属性名')
+	           设置     元素对象.setAttribute('属性名')
+	           删除     元素对象.removeAttribute('属性名')
+-->
+	<body>
+		<div id="div1" title="hello"  style="width: 200px;">aaaaaa</div>
+
+
+    
+        <script type="text/javascript">
+        	var  div=document.getElementById('div1');
+        	
+        	var  id=div.id;
+        	console.log(id);
+        	
+        	
+        	var  id1=div['id'];
+        	console.log(id1);
+        	
+        	
+        	
+        	//获取title属性
+        	var title=div.getAttribute('title');
+        	console.log(title);
+        	
+        	
+        	//设置
+        	div.setAttribute('title','abc');
+        	title=div.getAttribute('title');
+        	console.log(title);
+        	
+        	//删除
+        	div.removeAttribute('title');
+        	title=div.getAttribute('title');
+        	console.log(title);
+        	
+
+        	title=div.getAttribute('style.width');  //不可以的
+        	console.log(title);
+        	
+        	
+        	
+        </script>
+
+	</body>
+</html>

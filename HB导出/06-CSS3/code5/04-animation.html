@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		/*动画帧定义动画*/
+		
+		/*move1：动画名字*/
+	
+		@-webkit-keyframes move1{
+			/*动画状态*/
+			/*from -to :适合状态少*/
+			/*百分数：适合状态多*/
+			0%{width: 100px;}
+			50%{width: 200px;}
+			75%{width: 500px;}
+			100%{width: 600px;}
+		}
+		
+			#box{width: 100px;height: 100px;background: purple;animation: 2s move1 linear;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				background: #cecece;
+			}
+			canvas {
+				background: white;
+				margin: 0 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="can" width="600" height="500">
+			温馨提示：该浏览器不支持画布功能。
+		</canvas>
+		
+		<script type="text/javascript">
+			var can=document.getElementById('can');
+			var ctx=can.getContext('2d');
+			var nowRotate=0;
+			var arrShell=[];
+			var img=new Image();
+			img.src='img/person.png';
+			img.onload=function(){
+				var time=setInterval(function(){
+					ctx.clearRect(0,0,600,500);
+					
+					for (var i=0; i<arrShell.length; i++) {
+						arrShell[i].x++;
+						arrShell[i].y--;
+						ctx.save();
+						ctx.fillStyle='red';
+						ctx.translate(300,250);
+						ctx.arc(arrShell[i].x,arrShell[i].y,15,0,360*Math.PI/180,false);
+						ctx.fill();
+						ctx.restore();
+					}
+					
+					//绘制祖玛
+					ctx.save();
+					ctx.translate(300,250);//基准点，中心点
+					ctx.rotate(nowRotate);
+					ctx.translate(-25,-25);//回退基准点，左上角
+					ctx.drawImage(img,0,0,50,50);//以基准点为起点 0,0
+					ctx.restore();
+				},20);
+			}
+			
+			window.onmousemove=function(ev){
+				var ev=ev || window.event;
+				
+				var x=ev.clientX-can.offsetLeft;
+				var y=ev.clientY;
+				var a=x-300;
+				var b=250-y;
+				var c=Math.sqrt(a*a+b*b);
+				if(a>0 && b>0) nowRotate=90*Math.PI/180-Math.asin(b/c);
+				else if(a<0 && b>0) nowRotate=Math.asin(b/c)-90*Math.PI/180;
+				else if(a<0 && b<0) nowRotate=Math.asin(b/c)-90*Math.PI/180;
+				else if(a>0 && b<0) nowRotate=-Math.asin(b/c)+90*Math.PI/180;
+				nowRotate=nowRotate;
+			}
+			window.onmousedown=function(){
+				var shell={};
+				shell.x=25*Math.sin(nowRotate);
+				shell.y=-25*Math.cos(nowRotate);
+				console.log(shell.x+'+'+shell.y)
+				arrShell.push(shell);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			#div1{width:100px;height: 100px; background: red; padding: 10px; 
+				  border: 5px solid #000; display: none;  margin: 2px;}
+		</style>
+<!--
+作者：89025117@qq.com
+	时间：2016-09-03
+	描述：offset   
+	offsetLeft ：左边框到左边框距离
+	offsetTop：顶边框到顶边框距离
+	offsetWidth ：可视图的宽度      width + padding + border
+	offsetHeight：可视图的高度      height + padding + border	
+	
+	clientWidth:边框内宽度
+	clientLeft：左侧边框大小
+	
+	
+	如果元素是隐藏的，那么以上的值全为0
+-->
+	</head>
+	<body>
+		<div id="div1"></div>
+		
+		
+		<script type="text/javascript">
+			var  div=document.getElementById('div1');
+			console.log(div.offsetWidth);
+			console.log(div.offsetHeight);
+			
+			
+			console.log(div.clientWidth);
+			console.log(div.clientHeight);
+			
+			
+		</script>
+	</body>
+</html>

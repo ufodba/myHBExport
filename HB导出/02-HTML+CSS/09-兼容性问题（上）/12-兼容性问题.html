@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{border:10px solid #000; width:600px; float:left;}
+	.box div{width:100px; height:100px; background:red; margin:20px;
+		border:5px solid #ccc; float:left; display:inline;
+	}
+	
+	/*
+		当一行子元素占用的宽度之和和父级的宽度相差超过3px（例如:603px）
+		或者有不满行状态的时候，最后一行子元素下的margin在IE6下就会消失。
+		
+		解决方法： 没有。
+	*/
+</style>
+
+</head>
+
+<body>
+	<div class="box">
+    	<div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+
+    </div>
+
+</body>
+</html>

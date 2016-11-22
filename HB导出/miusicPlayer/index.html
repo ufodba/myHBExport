@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+		<div id="pageOne" data-role="page">
+			<div data-role="header" id="PageOneHeader">
+				<h6>MUSIC 嗨起来</h6>
+			</div>
+			<!--<div id="" data-role="content">-->
+			<div id="" data-role="main" class="ui-content">
+			<!--歌曲列表Start-->
+				<div id="hiddenScroll" class="ui-grid-solo">
+					<ul id="miusicList" data-role="listview" data-inset="true">
+						<!--<li name="22" data-num = "22"><a href="#">2222</a></li>-->
+					</ul>
+				</div>
+
+				<!--歌曲列表End-->
+				<!--歌曲Start-->
+				<audio id="nowAudio" src=""></audio>
+				<!--歌曲End-->
+
+				<div id="miusicTitle" class="ui-grid-solo">
+					<div id="miusicTitleM">MIUSIC 正嗨</div>
+					<div id="nextTitle">下一首:<span id="nextTitleM"></span></div>
+				</div>
+				<ul id="miusicLyric" data-role="listview" data-inset="true">
+					<!--class="ui-grid-solo"-->
+					<!--Lyric-->
+					<!--<span>正在播放：</span>-->
+					<!--<span id="miusicTitleM"></span>-->
+				</ul>
+
+				<!--进度条Start-->
+				<div id="arrRange" class="ui-grid-a">
+
+					<div class="ui-block-a">
+						<div id="miusicRange" data-role="fieldcontain">
+							<label for="slider1">00:00/00:00</label>
+							<input type="range" name="slider1" id="slider1" value="0" min="0" max="100" />
+							<div id="rangeNow"></div>
+						</div>
+					</div>
+
+					<div class="ui-block-b">
+						<div id="volumeRange" data-role="fieldcontain">
+
+							<label for="slider2" id="volumeLogo"><img src="img/1129173.png"/></label>
+							<input type="range" name="slider2" id="slider2" value="0.5" min="0" max="1" step="0.1" />
+							<div id="miusicVolume"></div>
+						</div>
+					</div>
+				</div>
+
+				<!--进度条End-->
+			<div id="footer" data-role="footer" >
+				<!--音乐播放按钮Start-->
+				<div id="plaerBtn" data-type="horizontal" data-role="controlgroup" >
+					<a id="rewind" href="#" data-role="button" class="ui-nodisc-icon" data-icon="35-rewind"></a>
+					<a id="retreat" href="#" data-role="button" class="ui-nodisc-icon" data-icon="33-retreat"></a>
+					<a id="onOff" href="#" data-role="button" class="ui-nodisc-icon" data-icon="30-play"></a>
+					<a id="adwance" href="#" data-role="button" class="ui-nodisc-icon" data-icon="32-adwance"></a>
+					<a id="forward" href="#" data-role="button" class="ui-nodisc-icon" data-icon="34-forward"></a>
+				</div>
+				<!--音乐播放按钮End-->
+			</div>
+			
+
+			</div>
+		</div>
+
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			向下兼容——已验证
+			$(document).bind('mobileinit', function() {
+				$.mobile.pushStateEnabled = false;
+			});
+//			上下兼容——未验证
+//			$(document).bind('mobileinit',function(){
+//			    $.mobile.changePage.defaults.changeHash = false;
+//			    $.mobile.hashListeningEnabled = false;
+//			    $.mobile.pushStateEnabled = false;
+//			});
+		</script>
+		<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lyric.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

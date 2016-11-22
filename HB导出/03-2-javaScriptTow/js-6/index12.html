@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">button</button>
+		
+		<script type="text/javascript">
+			var btn = document.getElementById('btn');
+			/*
+			 * 重复的批定事件时，后面的会覆盖前面。
+			 */
+//			btn.onclick =fun1;
+			function fun1(){
+				alert('2');
+			};
+			
+//			btn.onclick = fun2;
+			function fun2(){
+				alert('1');
+			};
+			/*
+			 * 只支持IE6 7 8
+			 */
+//			btn.attachEvent('onclick',fun1);
+//			btn.attachEvent('onclick',fun2);
+			
+			/*
+			 * 标准浏览器支持。
+			 * 参数1：事件名称，注：不要加on
+			 * 参数2： 要绑定的事件函数。
+			 * 参数3.false 冒泡。true 捕获。
+			 */
+			btn.addEventListener('click',fun2,false);
+			btn.addEventListener('click',fun1,false);
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

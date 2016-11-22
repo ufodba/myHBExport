@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/ng-template" id="embedded.home.html">
+			<h1> Home </h1>
+			<div>内容</div>
+		</script>
+
+		<script type="text/ng-template" id="embedded.about.html">
+			<h1> About </h1>
+		</script>
+
+		<div>
+			<div >
+				<a href="#/home">Home</a>
+				<a href="#/about">About</a>
+			</div>
+
+			<p>p1</p>
+			<div ng-view>
+			</div>
+			
+			<p>p2</p>
+		</div>
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+
+		<script type="text/javascript">
+				var app = angular.module('app', ['ngRoute']);
+				app.controller('HomeController', function($scope, $route) {
+					$scope.$route = $route;
+				});
+				app.controller('AboutController', function($scope, $route) {
+					$scope.$route = $route;
+				});
+				
+				app.config(function($routeProvider) {
+					
+					$routeProvider.when('/home', {
+						templateUrl: 'embedded.home.html',
+//						template:'<h1>hello</h1>',
+						controller: 'HomeController'
+					});
+					
+					$routeProvider.when('/about', {
+						templateUrl: 'embedded.about.html',
+						controller: 'AboutController'
+					});
+					
+					$routeProvider.otherwise({
+						redirectTo: '/about'
+					});
+				});
+		</script>
+		</body>
+
+</html>
