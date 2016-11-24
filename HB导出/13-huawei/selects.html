@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.dropdownContainer{position: relative;height: 30px;width: 100%;background: #555;}
+			.dropdownDefault{border:1px solid #ddd;line-height: 28px;text-indent: 0.5em;}
+			.dropdownContainer .downArrow{position: absolute;right: 5px;top: 9px}
+			.dropdrown-menu{position: absolute;top:100%;width: 100%;left: 0;background: #555;display: none;}
+			.dropdrown-menu li{line-height: 24px;}
+			.dropdrown-menu li a{display: inline-block;width: 100%;text-indent: 0.5em}
+			.dropdrown-menu li a:hover{background: #0078b6;font-size: 1.1em;}
+			.arrow{width: 0;height: 0;display: inline-block;cursor: pointer;}
+			.downArrow{border-left: 6px solid transparent;border-right: 6px solid transparent;border-top: 12px solid #fff;}
+		</style>
+	</head>
+	<body>
+		<div class="dropdownContainer">
+		    <div class="dropdownDefault">1</div>
+		    <span class="downArrow arrow"></span>
+		    <ul class="dropdrown-menu">
+		        <li><a href="#">1</a></li>
+		        <li><a href="#">2</a></li>
+		        <li><a href="#">6</a></li>
+		        <li><a href="#">8</a></li>
+		    </ul>
+		</div>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".dropdownDefault,.dropdownContainer .downArrow").click(function(){
+			    $(this).siblings(".dropdrown-menu").show();
+			});
+			 
+			$(".dropdrown-menu li a").click(function(){
+			    $(this).parent().parent().siblings(".dropdownDefault").html($(this).html());
+			    $(this).parent().parent().hide();
+			});
+		</script>
+	</body>
+</html>
